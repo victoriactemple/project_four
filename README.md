@@ -1,24 +1,16 @@
-# README
+# PROJECT FOUR
+## GEORGIA STATE PARKS 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
 
-* Ruby version
+[Heroku](https://shielded-bastion-69368.herokuapp.com/)
 
-* System dependencies
 
-* Configuration
+[User Stories]
+(https://trello.com/b/y9gAto1I/project-4)
 
-* Database creation
+[WireFrame]
+(https://marvelapp.com/279hj66)
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### ERD: 
+<img src="/project_four_erd.jpg" width="300">
