@@ -57,11 +57,22 @@ lat: 34.7335,
 lon: -83.3715
 })
 
+## Users 
+
 tommy = User.create({
     email: "tommy_pickles@gmail.com",
     password: "blahblah1234",
     password_confirmation: "blahblah1234"
 })
+
+veronica = User.create({
+    email: "veronica@people.com",
+    password: "blahblah1234",
+    password_confirmation: "blahblah1234"
+})
+
+
+## Comment 
 
 tommy_comment = Comment.create({
     title: "What a hike!",
@@ -69,5 +80,14 @@ tommy_comment = Comment.create({
     user_id: tommy.id,
     park_id: tallulah_gorge.id
 })
+
+
+veronica_comment = Comment.create({
+    title: "He proposed here",
+    content: "It was so romantic!",
+    user_id: veronica.id,
+    park_id: providence_canyon.id
+})
+
 
 

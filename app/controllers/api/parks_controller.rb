@@ -9,7 +9,15 @@ class Api::ParksController < ApplicationController
     park_id = params[:id]
 
     @park = Park.find_by_id(park_id)
-    render json: @park includes: [:comments]
+    render json: @park, includes: [:comments]
+    end
+
+
+
+    private 
+
+    def park_params
+        
     end
 
 
