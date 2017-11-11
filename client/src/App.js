@@ -21,7 +21,6 @@ class App extends Component {
   }
 
   render() {
-    const ParkListComponent = () => (<ParkList parks={this.state.parks} />)
     return (
      <Router>
        <div>
