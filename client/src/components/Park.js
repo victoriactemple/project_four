@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import CommentList from './CommentList'
+import CommentList from './Comments/CommentList'
 import styled from 'styled-components';
 
 
@@ -11,9 +11,6 @@ text-align: center;
 const Description = styled.div`
 margin: 30px 0;
 `
-
-
-
 class Park extends Component {
         state ={
             park: {
@@ -43,11 +40,11 @@ class Park extends Component {
                 <p>{this.state.park.address}</p>
                 <Description>{this.state.park.description}</Description>
 
-    {this.state.park.comments.map((comment) => {
+     {/* {this.state.park.comments.map((comment) => {
         return <p>{comment.title} </p>
-    })}                
+    })}                 */}
 
-                <CommentList comments={this.state.park}/>
+                <CommentList comments={this.state.park.comments}/>
                 <p></p>
             </ParkContainer>
         );
