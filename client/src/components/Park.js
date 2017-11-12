@@ -47,7 +47,7 @@ class Park extends Component {
                 <Description>{this.state.park.description}</Description>
 
 
-                <CommentList comments={this.state.park.comments} toggleCommentForm={this.toggleCommentForm}/>
+                <CommentList comments={this.state.park.comments} toggleCommentForm={this.toggleCommentForm} showNewCommentForm={this.state.showNewCommentForm}/>
                 
                 
 

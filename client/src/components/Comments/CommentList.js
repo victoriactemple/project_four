@@ -9,7 +9,7 @@ const CommentList = (props) => {
     return (
         <div>
             <h4>Comments</h4>
-            <button onClick={this.toggleCommentForm}>Add A Comment</button>
+            <button onClick={props.toggleCommentForm}>Add A Comment</button>
               {props.comments.map((comment) => {
         return (
 
@@ -17,7 +17,7 @@ const CommentList = (props) => {
            
         )
         
-       {this.state.showNewCommentFrom ? <CommentForm toggleShowNewForm={this.toggleShowNewForm}/> : null}
+       {this.props.showNewCommentForm ? <CommentForm toggleCommentForm={this.toggleShowNewForm}/> : null}
         
     })}  
         </div>
