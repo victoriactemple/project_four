@@ -38,7 +38,7 @@ class ParkList extends Component {
                     <h1>GEORGIA STATE PARKS</h1>
                         
                     {this.state.parks.map(park => (
-                    <Link key={park.id} to={`/${park.id}`}>
+                    <Link key={park.id} to={`/parks/${park.id}`}>
                         <ParkName>{park.name}</ParkName>
                         
                     </Link>

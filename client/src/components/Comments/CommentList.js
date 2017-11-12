@@ -8,6 +8,7 @@ const CommentList = (props) => {
     return (
         <div>
             <h4>Comments</h4>
+            <button>Add A Comment</button>
               {props.comments.map((comment) => {
         return (
 

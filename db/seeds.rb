@@ -71,7 +71,6 @@ veronica = User.create({
     password_confirmation: "blahblah1234"
 })
 
-
 ## Comment 
 
 tommy_comment = Comment.create({
@@ -86,7 +85,7 @@ veronica_comment = Comment.create({
     title: "He proposed here",
     content: "It was so romantic!",
     user_id: veronica.id,
-    park_id: providence_canyon.id
+    park_id: providence_canyon.id 
 })
 
 

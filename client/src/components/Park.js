@@ -45,7 +45,8 @@ class Park extends Component {
     })}                 */}
 
                 <CommentList comments={this.state.park.comments}/>
-                <p></p>
+                
+                
             </ParkContainer>
         );
     }

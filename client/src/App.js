@@ -65,8 +65,8 @@ signIn = async (email, password) => {
      <Router>
        <div>
           <Switch>
-              <Route exact path="/" component={ParkList} />
-              <Route path="/:park_id" component={Park} /> 
+              <Route exact path="/parks" component={ParkList} />
+              <Route path="/parks/:park_id" component={Park} /> 
               <Route exact path="/signUp" render={SignUpLogInComponent} />
           </Switch>
        </div>
