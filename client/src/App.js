@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import axios from 'axios'
+import NavBar from './components/NavBar'
 import ParkList from './components/ParkList'
 import Park from './components/Park'
 import SignUpLogIn from './components/SignUpLogIn'
@@ -64,6 +65,7 @@ signIn = async (email, password) => {
     return (
      <Router>
        <div>
+         <NavBar />
           <Switch>
               <Route exact path="/parks" component={ParkList} />
               <Route path="/parks/:park_id" component={Park} /> 

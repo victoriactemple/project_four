@@ -17,7 +17,7 @@ font-family: 'Tenor Sans', sans-serif;
 `
 
 class ParkList extends Component {
-    state ={
+    state = {
         parks: []
     }
 
