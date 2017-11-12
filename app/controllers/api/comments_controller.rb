@@ -3,10 +3,13 @@ class Api::CommentsController < ApplicationController
     load_and_authorize_resource only: [:update, :destroy]
 
     def index
+        @users = User.joins(:comments).includes(:comments).all
+
 
         @comments = Comment.all
 
         render json: @comments
+
     end
 
     def show

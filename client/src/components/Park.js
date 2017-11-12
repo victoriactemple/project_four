@@ -1,10 +1,24 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import CommentList from './CommentList'
+import styled from 'styled-components';
+
+
+const ParkContainer = styled.div`
+text-align: center;
+`
+
+const Description = styled.div`
+margin: 30px 0;
+`
+
+
 
 class Park extends Component {
         state ={
-            park: {},
-            comments: []
+            park: {
+                comments: []
+            }
         }
         componentWillMount() {
             const park_id = this.props.match.params.park_id
@@ -23,15 +37,19 @@ class Park extends Component {
 
     render() {
         return (
-            <div>
+            <ParkContainer>
                 <h1>{this.state.park.name}</h1>
                 <img src = {this.state.park.image} />
                 <p>{this.state.park.address}</p>
-                <p>{this.state.park.description}</p>
+                <Description>{this.state.park.description}</Description>
 
-            
+    {this.state.park.comments.map((comment) => {
+        return <p>{comment.title} </p>
+    })}                
+
+                <CommentList comments={this.state.park}/>
                 <p></p>
-            </div>
+            </ParkContainer>
         );
     }
 }
