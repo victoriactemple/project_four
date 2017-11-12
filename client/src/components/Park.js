@@ -14,7 +14,8 @@ margin: 30px 0;
 class Park extends Component {
         state ={
             park: {
-                comments: []
+                comments: [],
+                showNewCommentForm: false
             }
         }
         componentWillMount() {
@@ -32,6 +33,11 @@ class Park extends Component {
             }
         }
 
+        toggleCommentForm = () => {
+            this.setState({showNewCommentForm: !this.state.showNewCommentForm})
+        }
+
+
     render() {
         return (
             <ParkContainer>
@@ -40,13 +46,12 @@ class Park extends Component {
                 <p>{this.state.park.address}</p>
                 <Description>{this.state.park.description}</Description>
 
-     {/* {this.state.park.comments.map((comment) => {
-        return <p>{comment.title} </p>
-    })}                 */}
 
-                <CommentList comments={this.state.park.comments}/>
+                <CommentList comments={this.state.park.comments} toggleCommentForm={this.toggleCommentForm}/>
                 
                 
+
+
             </ParkContainer>
         );
     }

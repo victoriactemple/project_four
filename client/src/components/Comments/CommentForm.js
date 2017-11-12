@@ -22,15 +22,15 @@ handleInput = (event) => {
     this.setState(newState)
 }
 
-handleSubmit = (event) => {
-    event.preventDefault() 
-    const { park_id } = this.props.match.params
-    
-    const response = await axios.post(`/api/parks/${park_id}`, {
-        comment: this.state
-    })
-    thisSetState({})
-}
+// handleSubmit = (event) => {
+//     event.preventDefault() 
+//     const { park_id } = this.props.match.params
+
+//     const response = await axios.post(`/api/parks/${park_id}`, {
+//         comment: this.state
+//     })
+//     thisSetState({})
+// }
 
 
     render() {
@@ -41,7 +41,7 @@ handleSubmit = (event) => {
                         <input 
                         type="text"
                         name="title"
-                        value={thist.state.title}
+                        value={this.state.title}
                         onChange={this.handleInput}
                         />
                     </div>
@@ -49,7 +49,7 @@ handleSubmit = (event) => {
                         <textarea 
                         type="text"
                         name="content"
-                        value={thist.state.content}
+                        value={this.state.content}
                         onChange={this.handleInput}
                         />
                     </div>

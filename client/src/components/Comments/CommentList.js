@@ -9,13 +9,15 @@ const CommentList = (props) => {
     return (
         <div>
             <h4>Comments</h4>
-            <button>Add A Comment</button>
+            <button onClick={this.toggleCommentForm}>Add A Comment</button>
               {props.comments.map((comment) => {
         return (
 
             <Comment {...comment} key={comment.id}/>
            
         )
+        
+       {this.state.showNewCommentFrom ? <CommentForm toggleShowNewForm={this.toggleShowNewForm}/> : null}
         
     })}  
         </div>
@@ -24,9 +26,3 @@ const CommentList = (props) => {
 
 export default CommentList;
 
-
-{/* <div>
-
-<strong>{comment.title} </strong>
-    <p>{comment.content}</p>
-</div> */}
