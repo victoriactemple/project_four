@@ -1,20 +1,32 @@
-import React from 'react';
+import React, { Component } from 'react'
 import Trail from './Trail'
 
-const TrailList = (props) => {
-    return (
-        <div>
-            <h3>Trail List</h3>
-            <button>Add a trail</button>
-            {props.trails.map((trail) =>{
-                return (
-        <Trail {...trail} key={trail.id} />                )
-            })}
+class TrailList extends Component {
+    state={
+        toggleTrail: false
+    }
+    toggleEdit= () => {
+        this.setState({toggleTrail: !this.state.toggleTrail})
+    }
+    render() {
+        return (
+            <div>
+                <h2>TrailList</h2>
+                {this.props.trails.map((trail) => {
+                return(
+                    <div key={trail.id}>
+                    <strong>{trail.name}</strong>
+                    <div>{trail.image}</div>
+                    <button onClick={this.toggleEdit}>Read More</button>
+                    {this.state.toggleTrail ? <Trail {...trail} /> : null }
 
-        </div>
-    );
-};
+                    </div>
+                )
+                })}
+
+            </div>
+        );
+    }
+}
 
 export default TrailList;
-
- 

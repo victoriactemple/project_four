@@ -87,8 +87,8 @@ tommy_comment = ParkComment.create({
 
 providence_canyon_loop_trail = Trail.create({
     difficulty: "easy",
-    elevation_profile: "thiswillbeaprettypicture.jpg",
-    image: "thiswillbeaprettypicture.jpg",
+    elevation_profile: "https://2wzlm92dvpgd3a560m9ue6tx-wpengine.netdna-ssl.com/images/providence-canyon-hiking-trail-loop/providence-canyon-trail-elevation-profile.png",
+    image: "http://www.hikingtheappalachians.com/uploads/2/4/2/9/24290352/6751664_orig.jpg",
     pet_friendly: false,
     distance: 0.25,
     park_id: providence_canyon.id,

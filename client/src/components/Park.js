@@ -4,7 +4,7 @@ import CommentList from './Comments/CommentList'
 import styled from 'styled-components';
 import CommentForm from './Comments/CommentForm'
 import TrailList from './Trails/TrailList'
-
+import Trail from './Trails/Trail'
 
 const ParkContainer = styled.div`
 text-align: center;
@@ -17,9 +17,10 @@ class Park extends Component {
         state ={
             park: {
                 trails: [],
-                parkComments: [],
-                showNewCommentForm: false
-            }
+                parkComments: []
+            },
+            
+            showNewCommentForm: false
         }
         componentWillMount() {
             const park_id = this.props.match.params.park_id

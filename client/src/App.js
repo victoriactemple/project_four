@@ -9,6 +9,8 @@ import SignUpLogIn from './components/SignUpLogIn'
 import CommentList from './components/Comments/CommentList'
 import CommentForm from './components/Comments/CommentForm'
 import TrailList from './components/Trails/TrailList'
+import Trail from './components/Trails/Trail'
+
 
 
 class App extends Component {
@@ -26,6 +28,7 @@ render() {
               <Route exact path="/parks" component={ParkList} />
               <Route exact path="/parks/:park_id" component={Park} /> 
               <Route exact path="/parks/:park_id/trails" component={TrailList} /> 
+              <Route exact path="/parks/:park_id/trails/:trail_id" component={Trail} /> 
               <Route exact path= "/parks/:park_id/comments" component={CommentForm} />
              
           </Switch>
