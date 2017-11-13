@@ -12,6 +12,7 @@ class TrailList extends Component {
         return (
             <div>
                 <h2>TrailList</h2>
+                <button>Add A Trail</button>
                 {this.props.trails.map((trail) => {
                 return(
                     <div key={trail.id}>

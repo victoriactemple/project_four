@@ -43,6 +43,11 @@ class Park extends Component {
             }
         }
 
+
+        deleteATrail = async () => {
+            
+        }
+
         toggleCommentForm = () => {
             this.setState({showNewCommentForm: !this.state.showNewCommentForm})
         }
