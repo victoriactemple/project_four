@@ -15,16 +15,18 @@ end
 
 
 def create
-    # @park = Park.find(params[:park_id])
-    # @trail = Trail.new(trail_params)
-    # @park.trails << @trail
-    # @park.save!
-    # render json: @trail
+    @park = Park.find(params[:park_id])
+    @trail = @park.trails.create(trail_params)
+ 
+   render json: @trail
 
 end
 
 def update
+    @trail = Trail.find(params[:id])
+    @trail.update!(trail_params)
 
+    render json: @trail
 
 end
 

@@ -23,7 +23,7 @@ class TrailList extends Component {
                             <div>{trail.image}</div>
                             
                     </Link>
-                    <Trail {...trail} deleteATrail={this.props.deleteATrail}/>
+                    
                     </div>
                 )
                
