@@ -19,7 +19,7 @@ class TrailList extends Component {
                     <strong>{trail.name}</strong>
                     <div>{trail.image}</div>
                     <button onClick={this.toggleEdit}>Read More</button>
-                    {this.state.toggleTrail ? <Trail {...trail} /> : null }
+                    {this.state.toggleTrail ? <Trail {...trail} deleteATrail={this.props.deleteATrail}/> : null }
 
                     </div>
                 )

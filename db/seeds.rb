@@ -93,8 +93,52 @@ providence_canyon_loop_trail = Trail.create({
     distance: 0.25,
     park_id: providence_canyon.id,
     name: "Providence Canyon Loop Trail"
+})
+
+providence_canyon_other_loop_trail = Trail.create({
+    difficulty: "easy",
+    elevation_profile: "https://2wzlm92dvpgd3a560m9ue6tx-wpengine.netdna-ssl.com/images/providence-canyon-hiking-trail-loop/providence-canyon-trail-elevation-profile.png",
+    image: "http://www.hikingtheappalachians.com/uploads/2/4/2/9/24290352/6751664_orig.jpg",
+    pet_friendly: false,
+    distance: 0.25,
+    park_id: providence_canyon.id,
+    name: "Providence Canyon Loop Trail"
+})
+
+
+providence_canyon_other_another_loop_trail = Trail.create({
+    difficulty: "easy",
+    elevation_profile: "https://2wzlm92dvpgd3a560m9ue6tx-wpengine.netdna-ssl.com/images/providence-canyon-hiking-trail-loop/providence-canyon-trail-elevation-profile.png",
+    image: "http://www.hikingtheappalachians.com/uploads/2/4/2/9/24290352/6751664_orig.jpg",
+    pet_friendly: false,
+    distance: 0.25,
+    park_id: providence_canyon.id,
+    name: "Providence Canyon Loop Trail"
+})
+
+
+sweetwater_creek_white_trail = Trail.create({
+    difficulty: "moderate",
+    elevation_profile: "https://2wzlm92dvpgd3a560m9ue6tx-wpengine.netdna-ssl.com/images/providence-canyon-hiking-trail-loop/providence-canyon-trail-elevation-profile.png",
+    image: "https://www.atlantatrails.com/images/sweetwater-creek-state-park-white-trail/03-sweetwater-creek-white-trail-best-atlanta-hikes@2x.jpg",
+    pet_friendly: true,
+    distance: 4.10,
+    park_id: sweetwater_creek.id,
+    name: "Sweetwater Creek White Trail"
 
 })
+
+hurricane_falls_trail = Trail.create({
+    difficulty: "difficult",
+    elevation_profile: "https://2wzlm92dvpgd3a560m9ue6tx-wpengine.netdna-ssl.com/images/providence-canyon-hiking-trail-loop/providence-canyon-trail-elevation-profile.png",
+    image: "https://2wzlm92dvpgd3a560m9ue6tx-wpengine.netdna-ssl.com/wp-content/uploads/2017/01/07-tallulah-gorge-hurricane-falls-trail@2x.jpg",
+    pet_friendly: false,
+    distance: 2.0,
+    park_id: tallulah_gorge.id,
+    name: "Hurricane Falls Trail"
+
+})
+
 
 veronica_comment = TrailComment.create({
     title: "He proposed here",

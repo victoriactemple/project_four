@@ -6,6 +6,10 @@ import CommentForm from './Comments/CommentForm'
 import TrailList from './Trails/TrailList'
 import Trail from './Trails/Trail'
 
+const FillerDiv = styled.div`
+height: 100px
+`
+
 const ParkContainer = styled.div`
 text-align: center;
 `
@@ -44,9 +48,21 @@ class Park extends Component {
         }
 
 
-        deleteATrail = async () => {
+        deleteATrail = async (event) => {
+            try {
+            const { park_id } = this.props.match.params
+            const id = event.target.value
+            console.log(park_id, id)
+            const response = await axios.delete(`/api/parks/${park_id}/trails/${id}`)
             
+            this.setState({
+                park: response.data
+            })
+        } catch (error) {
+            console.log(error)
+            await this.setState({ error: error.message })
         }
+    }
 
         toggleCommentForm = () => {
             this.setState({showNewCommentForm: !this.state.showNewCommentForm})
@@ -61,8 +77,10 @@ class Park extends Component {
                 <p>{this.state.park.address}</p>
                 <Description>{this.state.park.description}</Description>
 
-                <TrailList trails={this.state.park.trails}/>
+                <TrailList trails={this.state.park.trails} deleteATrail={this.deleteATrail}/>
 
+
+                <FillerDiv></FillerDiv>
 
             </ParkContainer>
         );
