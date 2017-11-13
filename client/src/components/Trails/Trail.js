@@ -37,7 +37,7 @@ deleteATrail = async () => {
     
     this.setState({
         park: response.data,
-        redirectoToPark: true
+        redirectToPark: true
     })
 } catch (error) {
     console.log(error)
@@ -48,7 +48,7 @@ deleteATrail = async () => {
 
 
     render() {
-        if (this.state.redirectToCity === true){
+        if (this.state.redirectToPark === true){
             return (
                 <Redirect to={`/parks/${this.state.park.id}`} />
             )
