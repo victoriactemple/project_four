@@ -6,31 +6,47 @@ def index
 end
 
 def show
+@park = Park.find(params[:park_id])
 trail_id = params[:id]
-@trails = Trail.find_by_id(trail_id)
+@trail = @park.trails.find(trail_id)
 render json: @trail, include: [:trail_comments]
 
 end
 
 
 def create
+    # @park = Park.find(params[:park_id])
+    # @trail = Trail.new(trail_params)
+    # @park.trails << @trail
+    # @park.save!
+    # render json: @trail
 
 end
 
 def update
+
 
 end
 
 
 def destroy
     @park = Park.find(params[:park_id])
-    @park.trails.delete(Comment.find(params[:id]))
-    @park.save!
+    @trail = @park.trails.find(params[:id]) # .delete(Trail.find(params[:id]))
+    @trail.destroy
 
     render json: @park
+end
+
+
+private 
+
+def trail_params
+    params.require(:trail).permit(:name, :distance, :image, :elevation_profile, :difficulty, :pet_friendly)
+end
 
 end
 
 
-
-end
+#     @trail = Trail.find(params[:id]).destroy
+# @trails = Park.find(params[:park_id]).trails
+# render json: @trails
