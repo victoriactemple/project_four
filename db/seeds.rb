@@ -1,6 +1,6 @@
 Park.destroy_all
 User.destroy_all
-Comment.destroy_all
+ParkComment.destroy_all
 
 providence_canyon = Park.create({name: "Providence Canyon", 
 description: "Providence Canyon State Outdoor Recreation Area is a 1,003 acres state park located in Stewart County in southwest Georgia. The park contains Providence Canyon, which is sometimes called Georgia's 'Little Grand Canyon'.", 
@@ -71,9 +71,9 @@ veronica = User.create({
     password_confirmation: "blahblah1234"
 })
 
-## Comment 
+## Park Comment 
 
-tommy_comment = Comment.create({
+tommy_comment = ParkComment.create({
     title: "What a hike!",
     content: "That was a insane amount of stairs!",
     user_id: tommy.id,
@@ -81,7 +81,28 @@ tommy_comment = Comment.create({
 })
 
 
-veronica_comment = Comment.create({
+## Trails 
+
+providence_canyon_loop_trail = Trail.create({
+    difficulty: "easy",
+    elevation_profile: "thiswillbeaprettypicture.jpg",
+    image: "thiswillbeaprettypicture.jpg"
+    pet_friendly: false,
+    distance: 0.25,
+    park_id: providene_canyon.id
+
+})
+
+veronica_comment = TrailComment.create({
+    title: "He proposed here",
+    content: "It was so romantic!",
+    user_id: veronica.id,
+    trail_id: providence_canyon_loop_trail.id 
+})
+
+
+
+veronica_comment = ParkComment.create({
     title: "He proposed here",
     content: "It was so romantic!",
     user_id: veronica.id,
@@ -89,4 +110,10 @@ veronica_comment = Comment.create({
 })
 
 
+veronica_comment = ParkComment.create({
+    title: "He proposed here",
+    content: "It was so romantic!",
+    user_id: veronica.id,
+    park_id: providence_canyon.id 
+})
 

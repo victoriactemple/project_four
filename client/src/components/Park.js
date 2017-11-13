@@ -15,7 +15,7 @@ margin: 30px 0;
 class Park extends Component {
         state ={
             park: {
-                comments: [],
+                parkComments: [],
                 showNewCommentForm: false
             }
         }
@@ -48,7 +48,7 @@ class Park extends Component {
                 <Description>{this.state.park.description}</Description>
 
 
-                <CommentList comments={this.state.park.comments} toggleCommentForm={this.toggleCommentForm} showNewCommentForm={this.state.showNewCommentForm}/>
+                <CommentList comments={this.state.park.parkComments} toggleCommentForm={this.toggleCommentForm} showNewCommentForm={this.state.showNewCommentForm}/>
                 
                 {this.state.showNewCommentForm ? <CommentForm toggleCommentForm={this.toggleShowNewForm}/> : null}
 

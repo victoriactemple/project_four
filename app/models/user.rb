@@ -6,5 +6,5 @@ class User < ActiveRecord::Base
   include DeviseTokenAuth::Concerns::User
 
   has_many :park_comments, dependent: :destroy
-  has_many :trail_comments, dependernt: :destroy
+  has_many :trail_comments, dependent: :destroy
 end

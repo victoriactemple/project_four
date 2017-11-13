@@ -3,17 +3,17 @@ class Api::CommentsController < ApplicationController
     load_and_authorize_resource only: [:update, :destroy]
 
     def index
-        @users = User.joins(:comments).includes(:comments).all
+        @users = User.joins(:park_comments).includes(:park_comments).all
 
 
-        @comments = Comment.all
+        @comments = ParkComment.all
 
         render json: @comments
 
     end
 
     def show
-        @comment = Comment.find(params[:id])
+        @comment = ParkComment.find(params[:id])
 
         render json: @comment
 
@@ -37,7 +37,7 @@ class Api::CommentsController < ApplicationController
 
     def destroy
         @user = current_user
-        @comment = Comment.find(params[:id]).delete
+        @comment = ParkComment.find(params[:id]).delete
     
         render status: :ok
 
@@ -45,7 +45,7 @@ class Api::CommentsController < ApplicationController
 
     private 
     def comment_params 
-        params.require(:comment).permit(:title, :content)
+        params.require(:park_comment).permit(:title, :content)
     end
 
 
