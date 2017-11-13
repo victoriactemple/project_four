@@ -20,17 +20,20 @@ class Api::CommentsController < ApplicationController
     end
 
     def create
+
         @user = current_user
         @comment = @user.comments.build(comment_params)
 
         if @user.save
-            render json: @comment, status: :created, location: @comment
-        else
-            render json: @comment.errors, status: :unprocessable_entity
+           render json: @comment
+        
+        # status: :created, location: @comment
+        # else
+        #     render json: @comment.errors, status: :unprocessable_entity
         end
         
-
     end
+   
 
     def destroy
         @user = current_user

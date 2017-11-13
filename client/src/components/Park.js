@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import CommentList from './Comments/CommentList'
 import styled from 'styled-components';
+import CommentForm from './Comments/CommentForm'
 
 
 const ParkContainer = styled.div`
@@ -49,6 +50,8 @@ class Park extends Component {
 
                 <CommentList comments={this.state.park.comments} toggleCommentForm={this.toggleCommentForm} showNewCommentForm={this.state.showNewCommentForm}/>
                 
+                {this.state.showNewCommentForm ? <CommentForm toggleCommentForm={this.toggleShowNewForm}/> : null}
+
                 
 
 

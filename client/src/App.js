@@ -5,6 +5,8 @@ import NavBar from './components/NavBar'
 import ParkList from './components/ParkList'
 import Park from './components/Park'
 import SignUpLogIn from './components/SignUpLogIn'
+import CommentList from './components/Comments/CommentList'
+import CommentForm from './components/Comments/CommentForm'
 
 
 class App extends Component {
@@ -12,6 +14,8 @@ class App extends Component {
     parks: [],
     signedIn: false
   }
+
+  
 
   signUp = async (email, password, password_confirmation) => {
     try {
@@ -68,7 +72,8 @@ signIn = async (email, password) => {
          <NavBar />
           <Switch>
               <Route exact path="/parks" component={ParkList} />
-              <Route path="/parks/:park_id" component={Park} /> 
+              <Route exact path="/parks/:park_id" component={Park} /> 
+              <Route exact path= "/parks/:park_id/comments" component={CommentForm} />
               <Route exact path="/signUp" render={SignUpLogInComponent} />
           </Switch>
        </div>

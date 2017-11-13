@@ -3,8 +3,10 @@ import axios from 'axios'
 
 class CommentForm extends Component {
     state ={
+        newComment: {
         title: '',
         content: ''
+        }
     }
 componentWillMount () {
     this.setState({
@@ -32,6 +34,29 @@ handleInput = (event) => {
 //     thisSetState({})
 // }
 
+handleSubmit = async (event) => {
+    try {
+        event.preventDefault()
+        const { park_id } = this.props.match.params
+        const emptyForm = {
+            title: '',
+            description: ''
+        }
+        const response = await axios.post(`/api/parks/${park_id}/comments`, {
+            comment: this.state.newComment
+        })
+        this.setState({ redirectToPostList: true, 
+            newPostId: response.data._id, 
+            newPost: emptyForm })
+
+
+    } catch (error) {
+        console.log(error)
+    }
+
+}
+
+
 
     render() {
         return (
@@ -53,6 +78,7 @@ handleInput = (event) => {
                         onChange={this.handleInput}
                         />
                     </div>
+                    <button>Submit</button>
                 </form>
             </div>
         );
