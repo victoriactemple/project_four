@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 
 class Trail extends Component {
     state={
+        park: {},
         trail: {
             comments: []
-        }
+        },
+        redirectToPark: false
         
     }
 
@@ -25,14 +28,16 @@ class Trail extends Component {
 }
 
 
-deleteATrail = async (event) => {
+deleteATrail = async () => {
     try {
-        const 
-    console.log(park_id, id)
-    const response = await axios.delete(`/api/parks/${park_id}/trails/${id}`)
+        console.log("i work")
+    const { park_id, trail_id } = this.props.match.params
+    console.log(park_id, trail_id)
+    const response = await axios.delete(`/api/parks/${park_id}/trails/${trail_id}`)
     
     this.setState({
-        park: response.data
+        park: response.data,
+        redirectoToPark: true
     })
 } catch (error) {
     console.log(error)
@@ -43,6 +48,12 @@ deleteATrail = async (event) => {
 
 
     render() {
+        if (this.state.redirectToCity === true){
+            return (
+                <Redirect to={`/parks/${this.state.park.id}`} />
+            )
+        }
+    
         return (
             <div>
                 <h2>{this.state.trail.name}</h2>
