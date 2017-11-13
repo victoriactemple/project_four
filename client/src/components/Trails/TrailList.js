@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import Trail from './Trail'
 
 class TrailList extends Component {
-    state={
-        toggleTrail: false
-    }
+  
     toggleEdit= () => {
         this.setState({toggleTrail: !this.state.toggleTrail})
     }
@@ -15,14 +14,19 @@ class TrailList extends Component {
                 <button>Add A Trail</button>
                 {this.props.trails.map((trail) => {
                 return(
-                    <div key={trail.id}>
-                    <strong>{trail.name}</strong>
-                    <div>{trail.image}</div>
-                    <button onClick={this.toggleEdit}>Read More</button>
-                    {this.state.toggleTrail ? <Trail {...trail} deleteATrail={this.props.deleteATrail}/> : null }
+                   <div key={trail.id}>
 
+                   
+                   
+                   <Link to={`/parks/${this.props.parkId}/trails/${trail.id}`}>
+                            <h3>{trail.name}</h3>
+                            <div>{trail.image}</div>
+                            
+                    </Link>
+                    <Trail {...trail} deleteATrail={this.props.deleteATrail}/>
                     </div>
                 )
+               
                 })}
 
             </div>
@@ -31,3 +35,11 @@ class TrailList extends Component {
 }
 
 export default TrailList;
+
+
+
+{/* <div key={trail.id}>
+<strong>{trail.name}</strong>
+<div>{trail.image}</div>
+<button onClick={this.toggleEdit}>Read More</button>
+{this.state.toggleTrail ? <Trail {...trail} deleteATrail={this.props.deleteATrail}/> : null } */}

@@ -77,7 +77,7 @@ class Park extends Component {
                 <p>{this.state.park.address}</p>
                 <Description>{this.state.park.description}</Description>
 
-                <TrailList trails={this.state.park.trails} deleteATrail={this.deleteATrail}/>
+                <TrailList parkId={this.state.park.id} trails={this.state.park.trails} deleteATrail={this.deleteATrail}/>
 
 
                 <FillerDiv></FillerDiv>
