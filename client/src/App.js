@@ -90,7 +90,7 @@ signOut = async (event) => {
               <Route exact path="/parks" component={ParkList} />
               <Route exact path="/parks/:park_id" component={Park} /> 
               <Route exact path= "/parks/:park_id/comments" component={CommentForm} />
-              <Route exact path="/signUp" render={SignUpLogInComponent} />
+              <Route exact path="/sign_up" render={SignUpLogInComponent} />
           </Switch>
        </div>
      </Router>
