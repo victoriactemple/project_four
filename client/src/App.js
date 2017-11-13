@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import {clearAuthTokens, saveAuthTokens, setAxiosDefaults, userIsLoggedIn} from "./util/SessionHeaderUtil"
 import axios from 'axios'
 import NavBar from './components/NavBar'
 import ParkList from './components/ParkList'
@@ -70,17 +71,6 @@ signOut = async (event) => {
       console.log(error)
   }
 }
-
-
-  // async componentWillMount() {
-  //   try {
-  //     const response = await axios.get('/api/parks')
-  //     this.setState({parks: response.data})
-  //     console.log(response.data)
-  //   } catch (error) {
-  //     console.log(error)
-  //   }
-  // }
 
   render() {
     const SignUpLogInComponent = () => (
