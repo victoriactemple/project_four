@@ -5,6 +5,6 @@ class User < ActiveRecord::Base
           :omniauthable
   include DeviseTokenAuth::Concerns::User
 
-  has_many :park_comments, dependent: :destroy
-  has_many :trail_comments, dependent: :destroy
+  has_many :park_comments
+  has_many :trail_comments
 end

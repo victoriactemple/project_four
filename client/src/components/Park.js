@@ -3,6 +3,7 @@ import axios from 'axios'
 import CommentList from './Comments/CommentList'
 import styled from 'styled-components';
 import CommentForm from './Comments/CommentForm'
+import TrailList from './Trails/TrailList'
 
 
 const ParkContainer = styled.div`
@@ -15,6 +16,7 @@ margin: 30px 0;
 class Park extends Component {
         state ={
             park: {
+                trails: [],
                 parkComments: [],
                 showNewCommentForm: false
             }
@@ -26,8 +28,14 @@ class Park extends Component {
     
         getOnePark = async (park_id) => {
             try {
+
             const res = await axios.get(`/api/parks/${park_id}`)
-            await this.setState({park: res.data})
+            console.log(res.data)
+            const newPark = res.data.park
+
+            newPark.trails = res.data.trails
+
+            await this.setState({park: newPark})
             console.log(res.data)
             } catch(error) {
                 await this.setState({error: error.message})
@@ -47,12 +55,7 @@ class Park extends Component {
                 <p>{this.state.park.address}</p>
                 <Description>{this.state.park.description}</Description>
 
-
-                <CommentList comments={this.state.park.parkComments} toggleCommentForm={this.toggleCommentForm} showNewCommentForm={this.state.showNewCommentForm}/>
-                
-                {this.state.showNewCommentForm ? <CommentForm toggleCommentForm={this.toggleShowNewForm}/> : null}
-
-                
+                <TrailList trails={this.state.park.trails}/>
 
 
             </ParkContainer>
@@ -61,3 +64,12 @@ class Park extends Component {
 }
 
 export default Park;
+
+
+
+
+                {/* <CommentList comments={this.state.park.parkComments} toggleCommentForm={this.toggleCommentForm} showNewCommentForm={this.state.showNewCommentForm}/>
+                
+                {this.state.showNewCommentForm ? <CommentForm toggleCommentForm={this.toggleShowNewForm}/> : null}
+
+                 */}

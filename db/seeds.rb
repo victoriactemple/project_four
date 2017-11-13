@@ -1,6 +1,8 @@
 Park.destroy_all
 User.destroy_all
 ParkComment.destroy_all
+Trail.destroy_all
+TrailComment.destroy_all
 
 providence_canyon = Park.create({name: "Providence Canyon", 
 description: "Providence Canyon State Outdoor Recreation Area is a 1,003 acres state park located in Stewart County in southwest Georgia. The park contains Providence Canyon, which is sometimes called Georgia's 'Little Grand Canyon'.", 
@@ -86,10 +88,11 @@ tommy_comment = ParkComment.create({
 providence_canyon_loop_trail = Trail.create({
     difficulty: "easy",
     elevation_profile: "thiswillbeaprettypicture.jpg",
-    image: "thiswillbeaprettypicture.jpg"
+    image: "thiswillbeaprettypicture.jpg",
     pet_friendly: false,
     distance: 0.25,
-    park_id: providene_canyon.id
+    park_id: providence_canyon.id,
+    name: "Providence Canyon Loop Trail"
 
 })
 
