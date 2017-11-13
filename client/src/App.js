@@ -24,30 +24,52 @@ class App extends Component {
             password: password,
             password_confirmation: password_confirmation
         }
-        await axios.post('/auth', payload)
+        const response = await axios.post('/auth', payload)
+        saveAuthTokens(response.headers)
 
-        this.setState({signedIn: true})
+        this.setState({
+            signedIn: true
+        })
 
     } catch (error) {
         console.log(error)
     }
 }
+
 
 signIn = async (email, password) => {
-    try {
-        const payload = {
-            email,
-            password
-        }
-        await axios.post('/auth/sign_in', payload)
+  try {
+      const payload = {
+          email,
+          password
+      }
+      const response = await axios.post('/auth/sign_in', payload)
+      saveAuthTokens(response.headers)
 
-        this.setState({signedIn: true})
+      const posts = await this.getPosts()
 
-    } catch (error) {
-        console.log(error)
-    }
+      this.setState({
+          signedIn: true
+      })
+
+  } catch (error) {
+      console.log(error)
+  }
 }
 
+signOut = async (event) => {
+  try {
+      event.preventDefault()
+
+      await axios.delete('/auth/sign_out')
+
+      clearAuthTokens();
+
+      this.setState({signedIn: false})
+  } catch (error) {
+      console.log(error)
+  }
+}
 
 
   // async componentWillMount() {
@@ -66,6 +88,10 @@ signIn = async (email, password) => {
           signUp={this.signUp}
           signIn={this.signIn}/>
   )
+
+  const ParkListComponent = () => {
+    <ParkList signIn={this.state.signedIn} />
+  }
     return (
      <Router>
        <div>
