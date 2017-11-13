@@ -13,5 +13,24 @@ render json: @trail, include: [:trail_comments]
 end
 
 
+def create
+
+end
+
+def update
+
+end
+
+
+def destroy
+    @park = Park.find(params[:park_id])
+    @park.trails.delete(Comment.find(params[:id]))
+    @park.save!
+
+    render json: @park
+
+end
+
+
 
 end
