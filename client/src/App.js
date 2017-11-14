@@ -16,7 +16,8 @@ import TrailCommentForm from './components/TrailComments/TrailCommentForm'
 
 class App extends Component {
   state = {
-    signedIn: false
+    signedIn: false,
+    blah: {}
   }
 
 

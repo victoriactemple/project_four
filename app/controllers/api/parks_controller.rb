@@ -13,7 +13,6 @@ class Api::ParksController < ApplicationController
     render json: {
        park: @park,
        trails: @trails 
-
     }
     
     end

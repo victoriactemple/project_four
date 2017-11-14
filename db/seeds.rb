@@ -7,15 +7,19 @@ TrailComment.destroy_all
 providence_canyon = Park.create({name: "Providence Canyon", 
 description: "Providence Canyon State Outdoor Recreation Area is a 1,003 acres state park located in Stewart County in southwest Georgia. The park contains Providence Canyon, which is sometimes called Georgia's 'Little Grand Canyon'.", 
 image: "http://gastateparks.org/sites/default/files/parks/ProvidenceCanyon.jpg",
-address: "8930 Canyon Rd, Lumpkin, GA 31815", lat: 32.0675, 
-lon: -84.9037
+address: "8930 Canyon Rd, Lumpkin, GA 31815", 
+lat: 32.0675, 
+lon: -84.9037,
+zipcode: 31815
 })
 
 sweetwater_creek = Park.create({name: "Sweetwater Creek", 
 description: "Sweetwater Creek State Park is a 2,549 acre Georgia state park located in the New Manchester area of east Douglas County, 15 miles from downtown Atlanta. The park is named after Sweetwater Creek which runs through the park.", 
 image: "https://i.ytimg.com/vi/44kMEO39Bu0/maxresdefault.jpg",
-address: "1750 Mt Vernon Rd, Lithia Springs, GA 30122", lat: 33.7525, 
-lon: -84.6287
+address: "1750 Mt Vernon Rd, Lithia Springs, GA 30122", 
+lat: 33.7525, 
+lon: -84.6287,
+zipcode: 30122
 })
 
 
@@ -24,7 +28,8 @@ description: "Cloudland Canyon State Park is in northwest Georgia, on the wester
 image: "http://media-cdn.timesfreepress.com/img/news/tease/2013/05/30/Cloudland_t618_t1070_h04797ef87fd1bbff0de64d8f73a71fae70ac0ad5.jpg",
 address: "122 Cloudland Canyon Park Rd, Rising Fawn, GA 30738", 
 lat: 34.8395, 
-lon: -85.4840
+lon: -85.4840,
+zipcode: 30738
 })
 
 
@@ -35,7 +40,8 @@ address: "2620 Highway 155 SW
 Stockbridge, GA 30281
 Henry County", 
 lat: 33.6250, 
-lon: -84.1715
+lon: -84.1715,
+zipcode: 30281
 })
 
 
@@ -44,7 +50,8 @@ description: "Vogel State Park is a 233-acre or 94 hectares state park located a
 image: "https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/vogel-state-park-color-robert-walters.jpg",
 address: "405 Vogel State Park Rd, Blairsville, GA 30512", 
 lat: 34.7649, 
-lon: -83.9255
+lon: -83.9255,
+zipcode: 30512
 })
 
 
@@ -56,7 +63,8 @@ address: "338 Jane Hurt Yarn Drive
 Tallulah Falls, GA 30573
 Rabun County", 
 lat: 34.7335, 
-lon: -83.3715
+lon: -83.3715,
+zipcode: 30573
 })
 
 ## Users 

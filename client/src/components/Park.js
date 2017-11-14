@@ -20,16 +20,18 @@ margin: 30px 0;
 `
 class Park extends Component {
         state ={
+
             park: {
                 trails: [],
                 parkComments: []
             },
-            
-            showNewTrailForm: false
+            showNewTrailForm: false,
+            weather: {}
         }
-        componentWillMount() {
+        async componentWillMount() {
             const park_id = this.props.match.params.park_id
-            this.getOnePark(park_id)
+           await this.getOnePark(park_id)
+            await this.getWeather()
         }
     
         getOnePark = async (park_id) => {
@@ -46,6 +48,19 @@ class Park extends Component {
             } catch(error) {
                 await this.setState({error: error.message})
             }
+        }
+
+        getWeather = async () => {
+            const zipcode = this.state.park.zipcode
+            // console.log(zipcode)
+            const response = await axios.get(`/api/weather/${zipcode}`)
+            const formattedResponse = {
+                temp: response.data.main.temp,
+                description: response.data.weather.description
+            }
+            this.setState({weather: formattedResponse})
+
+            console.log(response.data)
         }
 
 
@@ -81,7 +96,7 @@ class Park extends Component {
                 <img src = {this.state.park.image} />
                 <p>{this.state.park.address}</p>
                 <Description>{this.state.park.description}</Description>
-             
+             <p>{this.state.weather.temp}</p>
 
                 <TrailList parkId={this.state.park.id} trails={this.state.park.trails} deleteATrail={this.deleteATrail}/>
                 <button onClick={this.toggleShowNewTrailForm}>Submit a new trail</button>
@@ -106,3 +121,5 @@ export default Park;
                 {this.state.showNewCommentForm ? <CommentForm toggleCommentForm={this.toggleShowNewForm}/> : null}
 
                  */}
+
+

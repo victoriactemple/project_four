@@ -7,7 +7,7 @@ Rails.application.routes.draw do
       end
       
     end 
-
+    get '/weather/:zipcode', to: "weather#show"
         
   end
 
