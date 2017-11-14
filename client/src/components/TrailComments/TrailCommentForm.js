@@ -10,7 +10,7 @@ class TrailCommentForm extends Component {
 
     }
 
-handleChange=(event) =>{
+handleChange=(event) => {
     const attribute = event.target.name
     const newTrailComment = {...this.state.trailComment}
     newTrailComment[attribute] = event.target.value
