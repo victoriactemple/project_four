@@ -75,6 +75,7 @@ toggleEditTrail = () => {
 
                 <button onClick={this.deleteATrail}>Delete Trail</button>
                 <button onClick={this.toggleEditTrail}>Edit Trail</button>
+                <button></button>
 
 
                 <TrailCommentList comments={this.state.trail.trail_comments}/>

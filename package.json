@@ -1,11 +1,15 @@
 {
-    "name": "project_four",
-    "engines": {
-      "node": "8.9.0"
-    },
-    "scripts": {
-      "build": "cd client && npm install && npm run build && cd ..",
-      "deploy": "cp -a client/build/. public/",
-      "postinstall": "npm run build && npm run deploy && echo 'Client built!'"
-    }
+  "name": "project_four",
+  "engines": {
+    "node": "8.9.0"
+  },
+  "scripts": {
+    "build": "cd client && npm install && npm run build && cd ..",
+    "deploy": "cp -a client/build/. public/",
+    "postinstall": "npm run build && npm run deploy && echo 'Client built!'"
+  },
+  "dependencies": {
+    "moment": "^2.19.2",
+    "react-moment": "^0.6.8"
   }
+}
