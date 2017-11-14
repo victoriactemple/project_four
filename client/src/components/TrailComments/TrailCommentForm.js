@@ -32,10 +32,10 @@ const emptyForm={
     content: ''
 }
 const res = await axios.post(`/api/parks/${park_id}/trails/${trailId}/trail_comments`, payload)
-// this.setState({newTrailCommentId: res.data._id,
-//                 trailComment: emptyForm
-// })
-// this.props.toggleAddComment()
+this.setState({
+                trailComment: emptyForm
+})
+this.props.toggleAddComment()
 this.props.getTrailAndComments()
 
 }
