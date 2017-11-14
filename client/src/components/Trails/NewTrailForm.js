@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import { Redirect } from 'react-router-dom'
 
 class NewTrailForm extends Component {
     state ={
@@ -22,19 +23,30 @@ class NewTrailForm extends Component {
 
     handleSubmit = async (event) => {
         event.preventDefault()
-        const park_id  = this.state.trail.id
-        const trail_id  = this.state.trail.id
-
-        console.log(trail_id)
+        const { park_id } = this.props
+        const emptyForm={
+            name: '',
+            difficulty: '',
+            image: '',
+            distance: ''
+          }
+        // console.log(trail_id)
         const res = await axios.post(`/api/parks/${park_id}/trails`, {
             trail: this.state.newTrail
         })
-        this.props.pushTrailToArray(res.data)
-        this.props.toggleShowNewTrailForm()            
+        this.setState({redirectToTrail: true, newTrailId: res.data._id, newReview: emptyForm})
+        
+        // this.props.toggleShowNewTrailForm()            
     }
     
     
     render() {
+        if (this.state.redirectToTrail) {
+            const { park_id } = this.props
+            return (
+                <Redirect to={`/parks/${park_id}`} />
+            )
+        }
         return (
             <div>
                  <form onSubmit={this.handleSubmit}>

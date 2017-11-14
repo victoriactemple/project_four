@@ -51,7 +51,7 @@ class Park extends Component {
 
         deleteATrail = async (event) => {
             try {
-            const { park_id } = this.props.match.params
+            const { park_id } = this.props.match.params.id
             const id = event.target.value
             console.log(park_id, id)
             const response = await axios.delete(`/api/parks/${park_id}/trails/${id}`)
@@ -63,12 +63,6 @@ class Park extends Component {
             console.log(error)
             await this.setState({ error: error.message })
         }
-    }
-
-    addTrail = (newTrail) => {
-        const updatedPark = {...this.state.park}
-        newTrail.trails.push(newTrail)
-        this.setState({park: updatedPark})
     }
 
         toggleCommentForm = () => {
@@ -92,7 +86,7 @@ class Park extends Component {
                 <TrailList parkId={this.state.park.id} trails={this.state.park.trails} deleteATrail={this.deleteATrail}/>
                 <button onClick={this.toggleShowNewTrailForm}>Submit a new trail</button>
 
-                {this.state.showNewTrailForm ? <NewTrailForm getOnePark={this.getOnePark} addTrail={this.addTrail}/> : null}
+                {this.state.showNewTrailForm ? <NewTrailForm park_id={this.state.park.id} getOnePark={this.getOnePark} addTrail={this.addTrail}/> : null}
 
 
                 <FillerDiv></FillerDiv>
