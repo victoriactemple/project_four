@@ -55,8 +55,9 @@ handleSubmit = async (event) => {
 
         if (this.state.redirectToTrail) {
             const { park_id } = this.props
+            const { trail_id } = this.props
             return(
-                    <Redirect to={`/parks/${park_id}`} />
+                    <Redirect to={`/parks/${park_id}/trails/${trail_id}`} />
 
                     )
         }

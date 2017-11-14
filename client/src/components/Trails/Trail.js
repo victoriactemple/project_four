@@ -93,6 +93,7 @@ toggleAddComment = () => {
                 toggleAddComment={this.toggleAddComment}/>
 
                 {this.state.showCreateComment ? <TrailCommentForm 
+                getTrailAndComments={this.getTrailAndComments}
                 toggleAddComment={this.toggleAddComment}
                 trailComments={this.state.trail_comments} 
                 trail={this.state.trails}
@@ -111,7 +112,7 @@ toggleAddComment = () => {
     }
     else return(
         <EditTrailForm trails={this.state.trails} 
-        toggleEditTrail={this.toggleEditTrail} 
+        getTrailAndComments={this.getTrailAndComments}
         trail={this.state.trail} 
         showTrail={this.getTrailAndComments} 
         toggleEditTrail={this.toggleEditTrail}/>
