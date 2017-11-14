@@ -20,17 +20,21 @@ handleChange=(event) => {
 handleSubmit = async (event) => {
 event.preventDefault()
 const { park_id } = this.props
-const { trail_id } = this.props
+const  trailId = this.props.trail_id
+const payload = {
+    title: this.state.trailComment.title,
+    content: this.state.trailComment.content,
+    trail_id: trailId
+}
+console.log(trailId)
 const emptyForm={
     title: '',
     content: ''
 }
-const res = await axios.post(`/api/parks/${park_id}/trails/${trail_id}/trail_comments`, {
-    trail_comment: this.state.trailComment
-})
-this.setState({newTrailCommentId: res.data._id,
-                trailComment: emptyForm
-})
+const res = await axios.post(`/api/parks/${park_id}/trails/${trailId}/trail_comments`, payload)
+// this.setState({newTrailCommentId: res.data._id,
+//                 trailComment: emptyForm
+// })
 this.props.toggleAddComment()
 }
 

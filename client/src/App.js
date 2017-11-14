@@ -10,14 +10,15 @@ import CommentList from './components/Comments/CommentList'
 import CommentForm from './components/Comments/CommentForm'
 import TrailList from './components/Trails/TrailList'
 import Trail from './components/Trails/Trail'
+import TrailCommentForm from './components/TrailComments/TrailCommentForm'
 
 
 
 class App extends Component {
   state = {
-    parks: [],
     signedIn: false
   }
+
 
 
   signUp = async (email, password, password_confirmation) => {
@@ -49,10 +50,9 @@ class App extends Component {
           const response = await axios.post('/auth/sign_in', payload)
           saveAuthTokens(response.headers)
     
-          const posts = await this.getPosts()
     
           this.setState({
-              signedIn: true
+              signedIn: true 
           })
     
       } catch (error) {
@@ -85,8 +85,8 @@ render() {
         signIn={this.signIn}/>
 )
 
-const ParkListComponent = () => {
-  <ParkList signIn={this.state.signedIn} />
+const SignedInState = () => {
+    <Trail signedIn={this.state.signedIn}/>
 }
     return (
      <Router>
