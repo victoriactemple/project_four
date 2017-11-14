@@ -5,6 +5,7 @@ import Trail from './Trail'
 
 class EditTrailForm extends Component {
         state={
+            park: {},
             trail: {
                 name: '',
                 difficulty: '',
@@ -52,11 +53,11 @@ handleSubmit = async (event) => {
 
     render() {
 
-        if (this.state.redirectToTrail === true ){
-            const park_id = this.state.trail.park_id
-            const trail_id = this.state.trail.id
+        if (this.state.redirectToTrail) {
+            const park_id = this.props.match.params.id
             return(
-                    <Redirect to={`/parks/${park_id}/trails/${trail_id}`} />
+                    <Redirect to={`/parks/${park_id}/trails/${this.state.trail.id}`} />
+
                     )
         }
         return (
@@ -78,7 +79,7 @@ handleSubmit = async (event) => {
                     <input onChange={this.handleChange} type="boolean" name="petFriendly" value={this.state.trail.pet_friendly} />
                 </div>
 
-            <button>submit changes</button>
+            <button onClick={this.toggleEditTrail}>submit changes</button>
                 </form>
             </div>
         );

@@ -10,7 +10,8 @@ class Trail extends Component {
             comments: []
         },
         redirectToPark: false,
-        editTrailDetals: false
+        editTrailDetals: false,
+        showCreateATrail: false
         
     }
 
@@ -53,7 +54,7 @@ toggleEditTrail = () => {
 
 
     render() {
-        if (this.state.redirectToPark === true){
+        if (this.state.redirectToPark){
             return (
                 <Redirect to={`/parks/${this.state.park.id}`} />
             )

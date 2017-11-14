@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import CommentForm from './Comments/CommentForm'
 import TrailList from './Trails/TrailList'
 import Trail from './Trails/Trail'
+import NewTrailForm from './Trails/NewTrailForm'
 
 const FillerDiv = styled.div`
 height: 100px
@@ -24,7 +25,7 @@ class Park extends Component {
                 parkComments: []
             },
             
-            showNewCommentForm: false
+            showNewTrailForm: false
         }
         componentWillMount() {
             const park_id = this.props.match.params.park_id
@@ -64,8 +65,18 @@ class Park extends Component {
         }
     }
 
+    addTrail = (newTrail) => {
+        const updatedPark = {...this.state.park}
+        newTrail.trails.push(newTrail)
+        this.setState({park: updatedPark})
+    }
+
         toggleCommentForm = () => {
             this.setState({showNewCommentForm: !this.state.showNewCommentForm})
+        }
+
+        toggleShowNewTrailForm = () => {
+            this.setState({showNewTrailForm: !this.state.showNewTrailForm})
         }
 
 
@@ -76,8 +87,12 @@ class Park extends Component {
                 <img src = {this.state.park.image} />
                 <p>{this.state.park.address}</p>
                 <Description>{this.state.park.description}</Description>
+             
 
                 <TrailList parkId={this.state.park.id} trails={this.state.park.trails} deleteATrail={this.deleteATrail}/>
+                <button onClick={this.toggleShowNewTrailForm}>Submit a new trail</button>
+
+                {this.state.showNewTrailForm ? <NewTrailForm getOnePark={this.getOnePark} addTrail={this.addTrail}/> : null}
 
 
                 <FillerDiv></FillerDiv>
