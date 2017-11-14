@@ -97,7 +97,7 @@ const ParkListComponent = () => {
               <Route exact path="/parks/:park_id" component={Park} /> 
               <Route exact path="/parks/:park_id/trails" component={TrailList} /> 
               <Route exact path="/parks/:park_id/trails/:trail_id" component={Trail} /> 
-               <Route exact path="/sign_up" render={SignUpLogInComponent} />
+              <Route exact path="/sign_up" render={SignUpLogInComponent} />
   
              
           </Switch>
