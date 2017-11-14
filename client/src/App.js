@@ -15,11 +15,79 @@ import Trail from './components/Trails/Trail'
 
 class App extends Component {
   state = {
-    parks: []
+    parks: [],
+    signedIn: false
   }
 
 
+  signUp = async (email, password, password_confirmation) => {
+        try {
+            const payload = {
+                email: email,
+                password: password,
+                password_confirmation: password_confirmation
+            }
+            const response = await axios.post('/auth', payload)
+            saveAuthTokens(response.headers)
+    
+            this.setState({
+                signedIn: true
+            })
+    
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    
+    
+    signIn = async (email, password) => {
+      try {
+          const payload = {
+              email,
+              password
+          }
+          const response = await axios.post('/auth/sign_in', payload)
+          saveAuthTokens(response.headers)
+    
+          const posts = await this.getPosts()
+    
+          this.setState({
+              signedIn: true
+          })
+    
+      } catch (error) {
+          console.log(error)
+      }
+    }
+    
+    signOut = async (event) => {
+      try {
+          event.preventDefault()
+    
+          await axios.delete('/auth/sign_out')
+    
+          clearAuthTokens();
+    
+          this.setState({signedIn: false})
+      } catch (error) {
+          console.log(error)
+      }
+    }
+    
+
+
+
 render() {
+       
+  const SignUpLogInComponent = () => (
+    <SignUpLogIn
+        signUp={this.signUp}
+        signIn={this.signIn}/>
+)
+
+const ParkListComponent = () => {
+  <ParkList signIn={this.state.signedIn} />
+}
     return (
      <Router>
        <div>
@@ -29,7 +97,8 @@ render() {
               <Route exact path="/parks/:park_id" component={Park} /> 
               <Route exact path="/parks/:park_id/trails" component={TrailList} /> 
               <Route exact path="/parks/:park_id/trails/:trail_id" component={Trail} /> 
-              
+               <Route exact path="/sign_up" render={SignUpLogInComponent} />
+  
              
           </Switch>
        </div>
@@ -42,70 +111,6 @@ export default App;
 
 
 
- {/* <Route exact path="/sign_up" render={SignUpLogInComponent} /> */}
-  //signedIn: false
-
-//   signUp = async (email, password, password_confirmation) => {
-//     try {
-//         const payload = {
-//             email: email,
-//             password: password,
-//             password_confirmation: password_confirmation
-//         }
-//         const response = await axios.post('/auth', payload)
-//         saveAuthTokens(response.headers)
-
-//         this.setState({
-//             signedIn: true
-//         })
-
-//     } catch (error) {
-//         console.log(error)
-//     }
-// }
 
 
-// signIn = async (email, password) => {
-//   try {
-//       const payload = {
-//           email,
-//           password
-//       }
-//       const response = await axios.post('/auth/sign_in', payload)
-//       saveAuthTokens(response.headers)
-
-//       const posts = await this.getPosts()
-
-//       this.setState({
-//           signedIn: true
-//       })
-
-//   } catch (error) {
-//       console.log(error)
-//   }
-// }
-
-// signOut = async (event) => {
-//   try {
-//       event.preventDefault()
-
-//       await axios.delete('/auth/sign_out')
-
-//       clearAuthTokens();
-
-//       this.setState({signedIn: false})
-//   } catch (error) {
-//       console.log(error)
-//   }
-// }
-
- 
-//     const SignUpLogInComponent = () => (
-//       <SignUpLogIn
-//           signUp={this.signUp}
-//           signIn={this.signIn}/>
-//   )
-
-//   const ParkListComponent = () => {
-//     <ParkList signIn={this.state.signedIn} />
-//   }
+//  

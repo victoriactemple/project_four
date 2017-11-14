@@ -25,7 +25,7 @@ class Trail extends Component {
     getTrailAndComments = async (trail_id) => {
         try {
             const { park_id, trail_id } = this.props.match.params
-            console.log(trail_id)
+            // console.log(trail_id)
             const res = await axios.get(`/api/parks/${park_id}/trails/${trail_id}`)
             this.setState({trail: res.data})
     } catch(error) {
@@ -57,6 +57,7 @@ toggleEditTrail = () => {
 
 toggleAddComment = () => {
     this.setState({showCreateComment: !this.state.showCreateComment})
+    console.log("I'm being clicked")
 }
 
 
@@ -94,7 +95,10 @@ toggleAddComment = () => {
                 {this.state.showCreateComment ? <TrailCommentForm 
                 toggleAddComment={this.toggleAddComment}
                 trailComments={this.state.trail_comments} 
-                trails={this.state.trails}
+                trail={this.state.trails}
+                park_id={this.props.match.params.park_id}
+                trail_id={this.state.trail.id}
+
                 /> : null}
 
                 {/* {this.state.editTrailDetals ? <EditTrailForm 
@@ -106,7 +110,11 @@ toggleAddComment = () => {
         )
     }
     else return(
-        <EditTrailForm trails={this.state.trails} toggleEditTrail={this.toggleEditTrail} trail={this.state.trail} showTrail={this.getTrailAndComments} toggleEditTrail={this.toggleEditTrail}/>
+        <EditTrailForm trails={this.state.trails} 
+        toggleEditTrail={this.toggleEditTrail} 
+        trail={this.state.trail} 
+        showTrail={this.getTrailAndComments} 
+        toggleEditTrail={this.toggleEditTrail}/>
     )
     }
 }

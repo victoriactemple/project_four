@@ -34,7 +34,9 @@ class NewTrailForm extends Component {
         const res = await axios.post(`/api/parks/${park_id}/trails`, {
             trail: this.state.newTrail
         })
-        this.setState({redirectToTrail: true, newTrailId: res.data._id, newReview: emptyForm})
+        this.setState({redirectToTrail: true, 
+            newTrailId: res.data._id, 
+            newTrail: emptyForm})
         
         // this.props.toggleShowNewTrailForm()            
     }

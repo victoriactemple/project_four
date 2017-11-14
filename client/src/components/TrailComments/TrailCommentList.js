@@ -1,5 +1,6 @@
 import React from 'react';
 import TrailComment from './TrailComment'
+import TrailCommentForm from './TrailCommentForm'
 
 
 const TrailCommentList = (props) => {
@@ -13,7 +14,7 @@ const TrailCommentList = (props) => {
             })}
             
             <br />
-            <button>add comment</button>
+            <button onClick={props.toggleAddComment}>add comment</button>
         </div>
     );
 };
