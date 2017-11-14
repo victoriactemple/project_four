@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import axios from 'axios'
 import EditTrailForm from './EditTrailForm'
 import TrailCommentList from '../TrailComments/TrailCommentList'
@@ -75,7 +75,9 @@ toggleEditTrail = () => {
 
                 <button onClick={this.deleteATrail}>Delete Trail</button>
                 <button onClick={this.toggleEditTrail}>Edit Trail</button>
-                <button></button>
+                <Link to={`/parks/`}><button>Back to parks</button></Link>
+                {/* <Link to={`/parks/${this.state.trail.park.id}`}><button>Back to park</button></Link> */}
+
 
 
                 <TrailCommentList comments={this.state.trail.trail_comments}/>
