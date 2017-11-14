@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 import EditTrailForm from './EditTrailForm'
+import TrailCommentList from '../TrailComments/TrailCommentList'
 
 class Trail extends Component {
     state={
         park: {},
         trail: {
-            comments: []
+            trail_comments: []
         },
         redirectToPark: false,
         editTrailDetals: false,
@@ -74,6 +75,15 @@ toggleEditTrail = () => {
 
                 <button onClick={this.deleteATrail}>Delete Trail</button>
                 <button onClick={this.toggleEditTrail}>Edit Trail</button>
+
+
+                <TrailCommentList comments={this.state.trail.trail_comments}/>
+
+                {/* {this.state.editTrailDetals ? <EditTrailForm 
+                toggleEditTrail={this.toggleEditTrail} 
+                trail={this.state.trail} 
+                showTrail={this.getTrailAndComments} 
+                toggleEditTrail={this.toggleEditTrail} /> : null} */}
             </div>
         )
     }
