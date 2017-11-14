@@ -3,6 +3,7 @@ import { Redirect, Link } from 'react-router-dom'
 import axios from 'axios'
 import EditTrailForm from './EditTrailForm'
 import TrailCommentList from '../TrailComments/TrailCommentList'
+import TrailCommentForm from '../TrailComments/TrailCommentForm'
 
 class Trail extends Component {
     state={
@@ -12,7 +13,8 @@ class Trail extends Component {
         },
         redirectToPark: false,
         editTrailDetals: false,
-        showCreateATrail: false
+        showCreateATrail: false,
+        showCreateComment: false
         
     }
 
@@ -53,6 +55,12 @@ toggleEditTrail = () => {
     this.setState({ editTrailDetails: !this.state.editTrailDetails })
 }
 
+toggleAddComment = () => {
+    this.setState({showCreateComment: !this.state.showCreateComment})
+}
+
+
+
 
     render() {
         if (this.state.redirectToPark){
@@ -80,7 +88,14 @@ toggleEditTrail = () => {
 
 
 
-                <TrailCommentList comments={this.state.trail.trail_comments}/>
+                <TrailCommentList comments={this.state.trail.trail_comments} 
+                toggleAddComment={this.toggleAddComment}/>
+
+                {this.state.showCreateComment ? <TrailCommentForm 
+                toggleAddComment={this.toggleAddComment}
+                trailComments={this.state.trail_comments} 
+                trails={this.state.trails}
+                /> : null}
 
                 {/* {this.state.editTrailDetals ? <EditTrailForm 
                 toggleEditTrail={this.toggleEditTrail} 
@@ -91,27 +106,9 @@ toggleEditTrail = () => {
         )
     }
     else return(
-        <EditTrailForm toggleEditTrail={this.toggleEditTrail} trail={this.state.trail} showTrail={this.getTrailAndComments} toggleEditTrail={this.toggleEditTrail}/>
+        <EditTrailForm trails={this.state.trails} toggleEditTrail={this.toggleEditTrail} trail={this.state.trail} showTrail={this.getTrailAndComments} toggleEditTrail={this.toggleEditTrail}/>
     )
     }
 }
 
 export default Trail;
-
-
-// import React from 'react';
-
-// // const Trail = (props) => {
-// //     return (
-// //         <div>
-// //             <strong>{props.name} </strong>
-// //              <p>Difficulty: {props.difficulty}</p>
-// //              <p>Distance: {props.distance} miles</p>
-// //              <p>Pet Friendly: {props.pet_friendly}</p>
-// //              <button value={props.id} onClick={props.deleteATrail}>Delete Trail</button>
-
-// //         </div>
-// //     );
-// // };
-
-// // export default Trail;

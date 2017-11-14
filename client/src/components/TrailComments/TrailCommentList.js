@@ -11,6 +11,9 @@ const TrailCommentList = (props) => {
                     <TrailComment {...comment} key={comment.id}/>
                 )
             })}
+            
+            <br />
+            <button>add comment</button>
         </div>
     );
 };
