@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import {clearAuthTokens, saveAuthTokens, setAxiosDefaults, userIsLoggedIn} from "./util/SessionHeaderUtil"
 import axios from 'axios'
-import NavBar from './components/NavBar'
+import NavBar from './components/Navbar'
 import ParkList from './components/ParkList'
 import Park from './components/Park'
 import SignUpLogIn from './components/SignUpLogIn'
@@ -124,7 +124,7 @@ render() {
         <button onClick={this.signOut}>signout</button> :
         <button onClick={this.goToLogIn}>sign-in</button>
          }
-         {/* <NavBar /> */}
+         <NavBar />
           <Switch>
               <Route exact path="/parks" component={ParkList} />
               <Route exact path="/parks/:park_id" component={Park} /> 
