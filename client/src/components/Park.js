@@ -55,8 +55,11 @@ class Park extends Component {
             // console.log(zipcode)
             const response = await axios.get(`/api/weather/${zipcode}`)
             const formattedResponse = {
+                humidity: response.data.main.humidity,
                 temp: response.data.main.temp,
-                description: response.data.weather.description
+                description: response.data.weather.main,
+                windSpeed: response.data.wind.speed
+
             }
             this.setState({weather: formattedResponse})
 
@@ -96,7 +99,16 @@ class Park extends Component {
                 <img src = {this.state.park.image} />
                 <p>{this.state.park.address}</p>
                 <Description>{this.state.park.description}</Description>
-             <p>{this.state.weather.temp}</p>
+
+                <div>
+                    <h5>Current Weather</h5>
+                <p>{this.state.weather.temp}°F </p>
+                <p>{this.state.weather.description} </p>
+                <p>humidity: {this.state.weather.humidity}%</p>
+                <p>wind speed: {this.state.weather.windSpeed}</p>
+
+                </div>
+             
 
                 <TrailList parkId={this.state.park.id} trails={this.state.park.trails} deleteATrail={this.deleteATrail}/>
                 <button onClick={this.toggleShowNewTrailForm}>Submit a new trail</button>
