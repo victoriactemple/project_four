@@ -10,8 +10,7 @@ class NewTrailForm extends Component {
             image: '',
             distance: '',
         
-        },
-        redirectToTrail: false
+        }
     }
 
     handleChange = (event) => {
@@ -30,25 +29,20 @@ class NewTrailForm extends Component {
             image: '',
             distance: ''
           }
-        // console.log(trail_id)
         const res = await axios.post(`/api/parks/${park_id}/trails`, {
             trail: this.state.newTrail
         })
-        this.setState({redirectToTrail: true, 
+        this.setState({ 
             newTrailId: res.data._id, 
             newTrail: emptyForm})
-        
-        // this.props.toggleShowNewTrailForm()            
+            
+        await this.props.toggleShowNewTrailForm()
+       await this.props.getOnePark()  
+      
     }
     
     
     render() {
-        if (this.state.redirectToTrail) {
-            const { park_id } = this.props
-            return (
-                <Redirect to={`/parks/${park_id}`} />
-            )
-        }
         return (
             <div>
                  <form onSubmit={this.handleSubmit}>

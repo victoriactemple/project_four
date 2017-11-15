@@ -30,11 +30,6 @@ class Trail extends Component {
         this.getTrailAndComments()
     }
 
-    // componentWillReceiveProps(nextProps) {
-    //     console.log(this.props)
-    //     console.log(nextProps)
-
-    // }
 
     getTrailAndComments = async (trail_id) => {
         try {
@@ -71,7 +66,6 @@ class Trail extends Component {
 
     toggleAddComment = () => {
         this.setState({ showCreateComment: !this.state.showCreateComment })
-        // console.log("I'm being clicked")
     }
 
 
@@ -87,7 +81,6 @@ class Trail extends Component {
             return (
                 <div>
                     <h2>{this.state.trail.name}</h2>
-                    {/* <p><img src={this.state.trail.image}/></p> */}
                     <p>distance: {this.state.trail.distance} miles</p>
                     <p>difficulty: {this.state.trail.difficulty}</p>
                     {/* <p>pet_friendly: {this.state.trail.pet_friendly}</p> */}
@@ -99,16 +92,16 @@ class Trail extends Component {
                     <button onClick={this.deleteATrail}>Delete Trail</button>
                     <Link to={{
                         pathname: `/parks/${this.state.trail.park_id}/trails/${this.state.trail.id}/edit`,
-                        state: {trails: this.state.trail}
+                        state: { trails: this.state.trail }
                     }}>Edit Trail</Link>
+
                     <Link to={{
-                        pathname: `/parks/${this.state.trail.park_id}`, 
+                        pathname: `/parks/${this.state.trail.park_id}`,
                     }}>Back to Parks </Link>
 
 
 
-                    <TrailCommentList comments={this.state.trail.trail_comments}
-                        toggleAddComment={this.toggleAddComment} />
+                 
 
                     {this.state.showCreateComment ? <TrailCommentForm
                         getTrailAndComments={this.getTrailAndComments}
@@ -120,11 +113,13 @@ class Trail extends Component {
 
                     /> : null}
 
-            
+                    <TrailCommentList comments={this.state.trail.trail_comments}
+                        toggleAddComment={this.toggleAddComment} />
+
                 </div>
             )
         }
-     
+
     }
 }
 
