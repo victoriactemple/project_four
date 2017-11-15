@@ -101,8 +101,9 @@ class Trail extends Component {
                         pathname: `/parks/${this.state.trail.park_id}/trails/${this.state.trail.id}/edit`,
                         state: {trails: this.state.trail}
                     }}>Edit Trail</Link>
-                    <Link to={`/parks}`}><button>Back to parks</button></Link>
-                    {/* <Link to={`/parks/${this.state.trail.park.id}`}><button>Back to park</button></Link> */}
+                    <Link to={{
+                        pathname: `/parks/${this.state.trail.park_id}`, 
+                    }}>Back to Parks </Link>
 
 
 
@@ -129,11 +130,3 @@ class Trail extends Component {
 
 export default Trail;
 
-
-// else return (
-//     <EditTrailForm trails={this.state.trails}
-//         getTrailAndComments={this.getTrailAndComments}
-//         trail={this.state.trail}
-//         showTrail={this.getTrailAndComments}
-//         toggleEditTrail={this.toggleEditTrail} />
-// )
