@@ -59,7 +59,6 @@ class Park extends Component {
                 temp: response.data.main.temp,
                 description: response.data.weather.main,
                 windSpeed: response.data.wind.speed
-
             }
             this.setState({weather: formattedResponse})
 

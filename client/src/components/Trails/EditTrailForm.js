@@ -40,27 +40,25 @@ handleSubmit = async (event) => {
          trail: clonedTrail
             
         })
-        await this.getTrailAndComment()
-        this.props.toggleEditTrail()
-
+    
         console.log(response)
         this.setState({trail: response.data, redirectToTrail: true})
+        
+        // await this.props.toggleEditTrail()
+        await this.getTrailAndComment()
+
     }
     catch(error) {
         console.log(error)
     }
 }
 
+
+
+
     render() {
 
-        if (this.state.redirectToTrail) {
-            const { park_id } = this.props
-            const { trail_id } = this.props
-            return(
-                    <Redirect to={`/parks/${park_id}/trails/${trail_id}`} />
-
-                    )
-        }
+  
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
@@ -80,7 +78,7 @@ handleSubmit = async (event) => {
                     <input onChange={this.handleChange} type="boolean" name="petFriendly" value={this.state.trail.pet_friendly} />
                 </div>
 
-            <button onClick={this.toggleEditTrail}>submit changes</button>
+            <button>submit changes</button>
                 </form>
             </div>
         );
@@ -101,4 +99,13 @@ export default EditTrailForm;
         //     return(
         //         <Redirect to={`/parks/${park_id}/trails/${trail_id}`} />
         //     )
+        // }
+
+              // if (this.state.redirectToTrail) {
+        //     const { park_id } = this.props.id
+            
+        //     return(
+        //             <Redirect to={`/parks/${park_id}`} />
+
+        //             )
         // }

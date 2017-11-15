@@ -15,7 +15,6 @@ class Trail extends Component {
         editTrailDetals: false,
         showCreateATrail: false,
         showCreateComment: false
-        
     }
 
  componentWillMount() {
@@ -84,7 +83,7 @@ toggleAddComment = () => {
 
                 <button onClick={this.deleteATrail}>Delete Trail</button>
                 <button onClick={this.toggleEditTrail}>Edit Trail</button>
-                <Link to={`/parks/`}><button>Back to parks</button></Link>
+                <Link to={`/parks}`}><button>Back to parks</button></Link>
                 {/* <Link to={`/parks/${this.state.trail.park.id}`}><button>Back to park</button></Link> */}
 
 
