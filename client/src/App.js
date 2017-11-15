@@ -17,9 +17,21 @@ import TrailCommentForm from './components/TrailComments/TrailCommentForm'
 class App extends Component {
   state = {
     signedIn: false,
-    blah: {}
+    
   }
 
+  async componentWillMount() {
+      try{
+          const signedIn = userIsLoggedIn()
+          if(signedIn){
+              setAxiosDefaults()
+          } this.setState({
+              signedIn
+          })
+      } catch (error){
+          console.log(error)
+      }
+  }
 
 
   signUp = async (email, password, password_confirmation) => {

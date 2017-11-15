@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom'
 
 
 class SignUpLogIn extends Component {
     state = {
         email: '',
         password: '',
-        password_confirmation: ''
+        password_confirmation: '',
+        toggleRedirect: false
     }
 
     signUp = (event) => {
@@ -15,6 +17,7 @@ class SignUpLogIn extends Component {
             this.state.password,
             this.state.password_confirmation
         )
+        this.toggleRedirect()
     }
 
     signIn = (event) => {
@@ -23,6 +26,7 @@ class SignUpLogIn extends Component {
             this.state.email,
             this.state.password
         )
+        this.toggleRedirect()
     }
 
     handleChange = (event) => {
@@ -31,7 +35,16 @@ class SignUpLogIn extends Component {
         this.setState(newState)
     }
 
+    toggleRedirect = () =>{
+        this.setState({toggleRedirect: !this.state.toggleRedirect})
+    }
+
     render() {
+        if (this.state.toggleRedirect) {
+            return (
+                <Redirect to="/parks" />
+            )
+        }
         return (
             <div>
                     <form>
