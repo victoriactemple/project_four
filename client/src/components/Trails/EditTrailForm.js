@@ -21,7 +21,7 @@ componentWillMount() {
     if (this.props.location && this.props.location.state && this.props.location.state.trails){
         this.setState({trail: this.props.location.state.trails})
     } else {
-        
+
     }
     
 }
@@ -49,10 +49,7 @@ handleSubmit = async (event) => {
     
         console.log(response)
         
-        
-        await this.props.toggleEditTrail()
-        // await this.props.getTrailAndComment()
-        this.setState({trail: response.data})
+        this.setState({trail: response.data, redirectToTrail: true})
 
     }
     catch(error) {
@@ -61,7 +58,11 @@ handleSubmit = async (event) => {
 }
 
     render() {
-
+if (this.state.redirectToTrail) {
+    const {park_id} = this.props.match.params
+    const {trail_id} = this.props.match.params
+    return <Redirect to={`/parks/${park_id}/trails/${trail_id}`} />
+}
   
         return (
             <div>
@@ -94,22 +95,3 @@ export default EditTrailForm;
 
 
 
-
-// This resulted in "You're trying to redirect to the same route you're on"
-
-     // if (this.state.redirectToTrail) {
-        //     const park_id = this.state.trail.park_id
-        //     const trail_id = this.state.trail.id
-        //     return(
-        //         <Redirect to={`/parks/${park_id}/trails/${trail_id}`} />
-        //     )
-        // }
-
-              // if (this.state.redirectToTrail) {
-        //     const { park_id } = this.props.id
-            
-        //     return(
-        //             <Redirect to={`/parks/${park_id}`} />
-
-        //             )
-        // }
