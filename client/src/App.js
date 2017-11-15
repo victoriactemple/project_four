@@ -96,13 +96,21 @@ render() {
   const SignUpLogInComponent = () => (
     <SignUpLogIn
         signUp={this.signUp}
-        signIn={this.signIn}/>
+        signIn={this.signIn}
+        signedIn={this.signedIn}
+        />
 )
 
-const SignedInState = () => {
-    <Trail signedIn={this.state.signedIn}/>
-}
+// const SignedInState = () => {
+//     <Trail signedIn={this.state.signedIn}/>
+// }
+
     return (
+        //  if signed in is true, then call the signout function and 
+        //  and have button display signout 
+        // if you are !not signed in yet
+        // when clicked, it redirects to form
+        // if (this.state.sign)
      <Router>
        <div>
          <NavBar />
