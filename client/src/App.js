@@ -124,7 +124,7 @@ render() {
         <button onClick={this.signOut}>signout</button> :
         <button onClick={this.goToLogIn}>sign-in</button>
          }
-         <NavBar />
+         {/* <NavBar /> */}
           <Switch>
               <Route exact path="/parks" component={ParkList} />
               <Route exact path="/parks/:park_id" component={Park} /> 
