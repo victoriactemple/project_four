@@ -35,10 +35,10 @@ class NewTrailForm extends Component {
         this.setState({ 
             newTrailId: res.data._id, 
             newTrail: emptyForm})
-            
-        await this.props.toggleShowNewTrailForm()
-       await this.props.getOnePark()  
-      
+
+        this.props.toggleShowNewTrailForm()
+         this.props.getOnePark()      
+         
     }
     
     

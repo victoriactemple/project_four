@@ -32,14 +32,13 @@ class Park extends Component {
             weather: {}
         }
         async componentWillMount() {
-            const park_id = this.props.match.params.park_id
-           await this.getOnePark(park_id)
+           await this.getOnePark()
             await this.getWeather()
         }
     
         getOnePark = async (park_id) => {
             try {
-
+            const park_id = this.props.match.params.park_id
             const res = await axios.get(`/api/parks/${park_id}`)
             console.log(res.data)
             const newPark = res.data.park
@@ -47,7 +46,6 @@ class Park extends Component {
             newPark.trails = res.data.trails
 
             await this.setState({park: newPark})
-            console.log(res.data)
             } catch(error) {
                 await this.setState({error: error.message})
             }
@@ -69,7 +67,7 @@ class Park extends Component {
             }
             this.setState({weather: formattedResponse})
 
-            console.log(response.data)
+            console.log(response.data, 'wether')
         }
 
 
