@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import styled from 'styled-components';
-
 
 const NavBarLinkHolder = styled.div`
 display: flex;
@@ -19,15 +18,19 @@ a {
 } 
 `
 
-const NavBar = () => {
-    return (
-        <div>
-            <NavBarLinks><Link to="/sign_up">SignUp</Link></NavBarLinks>
-            <NavBarLinks><Link to="/sign_in">SignIn</Link></NavBarLinks>
+class NavBar extends Component {
+    state={
+        signedIn: false
+    }
+    render() {
+        return (
+            <div>
+            <NavBarLinks><Link to="/sign_up">sign-in</Link></NavBarLinks>
             <NavBarLinks><Link to="/parks">Back to All Parks</Link></NavBarLinks>
             
-        </div>
-    );
-};
+            </div>
+        );
+    }
+}
 
 export default NavBar;

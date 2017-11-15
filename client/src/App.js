@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import {clearAuthTokens, saveAuthTokens, setAxiosDefaults, userIsLoggedIn} from "./util/SessionHeaderUtil"
 import axios from 'axios'
 import NavBar from './components/NavBar'
@@ -18,7 +18,7 @@ import EditTrailForm from './components/Trails/EditTrailForm'
 class App extends Component {
   state = {
     signedIn: false,
-    
+    redirectToSignIn: false
   }
 
   async componentWillMount() {
@@ -46,7 +46,8 @@ class App extends Component {
             saveAuthTokens(response.headers)
     
             this.setState({
-                signedIn: true
+                signedIn: true,
+                redirectToSignIn: false
             })
     
         } catch (error) {
@@ -66,7 +67,8 @@ class App extends Component {
     
     
           this.setState({
-              signedIn: true 
+              signedIn: true,
+              redirectToSignIn: false 
           })
     
       } catch (error) {
@@ -89,7 +91,9 @@ class App extends Component {
     }
     
 
-
+goToLogIn = () => {
+    this.setState({redirectToSignIn: true})
+}
 
 render() {
        
@@ -104,15 +108,22 @@ render() {
 // const SignedInState = () => {
 //     <Trail signedIn={this.state.signedIn}/>
 // }
+ //  if signed in is true, then call the signout function and 
+    // {this.state.signedIn ? 
+    //     //  and have button display signout 
+    //     <button onClick={this.signOut}>signout</button> :
+    //     // if you are !not signed in yet
+    //     // when clicked, it redirects to form
+    //     
+    //     }
 
     return (
-        //  if signed in is true, then call the signout function and 
-        //  and have button display signout 
-        // if you are !not signed in yet
-        // when clicked, it redirects to form
-        // if (this.state.sign)
      <Router>
        <div>
+       {this.state.signedIn ? 
+        <button onClick={this.signOut}>signout</button> :
+        <button onClick={this.goToLogIn}>sign-in</button>
+         }
          <NavBar />
           <Switch>
               <Route exact path="/parks" component={ParkList} />
@@ -124,6 +135,7 @@ render() {
   
              
           </Switch>
+          {this.state.redirectToSignIn ? (<Redirect to="/sign_up" />) : null }
        </div>
      </Router>
     );
