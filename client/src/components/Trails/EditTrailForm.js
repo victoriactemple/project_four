@@ -17,7 +17,13 @@ class EditTrailForm extends Component {
             redirectToTrail: false
         }
 componentWillMount() {
-    this.setState({trail: this.props.trail})
+    console.log(this.props)
+    if (this.props.location && this.props.location.state && this.props.location.state.trails){
+        this.setState({trail: this.props.location.state.trails})
+    } else {
+        
+    }
+    
 }
 
 
@@ -42,19 +48,17 @@ handleSubmit = async (event) => {
         })
     
         console.log(response)
-        this.setState({trail: response.data, redirectToTrail: true})
         
-        // await this.props.toggleEditTrail()
-        await this.getTrailAndComment()
+        
+        await this.props.toggleEditTrail()
+        // await this.props.getTrailAndComment()
+        this.setState({trail: response.data})
 
     }
     catch(error) {
         console.log(error)
     }
 }
-
-
-
 
     render() {
 

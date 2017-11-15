@@ -20,7 +20,7 @@ class TrailList extends Component {
                    
                    <Link to={`/parks/${this.props.parkId}/trails/${trail.id}`}>
                             <h3>{trail.name}</h3>
-                            <div>{trail.image}</div>
+                            <div> <img src ={trail.image} /></div>
                             
                     </Link>
                     

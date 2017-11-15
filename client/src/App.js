@@ -11,6 +11,7 @@ import CommentForm from './components/Comments/CommentForm'
 import TrailList from './components/Trails/TrailList'
 import Trail from './components/Trails/Trail'
 import TrailCommentForm from './components/TrailComments/TrailCommentForm'
+import EditTrailForm from './components/Trails/EditTrailForm'
 
 
 
@@ -111,6 +112,7 @@ const SignedInState = () => {
               <Route exact path="/parks/:park_id/trails" component={TrailList} /> 
               <Route exact path="/parks/:park_id/trails/:trail_id" component={Trail} /> 
               <Route exact path="/sign_up" render={SignUpLogInComponent} />
+              <Route exact path="/parks/:park_id/trails/:trail_id/edit" component={EditTrailForm} />
   
              
           </Switch>

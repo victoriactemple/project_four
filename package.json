@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "moment": "^2.19.2",
-    "react-moment": "^0.6.8"
+    "react-moment": "^0.6.8",
+    "react-radio-buttons": "^1.2.0"
   }
 }
