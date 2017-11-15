@@ -37,8 +37,8 @@ this.setState({
 })
 
 
-this.props.toggleShowNewTrailForm()
-this.props.getOnePark()
+this.props.toggleAddComment()
+this.props.getTrailAndComments()
 }
 
     render() {
