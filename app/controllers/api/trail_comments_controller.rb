@@ -41,6 +41,12 @@ class Api::TrailCommentsController < ApplicationController
 
     end
 
+    def destroy
+        @user = current_user
+        @trail_comment = TrailComment.find(params[:id]).delete
+        render status: :ok
+    end
+
 
 
     private
