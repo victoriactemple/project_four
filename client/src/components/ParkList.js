@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 
 const ParkName = styled.h3`
-font-family: 'Tenor Sans', sans-serif;
+font-family: 'Lato', sans-serif;
  font-size: 25px;
  color: black;
  text-decoration: none;
@@ -13,7 +13,22 @@ font-family: 'Tenor Sans', sans-serif;
      color: black;
      text-decoration: none;
  }
- 
+`
+
+const MainPhoto = styled.div`
+text-align: center;
+img {
+    
+    max-width: 700px;
+}
+`
+
+const ParkListContainer = styled.div`
+text-align: center;
+margin: 0 auto;
+background-color: white;
+max-width: 280px;
+
 `
 
 class ParkList extends Component {
@@ -37,12 +52,17 @@ class ParkList extends Component {
                 <div>
                     <h1>GEORGIA STATE PARKS</h1>
                         
+                    <ParkListContainer>
                     {this.state.parks.map(park => (
-                    <Link key={park.id} to={`/parks/${park.id}`}>
-                        <ParkName>{park.name}</ParkName>
+                        
+                 <ParkName>  <Link key={park.id} to={`/parks/${park.id}`}>
+                        {park.name}
                         
                     </Link>
+                    </ParkName> 
                     ))}
+                    </ParkListContainer>
+                  <MainPhoto><img src="https://www.lucillesmountaintopinn.com/wp-content/uploads/blog.jpg" /></MainPhoto>  
                 </div>
             </div>
         );

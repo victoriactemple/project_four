@@ -4,7 +4,7 @@ import {clearAuthTokens, saveAuthTokens, setAxiosDefaults, userIsLoggedIn} from 
 import axios from 'axios'
 import styled from 'styled-components';
 import { injectGlobal } from 'styled-components'
-
+import Footer from './components/Footer'
 import NavBar from './components/Navbar'
 import ParkList from './components/ParkList'
 import Park from './components/Park'
@@ -128,10 +128,10 @@ render() {
     return (
      <Router>
        <div>
-       {this.state.signedIn ? 
+       {/* {this.state.signedIn ? 
         <button onClick={this.signOut}>signout</button> :
         <button onClick={this.goToLogIn}>sign-in</button>
-         }
+         } */}
          <NavBar />
           <Switch>
               <Route exact path="/parks" component={ParkList} />
@@ -143,7 +143,8 @@ render() {
   
              
           </Switch>
-          {this.state.redirectToSignIn ? (<Redirect to="/sign_up" />) : null }
+          {/* {this.state.redirectToSignIn ? (<Redirect to="/sign_up" />) : null } */}
+          <Footer />
        </div>
      </Router>
     );
@@ -156,4 +157,3 @@ export default App;
 
 
 
-//  

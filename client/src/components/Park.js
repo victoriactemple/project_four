@@ -129,7 +129,7 @@ class Park extends Component {
                 /> : null}
 
 
-                <FillerDiv></FillerDiv>
+                
 
             </ParkContainer>
         );

@@ -67,6 +67,53 @@ lon: -83.3715,
 zipcode: 30573
 })
 
+skidaway_island = Park.create({name: "Skidaway Island", 
+description: "One of the most spectacular canyons in the eastern U.S., Tallulah Gorge is two miles long and nearly 1,000 feet deep. Visitors can hike rim trails to several overlooks, or they can obtain a permit to hike to the gorge floor (100 per day, not available during water releases). A suspension bridge sways 80 feet above the rocky bottom, providing spectacular views of the river and waterfalls. Tightrope walkers have twice crossed the gorge, and visitors can still see towers used by Karl Wallenda. A paved path follows an on old railroad bed, perfect for strollers and bicycles, while mountain bikers can test their skills on a challenging 10 mile trail.", 
+image: "http://gastateparks.org/sites/default/files/parks/TallulahGorge.jpg",
+address: "338 Jane Hurt Yarn Drive
+Tallulah Falls, GA 30573
+Rabun County", 
+lat: 34.7335, 
+lon: -83.3715,
+zipcode: 30573
+})
+
+red_top_mountain = Park.create({name: "Red Top Mountain", 
+description: "One of the most spectacular canyons in the eastern U.S., Tallulah Gorge is two miles long and nearly 1,000 feet deep. Visitors can hike rim trails to several overlooks, or they can obtain a permit to hike to the gorge floor (100 per day, not available during water releases). A suspension bridge sways 80 feet above the rocky bottom, providing spectacular views of the river and waterfalls. Tightrope walkers have twice crossed the gorge, and visitors can still see towers used by Karl Wallenda. A paved path follows an on old railroad bed, perfect for strollers and bicycles, while mountain bikers can test their skills on a challenging 10 mile trail.", 
+image: "http://gastateparks.org/sites/default/files/parks/TallulahGorge.jpg",
+address: "338 Jane Hurt Yarn Drive
+Tallulah Falls, GA 30573
+Rabun County", 
+lat: 34.7335, 
+lon: -83.3715,
+zipcode: 30573
+})
+
+
+amicalola_falls = Park.create({name: "Amicalola Falls", 
+description: "One of the most spectacular canyons in the eastern U.S., Tallulah Gorge is two miles long and nearly 1,000 feet deep. Visitors can hike rim trails to several overlooks, or they can obtain a permit to hike to the gorge floor (100 per day, not available during water releases). A suspension bridge sways 80 feet above the rocky bottom, providing spectacular views of the river and waterfalls. Tightrope walkers have twice crossed the gorge, and visitors can still see towers used by Karl Wallenda. A paved path follows an on old railroad bed, perfect for strollers and bicycles, while mountain bikers can test their skills on a challenging 10 mile trail.", 
+image: "http://gastateparks.org/sites/default/files/parks/TallulahGorge.jpg",
+address: "338 Jane Hurt Yarn Drive
+Tallulah Falls, GA 30573
+Rabun County", 
+lat: 34.7335, 
+lon: -83.3715,
+zipcode: 30573
+})
+
+
+stephen_c_foster = Park.create({name: "Stephen C Foster", 
+description: "One of the most spectacular canyons in the eastern U.S., Tallulah Gorge is two miles long and nearly 1,000 feet deep. Visitors can hike rim trails to several overlooks, or they can obtain a permit to hike to the gorge floor (100 per day, not available during water releases). A suspension bridge sways 80 feet above the rocky bottom, providing spectacular views of the river and waterfalls. Tightrope walkers have twice crossed the gorge, and visitors can still see towers used by Karl Wallenda. A paved path follows an on old railroad bed, perfect for strollers and bicycles, while mountain bikers can test their skills on a challenging 10 mile trail.", 
+image: "http://gastateparks.org/sites/default/files/parks/TallulahGorge.jpg",
+address: "338 Jane Hurt Yarn Drive
+Tallulah Falls, GA 30573
+Rabun County", 
+lat: 34.7335, 
+lon: -83.3715,
+zipcode: 30573
+})
+
+
 ## Users 
 
 tommy = User.create({
