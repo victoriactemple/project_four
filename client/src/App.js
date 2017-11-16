@@ -115,7 +115,7 @@ render() {
 )
 
 const SignedInState = () => {
-    <TrailCommentForm signedIn={this.state.signedIn}/>
+    <NavBar signedIn={this.state.signedIn}/>
 }
 //   if signed in is true, then call the signout function and 
     // {this.state.signedIn ? 
@@ -129,11 +129,15 @@ const SignedInState = () => {
     return (
      <Router>
        <div>
-       {this.state.signedIn ? 
+       {/* {this.state.signedIn ? 
         <button onClick={this.signOut}>signout</button> :
         <button onClick={this.goToLogIn}>sign-in</button>
-         }
-         <NavBar />
+         } */}
+         <NavBar signedIn={this.state.signedIn} 
+         redirectToSignIn={this.state.redirectToSignIn}
+         goToLogIn={this.goToLogIn}
+         signOut={this.signOut}
+         />
           <Switch>
               <Route exact path="/parks" component={ParkList} />
               <Route exact path="/parks/:park_id" component={Park} /> 
@@ -144,7 +148,7 @@ const SignedInState = () => {
   
              
           </Switch>
-          {this.state.redirectToSignIn ? (<Redirect to="/sign_up" />) : null }
+          {/* {this.state.redirectToSignIn ? (<Redirect to="/sign_up" />) : null } */}
           <Footer />
        </div>
      </Router>

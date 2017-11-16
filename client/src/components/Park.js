@@ -10,16 +10,28 @@ import Trail from './Trails/Trail'
 import NewTrailForm from './Trails/NewTrailForm'
 
 
-const FillerDiv = styled.div`
-height: 100px
-`
 
 const ParkContainer = styled.div`
 text-align: center;
+/* margin: 10px; */
+
 `
 
 const Description = styled.div`
 margin: 30px 0;
+`
+
+const WeatherContainer = styled.div`
+background-color: white;
+max-width: 300px;
+`
+
+
+const ParkImageMain = styled.div`
+img{
+    max-height: 400px;
+    border-radius: 3px;
+}
 `
 class Park extends Component {
         state ={
@@ -66,8 +78,6 @@ class Park extends Component {
                 
             }
             this.setState({weather: formattedResponse})
-
-            console.log(response.data, 'wether')
         }
 
 
@@ -100,12 +110,12 @@ class Park extends Component {
         return (
             <ParkContainer>
                 <h1>{this.state.park.name}</h1>
-                <img src = {this.state.park.image} />
+              <ParkImageMain><img src = {this.state.park.image} /></ParkImageMain>  
                 
                 <p>{this.state.park.address}</p>
                 <Description>{this.state.park.description}</Description>
 
-                <div>
+                <WeatherContainer>
                     <h5>Current Weather</h5>
                 <p>{this.state.weather.temp}°F </p>
                 <p> {this.state.weather.general}</p>
@@ -115,7 +125,7 @@ class Park extends Component {
                 <p>humidity: {this.state.weather.humidity}%</p>
                 <p>wind speed: {this.state.weather.windSpeed}</p>
             
-                </div>
+                </WeatherContainer>
              
 
                 <TrailList parkId={this.state.park.id} trails={this.state.park.trails} deleteATrail={this.deleteATrail}/>

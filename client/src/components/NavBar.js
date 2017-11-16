@@ -119,14 +119,15 @@ class NavBar extends Component {
     // )
         return (
             <BackgroundContainer>
-{/*                 
-        {this.state.signedIn ? <button onClick={this.signOut}>signout</button> :
-        <button onClick={this.goToLogIn}>sign-in</button>
-         }   */}
- 
-            {/* <NavBarLinks><Link to="/sign_up">sign-in</Link></NavBarLinks> */}
+               
+        {this.props.signedIn ? 
+        <button onClick={this.props.signOut}>signout</button> :
+        <button onClick={this.props.goToLogIn}>sign-in</button>
+         }   
+         {this.props.redirectToSignIn ? (<Redirect to="/sign_up" />) : null }           
+
+            
             <NavBarLinks><Link to="/parks">Back to All Parks</Link></NavBarLinks>
-            {/* {this.state.redirectToSignIn ? (<Redirect to="/sign_up" />) : null }            */}
             </BackgroundContainer>
         );
     }
