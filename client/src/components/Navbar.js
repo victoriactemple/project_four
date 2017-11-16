@@ -30,103 +30,103 @@ a {
 
 class NavBar extends Component {
     state = {
-        signedIn: false,
-        redirectToSignIn: false
+        // signedIn: false,
+        // redirectToSignIn: false
       }
     
-      async componentWillMount() {
-          try{
-              const signedIn = userIsLoggedIn()
-              if(signedIn){
-                  setAxiosDefaults()
-              } this.setState({
-                  signedIn
-              })
-          } catch (error){
-              console.log(error)
-          }
-      }
+    //   async componentWillMount() {
+    //       try{
+    //           const signedIn = userIsLoggedIn()
+    //           if(signedIn){
+    //               setAxiosDefaults()
+    //           } this.setState({
+    //               signedIn
+    //           })
+    //       } catch (error){
+    //           console.log(error)
+    //       }
+    //   }
     
     
-      signUp = async (email, password, password_confirmation) => {
-            try {
-                const payload = {
-                    email: email,
-                    password: password,
-                    password_confirmation: password_confirmation
-                }
-                const response = await axios.post('/auth', payload)
-                saveAuthTokens(response.headers)
+    //   signUp = async (email, password, password_confirmation) => {
+    //         try {
+    //             const payload = {
+    //                 email: email,
+    //                 password: password,
+    //                 password_confirmation: password_confirmation
+    //             }
+    //             const response = await axios.post('/auth', payload)
+    //             saveAuthTokens(response.headers)
         
-                this.setState({
-                    signedIn: true,
-                    redirectToSignIn: false
-                })
+    //             this.setState({
+    //                 signedIn: true,
+    //                 redirectToSignIn: false
+    //             })
         
-            } catch (error) {
-                console.log(error)
-            }
-        }
-        
-        
-        signIn = async (email, password) => {
-          try {
-              const payload = {
-                  email,
-                  password
-              }
-              const response = await axios.post('/auth/sign_in', payload)
-              saveAuthTokens(response.headers)
+    //         } catch (error) {
+    //             console.log(error)
+    //         }
+    //     }
         
         
-              this.setState({
-                  signedIn: true,
-                  redirectToSignIn: false 
-              })
+    //     signIn = async (email, password) => {
+    //       try {
+    //           const payload = {
+    //               email,
+    //               password
+    //           }
+    //           const response = await axios.post('/auth/sign_in', payload)
+    //           saveAuthTokens(response.headers)
         
-          } catch (error) {
-              console.log(error)
-          }
-        }
         
-        signOut = async (event) => {
-          try {
-              event.preventDefault()
+    //           this.setState({
+    //               signedIn: true,
+    //               redirectToSignIn: false 
+    //           })
         
-              await axios.delete('/auth/sign_out')
+    //       } catch (error) {
+    //           console.log(error)
+    //       }
+    //     }
         
-              clearAuthTokens();
+    //     signOut = async (event) => {
+    //       try {
+    //           event.preventDefault()
         
-              this.setState({signedIn: false})
-          } catch (error) {
-              console.log(error)
-          }
-        }
+    //           await axios.delete('/auth/sign_out')
+        
+    //           clearAuthTokens();
+        
+    //           this.setState({signedIn: false})
+    //       } catch (error) {
+    //           console.log(error)
+    //       }
+    //     }
         
     
-    goToLogIn = () => {
-        this.setState({redirectToSignIn: true})
-    }
+    // goToLogIn = () => {
+    //     this.setState({redirectToSignIn: true})
+    // }
     
     render() {
            
-      const SignUpLogInComponent = () => (
-        <SignUpLogIn
-            signUp={this.signUp}
-            signIn={this.signIn}
-            signedIn={this.signedIn}
-            />
-    )
+    //   const SignUpLogInComponent = () => (
+    //     <SignUpLogIn
+    //         signUp={this.signUp}
+    //         signIn={this.signIn}
+    //         signedIn={this.signedIn}
+    //         />
+    // )
         return (
             <BackgroundContainer>
-                
+{/*                 
         {this.state.signedIn ? <button onClick={this.signOut}>signout</button> :
         <button onClick={this.goToLogIn}>sign-in</button>
-         }  
+         }   */}
  
             {/* <NavBarLinks><Link to="/sign_up">sign-in</Link></NavBarLinks> */}
             <NavBarLinks><Link to="/parks">Back to All Parks</Link></NavBarLinks>
-            {this.state.redirectToSignIn ? (<Redirect to="/sign_up" />) : null }           
+            {/* {this.state.redirectToSignIn ? (<Redirect to="/sign_up" />) : null }            */}
             </BackgroundContainer>
         );
     }

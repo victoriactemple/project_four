@@ -2,7 +2,13 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import styled from 'styled-components';
+import image from '../mountain_image.jpg'
 
+const MainPageContainer = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+`
 
 const ParkName = styled.h3`
 font-family: 'Lato', sans-serif;
@@ -16,20 +22,31 @@ font-family: 'Lato', sans-serif;
 `
 
 const MainPhoto = styled.div`
-text-align: center;
+padding-right: 100px;
 img {
-    
+    /* max-height: 500px; */
     max-width: 700px;
+    z-index: -1;
 }
 `
+// const MainPhoto = styled.div`
+// height: 500px;
+// width: 900px;
+// background-image: 
+//     url(${image});
+// `
+
+
 
 const ParkListContainer = styled.div`
 text-align: center;
-margin: 0 auto;
+/* margin: 0 auto; */
 background-color: white;
 max-width: 280px;
 
 `
+
+
 
 class ParkList extends Component {
     state = {
@@ -48,9 +65,9 @@ class ParkList extends Component {
 
     render() {
         return (
-            <div>
-                <div>
-                    <h1>GEORGIA STATE PARKS</h1>
+            <MainPageContainer>
+                
+                    {/* <h1>GEORGIA STATE PARKS</h1> */}
                         
                     <ParkListContainer>
                     {this.state.parks.map(park => (
@@ -63,8 +80,10 @@ class ParkList extends Component {
                     ))}
                     </ParkListContainer>
                   <MainPhoto><img src="https://www.lucillesmountaintopinn.com/wp-content/uploads/blog.jpg" /></MainPhoto>  
-                </div>
-            </div>
+
+                
+                
+            </MainPageContainer>
         );
     }
 }

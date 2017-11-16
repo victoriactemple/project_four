@@ -7,7 +7,6 @@ class TrailCommentForm extends Component {
             title: '',
             content: ''
         }
-
     }
 
 handleChange=(event) => {
@@ -35,7 +34,6 @@ const res = await axios.post(`/api/parks/${park_id}/trails/${trailId}/trail_comm
 this.setState({
                 trailComment: emptyForm
 })
-
 
 this.props.toggleAddComment()
 this.props.getTrailAndComments()

@@ -26,7 +26,8 @@ body{
 class App extends Component {
   state = {
     signedIn: false,
-    redirectToSignIn: false
+    redirectToSignIn: false,
+    error: ''
   }
 
   async componentWillMount() {
@@ -113,25 +114,25 @@ render() {
         />
 )
 
-// const SignedInState = () => {
-//     <Trail signedIn={this.state.signedIn}/>
-// }
- //  if signed in is true, then call the signout function and 
+const SignedInState = () => {
+    <TrailCommentForm signedIn={this.state.signedIn}/>
+}
+//   if signed in is true, then call the signout function and 
     // {this.state.signedIn ? 
-    //     //  and have button display signout 
-    //     <button onClick={this.signOut}>signout</button> :
-    //     // if you are !not signed in yet
-    //     // when clicked, it redirects to form
-    //     
-    //     }
+        //  and have button display signout 
+        // <button onClick={this.signOut}>signout</button> :
+        // if you are !not signed in yet
+        // when clicked, it redirects to form
+        
+        
 
     return (
      <Router>
        <div>
-       {/* {this.state.signedIn ? 
+       {this.state.signedIn ? 
         <button onClick={this.signOut}>signout</button> :
         <button onClick={this.goToLogIn}>sign-in</button>
-         } */}
+         }
          <NavBar />
           <Switch>
               <Route exact path="/parks" component={ParkList} />
@@ -143,7 +144,7 @@ render() {
   
              
           </Switch>
-          {/* {this.state.redirectToSignIn ? (<Redirect to="/sign_up" />) : null } */}
+          {this.state.redirectToSignIn ? (<Redirect to="/sign_up" />) : null }
           <Footer />
        </div>
      </Router>
