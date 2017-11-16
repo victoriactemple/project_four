@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import image from '../mountain_image.jpg'
 
 const MainPageContainer = styled.div`
+@media only screen and (min-width: 1024px);
 display: flex;
 justify-content: center;
 align-items: center;
@@ -22,19 +23,19 @@ font-family: 'Lato', sans-serif;
 `
 
 const MainPhoto = styled.div`
-padding-right: 100px;
+
 img {
     /* max-height: 500px; */
     max-width: 700px;
     z-index: -1;
 }
 `
-// const MainPhoto = styled.div`
+/* // const MainPhoto = styled.div`
 // height: 500px;
 // width: 900px;
 // background-image: 
 //     url(${image});
-// `
+// ` */
 
 
 

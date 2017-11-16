@@ -12,9 +12,14 @@ import NewTrailForm from './Trails/NewTrailForm'
 
 
 const ParkContainer = styled.div`
+/* font-family: 'Actor', sans-serif; */
 text-align: center;
 /* margin: 10px; */
+`
 
+const ParkName = styled.h1`
+font-family: 'Arimo', sans-serif;
+font-weight: 25px;
 `
 
 const Description = styled.div`
@@ -22,6 +27,7 @@ margin: 30px 0;
 `
 
 const WeatherContainer = styled.div`
+font-family: 'Kameron', serif;
 background-color: white;
 max-width: 300px;
 `
@@ -109,13 +115,7 @@ class Park extends Component {
     render() {
         return (
             <ParkContainer>
-                <h1>{this.state.park.name}</h1>
-              <ParkImageMain><img src = {this.state.park.image} /></ParkImageMain>  
-                
-                <p>{this.state.park.address}</p>
-                <Description>{this.state.park.description}</Description>
-
-                <WeatherContainer>
+                   <WeatherContainer>
                     <h5>Current Weather</h5>
                 <p>{this.state.weather.temp}°F </p>
                 <p> {this.state.weather.general}</p>
@@ -126,6 +126,15 @@ class Park extends Component {
                 <p>wind speed: {this.state.weather.windSpeed}</p>
             
                 </WeatherContainer>
+
+                <ParkName>{this.state.park.name}</ParkName>
+
+              <ParkImageMain><img src = {this.state.park.image} /></ParkImageMain>  
+                
+                <p>{this.state.park.address}</p>
+                <Description>{this.state.park.description}</Description>
+
+             
              
 
                 <TrailList parkId={this.state.park.id} trails={this.state.park.trails} deleteATrail={this.deleteATrail}/>

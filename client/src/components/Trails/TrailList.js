@@ -1,6 +1,42 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Trail from './Trail'
+import styled from 'styled-components';
+
+const TrailListContainer = styled.div`
+@media only screen and (min-width: 1024px);
+display: flex;
+flex-flow: row wrap;
+justify-content: space-around;
+align-items: center;
+/* border: solid black; */
+margin: 0 auto;
+padding-left: 30px;
+padding-right: 30px;
+padding-bottom: 30px;
+
+`
+const TrailName = styled.div`
+font-size: 20px;
+
+a {
+    font-family: 'Raleway', sans-serif;
+    color: black;
+    text-decoration: none;
+    /* color: rgb(104, 153, 80) */
+}
+`
+
+
+const TrailListImage = styled.div`
+img {
+    max-width: 350px;
+}
+a{
+    text-decoration: none;
+}
+`
+
 
 class TrailList extends Component {
   
@@ -9,27 +45,29 @@ class TrailList extends Component {
     }
     render() {
         return (
-            <div>
-                <h2>TrailList</h2>
+            <TrailListContainer>
+                
                 
                 {this.props.trails.map((trail) => {
                 return(
-                   <div key={trail.id}>
+                   <TrailName key={trail.id}>
 
                    
                    
                    <Link to={`/parks/${this.props.parkId}/trails/${trail.id}`}>
-                            <h3>{trail.name}</h3>
-                            <div> <img src ={trail.image} /></div>
+                            
+                            <TrailListImage> <img src ={trail.image} /></TrailListImage>
+                            <TrailName>{trail.name}</TrailName>
                             
                     </Link>
+                    </TrailName>
                     
-                    </div>
+                   
                 )
                
                 })}
 
-            </div>
+        </TrailListContainer>
         );
     }
 }
