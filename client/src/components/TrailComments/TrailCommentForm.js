@@ -2,13 +2,52 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import styled from 'styled-components';
 
+const Input = styled.input.attrs({
+    
+	margin: props => props.size || '.5em',
+	padding: props => props.size || '.5em'
+})`
+	color: black;
+    font-family: "Oxygen", sans-serif;
+	font-size: em;
+	border: 2px solid black;
+	border-radius: 3px;
+
+    margin: ${props => props.margin};
+	padding: ${props => props.padding};
+`
+
+
+const TextArea = styled.textarea.attrs({
+    
+	margin: props => props.size || '1em',
+	padding: props => props.size || '2em'
+})`
+	color: black;
+    font-family: "Oxygen", sans-serif;
+	font-size: 0.75em;
+	border: 2px solid black;
+	border-radius: 3px;
+
+    margin: ${props => props.margin};
+	padding: ${props => props.padding};
+`
+
+
+const CommentFormContainer = styled.div`
+text-align: center;
+border: 1px solid rgba(87, 87, 87, .2); 
+border-radius: 3px;
+`
+
+
 
 const Button = styled.button`
 cursor: pointer;
 background: white;
 color: black;
 font-size: 1em;
-margin: 1em;
+margin: .6em;
 padding: 0.25em 1em;
 border: 2px solid black;
 border-radius: 3px;
@@ -61,10 +100,10 @@ this.props.getTrailAndComments()
 
     render() {
         return (
-            <div>
+            <CommentFormContainer>
                 <form onSubmit={this.handleSubmit}>
                     <div>
-                        <input
+                        <Input
                         onChange={this.handleChange} 
                         type="text"
                         name="title"
@@ -73,7 +112,7 @@ this.props.getTrailAndComments()
                         />
                     </div>
                     <div>
-                        <textarea 
+                        <TextArea 
                         onChange={this.handleChange}
                         type="text"
                         name="content"
@@ -83,11 +122,11 @@ this.props.getTrailAndComments()
                     </div>
 
                     <div>
-                       <Button>submit</Button>
+                       <Button><i class="fa fa-floppy-o" aria-hidden="true"></i></Button>
                     </div>
 
                 </form>
-            </div>
+            </CommentFormContainer>
         );
     }
 }

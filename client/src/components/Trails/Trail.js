@@ -119,16 +119,17 @@ class Trail extends Component {
                     <TrailImage><img src={this.state.trail.image} /> </TrailImage>
 
 
-                    <Button onClick={this.deleteATrail}>delete
+                    <Button onClick={this.deleteATrail}> 
+                    <i className="fa fa-trash-o" aria-hidden="true"/>
                     </Button>
                     <Button><Link to={{
                         pathname: `/parks/${this.state.trail.park_id}/trails/${this.state.trail.id}/edit`,
                         state: { trails: this.state.trail }
-                    }}>edit</Link></Button>
+                    }}><i class="fa fa-pencil-square-o" aria-hidden="true"></i></Link></Button>
 
-                    <Button> <Link to={{
+                    {/* <Button> <Link to={{
                         pathname: `/parks/${this.state.trail.park_id}`,
-                    }}>all parks</Link></Button>
+                    }}>all parks</Link></Button> */}
 
                 
 
