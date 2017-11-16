@@ -4,7 +4,7 @@ import Trail from './Trail'
 import styled from 'styled-components';
 
 const TrailListContainer = styled.div`
-@media only screen and (min-width: 1024px);
+    @media only screen and (min-width: 1024px);
 display: flex;
 flex-flow: row wrap;
 justify-content: space-around;

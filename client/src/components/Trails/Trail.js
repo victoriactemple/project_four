@@ -11,8 +11,35 @@ const TrailImage = styled.div`
 img {
     max-width: 400px;
 }
-
 `
+
+const TrailContainer = styled.div`
+@media only screen and (min-width: 1024px);
+margin-left: 100px;
+margin-right: 100px
+// text-align: center;
+`
+
+const Button = styled.button`
+cursor: pointer;
+background: white;
+color: black;
+font-size: 1em;
+margin: 1em;
+padding: 0.25em 1em;
+border: 2px solid black;
+border-radius: 3px;
+&:hover{
+    box-shadow: 1px 1px 2px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+`
+
+
+
 
 class Trail extends Component {
     state = {
@@ -80,6 +107,9 @@ class Trail extends Component {
         if (!this.state.editTrailDetails) {
             return (
                 <div>
+
+                    <TrailContainer>
+
                     <h2>{this.state.trail.name}</h2>
                     <p>distance: {this.state.trail.distance} miles</p>
                     <p>difficulty: {this.state.trail.difficulty}</p>
@@ -89,17 +119,18 @@ class Trail extends Component {
                     <TrailImage><img src={this.state.trail.image} /> </TrailImage>
 
 
-                    <button onClick={this.deleteATrail}>Delete Trail</button>
-                    <Link to={{
+                    <Button onClick={this.deleteATrail}>delete
+                    </Button>
+                    <Button><Link to={{
                         pathname: `/parks/${this.state.trail.park_id}/trails/${this.state.trail.id}/edit`,
                         state: { trails: this.state.trail }
-                    }}>Edit Trail</Link>
+                    }}>edit</Link></Button>
 
-                    <Link to={{
+                    <Button> <Link to={{
                         pathname: `/parks/${this.state.trail.park_id}`,
-                    }}>Back to Parks </Link>
+                    }}>all parks</Link></Button>
 
-
+                
 
                  
 
@@ -115,7 +146,7 @@ class Trail extends Component {
 
                     <TrailCommentList comments={this.state.trail.trail_comments}
                         toggleAddComment={this.toggleAddComment} />
-
+                </TrailContainer>
                 </div>
             )
         }

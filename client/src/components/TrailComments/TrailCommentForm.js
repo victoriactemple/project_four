@@ -1,5 +1,25 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import styled from 'styled-components';
+
+
+const Button = styled.button`
+cursor: pointer;
+background: white;
+color: black;
+font-size: 1em;
+margin: 1em;
+padding: 0.25em 1em;
+border: 2px solid black;
+border-radius: 3px;
+&:hover{
+    box-shadow: 1px 1px 2px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+`
 
 class TrailCommentForm extends Component {
     state={
@@ -63,7 +83,7 @@ this.props.getTrailAndComments()
                     </div>
 
                     <div>
-                       <button>submit</button>
+                       <Button>submit</Button>
                     </div>
 
                 </form>
