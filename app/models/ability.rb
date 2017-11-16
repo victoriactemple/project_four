@@ -5,7 +5,7 @@ class Ability
     user || = User.new # guest user (not logged in)
     # can :read, Comment
 
-    can [:destory], TrailComment do |trail_comment|
+    can [:create, :destory], TrailComment do |trail_comment|
       trail_comment.user == user
     end
 

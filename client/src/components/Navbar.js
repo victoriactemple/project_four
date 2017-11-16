@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components';
 
 const NavBarLinkHolder = styled.div`
+font-family: 'News Cycle', sans-serif;
 display: flex;
+background-color: rgba(237, 234, 231, 100);
 flex-direction: row;
 Justify-content: space-around;
 padding-right: 20px;

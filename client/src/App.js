@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import {clearAuthTokens, saveAuthTokens, setAxiosDefaults, userIsLoggedIn} from "./util/SessionHeaderUtil"
 import axios from 'axios'
+import styled from 'styled-components';
+import { injectGlobal } from 'styled-components'
+
 import NavBar from './components/Navbar'
 import ParkList from './components/ParkList'
 import Park from './components/Park'
@@ -13,6 +16,11 @@ import Trail from './components/Trails/Trail'
 import TrailCommentForm from './components/TrailComments/TrailCommentForm'
 import EditTrailForm from './components/Trails/EditTrailForm'
 
+injectGlobal`
+body{
+    background-color: rgb(251, 250, 248)
+}
+`
 
 
 class App extends Component {
