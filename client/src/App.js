@@ -19,6 +19,7 @@ import EditTrailForm from './components/Trails/EditTrailForm'
 injectGlobal`
 body{
     background-color: rgb(251, 250, 248)
+    /* background-color: ghost-white; */
 }
 `
 

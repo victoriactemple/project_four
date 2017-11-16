@@ -5,7 +5,9 @@ Trail.destroy_all
 TrailComment.destroy_all
 
 providence_canyon = Park.create({name: "Providence Canyon", 
-description: "Providence Canyon State Outdoor Recreation Area is a 1,003 acres state park located in Stewart County in southwest Georgia. The park contains Providence Canyon, which is sometimes called Georgia's 'Little Grand Canyon'.", 
+description: "Georgia’s “Little Grand Canyon” is a testament to the power of man’s influence on the land. Massive gullies as deep as 150 feet were caused simply by poor farming practices during the 1800s, yet today they make some of the prettiest photographs within the state. The rare Plumleaf Azalea grows only in this region and blooms during July and August when most azaleas have lost their color. The canyon soil’s pink, orange, red and purple hues make a beautiful natural painting at this quiet park.
+
+Visitors can enjoy views of the canyons from the rim trail, taking care to stay behind fences and off the fragile canyon edge. Hikers who explore the deepest canyons will usually find a thin layer of water along the trail, indication of the water table below. Guests who hike to canyons 4 and 5 may want to join the Canyon Climbers Club. Backpackers can stay overnight along the backcountry trail which highlights portions of the canyon and winds through mixed forest. Camping, cottages and efficiency units are available nearby at Florence Marina State Park on 45,000 acre Lake Walter F. George.", 
 image: "http://gastateparks.org/sites/default/files/parks/ProvidenceCanyon.jpg",
 address: "8930 Canyon Rd, Lumpkin, GA 31815", 
 lat: 32.0675, 

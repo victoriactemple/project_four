@@ -10,14 +10,16 @@ flex-flow: row wrap;
 justify-content: space-around;
 align-items: center;
 /* border: solid black; */
-margin: 0 auto;
-padding-left: 30px;
+/* margin: 0 auto; */
+
+/* padding-left: 30px;
 padding-right: 30px;
-padding-bottom: 30px;
+padding-bottom: 30px; */
 
 `
 const TrailName = styled.div`
 font-size: 20px;
+text-align: center;
 
 a {
     font-family: 'Raleway', sans-serif;

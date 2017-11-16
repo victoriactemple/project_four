@@ -12,28 +12,54 @@ import NewTrailForm from './Trails/NewTrailForm'
 
 
 const ParkContainer = styled.div`
-/* font-family: 'Actor', sans-serif; */
-text-align: center;
+font-family: 'Actor', sans-serif;
+margin-left: 60px;
+margin-right: 60px;
+/* text-align: center; */
 /* margin: 10px; */
+`
+const Address = styled.div`
+text-align: center;
+padding-bottom: 10px;
+padding-top: 10px;
 `
 
 const ParkName = styled.h1`
+text-align: center;
 font-family: 'Arimo', sans-serif;
 font-weight: 25px;
 `
 
 const Description = styled.div`
-margin: 30px 0;
+margin-left: 100px;
+margin-right: 100px;
+margin-bottom: 20px;
+padding: 15px;
+background-color: rgba(212, 209, 188, .2);
+/* border: solid 1px; */
+
 `
 
 const WeatherContainer = styled.div`
+text-align: center;
+margin: 0 auto;
 font-family: 'Kameron', serif;
 background-color: white;
 max-width: 300px;
+margin-bottom: 20px;
+margin-top: 20px;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+`
+const TrailListContainer = styled.div`
+margin-left: 60px;
+margin-right: 60px;
+
 `
 
 
 const ParkImageMain = styled.div`
+text-align: center;
 img{
     max-height: 400px;
     border-radius: 3px;
@@ -115,7 +141,16 @@ class Park extends Component {
     render() {
         return (
             <ParkContainer>
-                   <WeatherContainer>
+
+
+                <ParkName>{this.state.park.name}</ParkName>
+
+              <ParkImageMain><img src = {this.state.park.image} /></ParkImageMain>  
+                
+                <Address>{this.state.park.address}</Address>
+                <Description>{this.state.park.description}</Description>
+
+                <WeatherContainer>
                     <h5>Current Weather</h5>
                 <p>{this.state.weather.temp}°F </p>
                 <p> {this.state.weather.general}</p>
@@ -126,19 +161,12 @@ class Park extends Component {
                 <p>wind speed: {this.state.weather.windSpeed}</p>
             
                 </WeatherContainer>
-
-                <ParkName>{this.state.park.name}</ParkName>
-
-              <ParkImageMain><img src = {this.state.park.image} /></ParkImageMain>  
-                
-                <p>{this.state.park.address}</p>
-                <Description>{this.state.park.description}</Description>
-
              
              
-
+                <TrailListContainer>
                 <TrailList parkId={this.state.park.id} trails={this.state.park.trails} deleteATrail={this.deleteATrail}/>
                 <button onClick={this.toggleShowNewTrailForm}>Submit a new trail</button>
+                </TrailListContainer>
 
                 {this.state.showNewTrailForm ? <NewTrailForm 
                 park_id={this.state.park.id} 
