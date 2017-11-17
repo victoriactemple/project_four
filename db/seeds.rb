@@ -109,9 +109,7 @@ zipcode: 30534
 stephen_c_foster = Park.create({name: "Stephen C Foster", 
 description: "\tThis remote park is a primary entrance to the legendary Okefenokee Swamp—one of Georgia's seven natural wonders. Spanish moss-laced trees reflect off the black swamp waters, while cypress knees rise upward from the glass-like surface. Here, paddlers and photographers will enjoy breathtaking scenery and abundant wildlife. Alligators, turtles, raccoons, black bears, deer, ibis, herons, wood storks, red-cockaded woodpeckers and numerous other creatures make their homes in the 402,000 acre refuge. Stargazers will appreciate the particularly dark sky.
 
-\tSame-day reservations are recommended for guided pontoon boat tours of the swamp. Sunset tours may be available. More adventurous visitors may wish to rent canoes, kayaks or jon boats for further exploration of the swamp, including a trip to historic Billy’s Island. Fishing in the lake is excellent, particularly for warmouth, bluegill, catfish, chain pickerel and bowfin. Boating is dependent upon water levels.
-
-",
+\tSame-day reservations are recommended for guided pontoon boat tours of the swamp. Sunset tours may be available. More adventurous visitors may wish to rent canoes, kayaks or jon boats for further exploration of the swamp, including a trip to historic Billy’s Island. Fishing in the lake is excellent, particularly for warmouth, bluegill, catfish, chain pickerel and bowfin. Boating is dependent upon water levels.",
 image: "https://i.imgur.com/Th47a4a.jpg",
 address: "17515 GA-177, Fargo, GA 31631", 
 lat: 34.7335, 
@@ -179,25 +177,41 @@ providence_canyon_loop_trail = Trail.create({
     so wear appropriate footwear."
 })
 
-providence_canyon_other_loop_trail = Trail.create({
-    difficulty: "easy",
-    elevation_profile: "https://2wzlm92dvpgd3a560m9ue6tx-wpengine.netdna-ssl.com/images/providence-canyon-hiking-trail-loop/providence-canyon-trail-elevation-profile.png",
-    image: "http://www.hikingtheappalachians.com/uploads/2/4/2/9/24290352/6751664_orig.jpg",
+homestead_trail = Trail.create({
+    difficulty: "https://i.imgur.com/Pjy7TV9.png",
+    elevation_profile: "https://upload.wikimedia.org/wikipedia/commons/d/d2/Providence_Canyon_old_car.jpg",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Providence_canyon_car1.jpg/2560px-Providence_canyon_car1.jpg",
     pet_friendly: "https://i.imgur.com/vEB2ZHp.png",
     distance: 0.25,
     park_id: providence_canyon.id,
-    name: "Providence Canyon Loop Trail"
+    name: "Homestead Trail",
+    description: "Take a trek back to an abandoned homestead. One of the quirkier attractions of the state park is an abandoned homestead including nearly a dozen rusty, 1950s-era cars and trucks. Due to the environmental damage that removing the vehicles would cause, park officials have decided to leave them alone."
 })
 
 
-providence_canyon_other_another_loop_trail = Trail.create({
-    difficulty: "easy",
-    elevation_profile: "https://2wzlm92dvpgd3a560m9ue6tx-wpengine.netdna-ssl.com/images/providence-canyon-hiking-trail-loop/providence-canyon-trail-elevation-profile.png",
-    image: "http://www.hikingtheappalachians.com/uploads/2/4/2/9/24290352/6751664_orig.jpg",
-    pet_friendly: "https://i.imgur.com/vEB2ZHp.png",
-    distance: 0.25,
+backcountry_red_blaze_trail = Trail.create({
+    difficulty: "https://i.imgur.com/StjacU0.png",
+    elevation_profile: "https://i.imgur.com/dm0xbJM.jpg",
+    image: "https://i.imgur.com/y03TjAb.jpg",
+    pet_friendly: "https://i.imgur.com/kVYdbSU.png",
+    distance: 7.05,
     park_id: providence_canyon.id,
-    name: "Providence Canyon Loop Trail"
+    name: "Back Country Red Blaze Trail",
+    description: "The 7-mile Backcountry Trail leads into the forested area off of
+    the White Blaze Canyon Loop Trail. The beginning of it is ¼ of
+    a mile down the Loop Trail at the creek bed itself. Instead of
+    turning left into the canyons, turn right on the creek bed. This
+    is the beginning of the Backcountry Trail, which winds through
+    some River Birch. After about two miles, it becomes rugged,
+    ascending a steep grade. It follows an old logging road, where
+    most of the primitive campsites are located. At site #2, a
+    shortcut is available which will shorten the trail about ¾ of a
+    mile. Further down the trail, as the trail becomes rugged again,
+    six canyons may be viewed, but they are not accessible to the
+    hikers. The Backcountry Trail will dead-end into the Loop Trail,
+    where hikers will turn right. This will continue through the day
+    use area. Follow the fence line through the picnic area for the
+    best overlooks, returning to the Visitor Center."
 })
 
 
@@ -231,19 +245,36 @@ veronica_comment = TrailComment.create({
     trail_id: providence_canyon_loop_trail.id 
 })
 
+veronica_comment = TrailComment.create({
+    title: "Our Favorite",
+    content: "We've been here about a zillion times and it's just one of the most magnificent!",
+    user_id: veronica.id,
+    trail_id: providence_canyon_loop_trail.id 
+})
+
+veronica_comment = TrailComment.create({
+    title: "A Hit!",
+    content: "The kids absolutely loved it!",
+    user_id: veronica.id,
+    trail_id: providence_canyon_loop_trail.id 
+})
+
+
+
+
 
 
 veronica_comment = ParkComment.create({
-    title: "He proposed here",
-    content: "It was so romantic!",
+    title: "A Hit!",
+    content: "The kids absolutely loved it!",
     user_id: veronica.id,
     park_id: providence_canyon.id 
 })
 
 
 veronica_comment = ParkComment.create({
-    title: "He proposed here",
-    content: "It was so romantic!",
+    title: "Our Favorite",
+    content: "We've been here about a zillion times and it's just one of the most magnificent!",
     user_id: veronica.id,
     park_id: providence_canyon.id 
 })
