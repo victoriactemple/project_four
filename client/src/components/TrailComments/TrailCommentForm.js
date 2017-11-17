@@ -43,7 +43,8 @@ const TextArea = styled.textarea.attrs({
 
 const CommentFormContainer = styled.div`
 text-align: center;
-border: 1px solid rgba(87, 87, 87, .2); 
+padding-top: 20px;
+/* border: 1px solid rgba(87, 87, 87, .5);  */
 border-radius: 3px;
 `
 
