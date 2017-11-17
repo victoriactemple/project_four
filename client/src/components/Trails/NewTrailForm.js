@@ -11,7 +11,7 @@ const Input = styled.input.attrs({
 })`
 	color: black;
     font-family: "Oxygen", sans-serif;
-	font-size: em;
+	font-size: 1em;
 	border: 2px solid black;
 	border-radius: 3px;
 
@@ -73,7 +73,7 @@ class NewTrailForm extends Component {
     state ={
         newTrail: {
             name: '',
-            difficulty: '',
+            description: '',
             image: '',
             distance: '',
         
@@ -117,7 +117,7 @@ class NewTrailForm extends Component {
                     <Input onChange={this.handleChange} type="text" name="name" value={this.state.newTrail.name} placeholder="name"/>
                 </div>
                 <div>
-                    <Input onChange={this.handleChange} type="text" name="difficulty" value={this.state.newTrail.difficulty} placeholder="difficulty" />
+                    <Input onChange={this.handleChange} type="text" name="description" value={this.state.newTrail.description} placeholder="description" />
                 </div>
                 <div>
                     <Input onChange={this.handleChange} type="text" name="image" value={this.state.newTrail.image} placeholder="image"/>
