@@ -122,7 +122,7 @@ this.props.getTrailAndComments()
                     </div>
 
                     <div>
-                       <Button><i class="fa fa-floppy-o" aria-hidden="true"></i></Button>
+                       <Button><i class="fa fa-lock" aria-hidden="true" title="save"></i> post</Button>
                     </div>
 
                 </form>

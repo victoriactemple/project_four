@@ -1,6 +1,64 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
+import styled from 'styled-components';
+
+
+const Input = styled.input.attrs({
+    
+	margin: props => props.size || '.5em',
+	padding: props => props.size || '.5em'
+})`
+	color: black;
+    font-family: "Oxygen", sans-serif;
+	font-size: em;
+	border: 2px solid black;
+	border-radius: 3px;
+
+    margin: ${props => props.margin};
+	padding: ${props => props.padding};
+`
+
+
+const TextArea = styled.textarea.attrs({
+    
+	margin: props => props.size || '1em',
+	padding: props => props.size || '2em'
+})`
+	color: black;
+    font-family: "Oxygen", sans-serif;
+	font-size: 0.75em;
+	border: 2px solid black;
+	border-radius: 3px;
+
+    margin: ${props => props.margin};
+	padding: ${props => props.padding};
+`
+
+
+const TrailFormContainer = styled.div`
+text-align: center;
+border: 1px solid rgba(87, 87, 87, .2); 
+border-radius: 3px;
+`
+
+
+
+const Button = styled.button`
+    cursor: pointer;
+	color: black;
+	font-size: 1em;
+	margin: 1em;
+	padding: 0.25em 1em;
+	border: 2px solid black;
+	border-radius: 3px;
+    &:hover{
+        box-shadow: 1px 1px 2px;
+    }
+    &:focus{
+        outline: none;
+    }
+`
 
 class NewTrailForm extends Component {
     state ={
@@ -44,24 +102,28 @@ class NewTrailForm extends Component {
     
     render() {
         return (
-            <div>
+            <TrailFormContainer>
                  <form onSubmit={this.handleSubmit}>
                 <div>
-                    <input onChange={this.handleChange} type="text" name="name" value={this.state.newTrail.name} placeholder="name"/>
+                    <Input onChange={this.handleChange} type="text" name="name" value={this.state.newTrail.name} placeholder="name"/>
                 </div>
                 <div>
-                    <input onChange={this.handleChange} type="text" name="difficulty" value={this.state.newTrail.difficulty} placeholder="difficulty" />
+                    <Input onChange={this.handleChange} type="text" name="difficulty" value={this.state.newTrail.difficulty} placeholder="difficulty" />
                 </div>
                 <div>
-                    <input onChange={this.handleChange} type="text" name="image" value={this.state.newTrail.image} placeholder="image"/>
+                    <Input onChange={this.handleChange} type="text" name="image" value={this.state.newTrail.image} placeholder="image"/>
                 </div>
                 <div>
-                    <input onChange={this.handleChange} type="number" name="distance" value={this.state.newTrail.distance} placeholder="distance"/>
+                    <Input onChange={this.handleChange} type="number" name="distance" value={this.state.newTrail.distance} placeholder="distance"/>
                 </div>
 
-            <button onClick={this.toggleEditTrail}>submit changes</button>
+
+            <Button onClick={this.toggleEditTrail}>
+            <i class="fa fa-lock" aria-hidden="true"></i> submit</Button>
+           
+            {/* <SaveButton><i class="fa fa-lock" aria-hidden="true"></i> save</SaveButton> */}
                 </form>
-            </div>
+            </TrailFormContainer>
         );
     }
 }

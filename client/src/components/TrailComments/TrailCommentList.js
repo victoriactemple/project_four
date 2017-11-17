@@ -3,7 +3,7 @@ import TrailComment from './TrailComment'
 import TrailCommentForm from './TrailCommentForm'
 import styled from 'styled-components';
 
-const Button = styled.button`
+const AddCommentButton = styled.button`
 cursor: pointer;
 background: white;
 color: black;
@@ -19,6 +19,9 @@ a{
     text-decoration: none;
     color: black;
 }
+&:focus{
+        outline: none;
+    }
 `
 
 
@@ -33,7 +36,14 @@ const TrailCommentList = (props) => {
             })}
             
             <br />
-            <Button onClick={props.toggleAddComment}>add comment</Button>
+            <AddCommentButton onClick={props.toggleAddComment}>
+           
+             <span class="sr-only"> add comment </span><span></span>
+            <i class="fa fa-comment" aria-hidden="true" title="add comment"></i>
+            <span></span> add comment
+            
+            
+            </AddCommentButton>
         </div>
     );
 };

@@ -8,6 +8,7 @@ import CommentForm from './Comments/CommentForm'
 import TrailList from './Trails/TrailList'
 import Trail from './Trails/Trail'
 import NewTrailForm from './Trails/NewTrailForm'
+import Buttons from './Styled-Components/Buttons'
 
 
 
@@ -55,6 +56,23 @@ const TrailListContainer = styled.div`
 margin-left: 60px;
 margin-right: 60px;
 
+`
+
+
+const AddTrailButton = styled.button`
+    cursor: pointer;
+	color: black;
+	font-size: 1em;
+	margin: 1em;
+	padding: 0.25em 1em;
+	border: 2px solid black;
+	border-radius: 3px;
+    &:hover{
+        box-shadow: 1px 1px 2px;
+    }
+    &:focus{
+        outline: none;
+    }
 `
 
 
@@ -151,21 +169,28 @@ class Park extends Component {
                 <Description>{this.state.park.description}</Description>
 
                 <WeatherContainer>
-                    <h5>Current Weather</h5>
-                <p>{this.state.weather.temp}°F </p>
-                <p> {this.state.weather.general}</p>
-                <img src={`http://openweathermap.org/img/w/${this.state.weather.icon}.png`} />
-                
-                <p>{this.state.weather.description} </p>
-                <p>humidity: {this.state.weather.humidity}%</p>
-                <p>wind speed: {this.state.weather.windSpeed}</p>
+                        <h5>Current Weather</h5>
+                    <p>{this.state.weather.temp}°F </p>
+                    <p> {this.state.weather.general}</p>
+                    <img src={`http://openweathermap.org/img/w/${this.state.weather.icon}.png`} />
+                    
+                    <p>{this.state.weather.description} </p>
+                    <p>humidity: {this.state.weather.humidity}%</p>
+                    <p>wind speed: {this.state.weather.windSpeed}</p>
             
                 </WeatherContainer>
              
              
                 <TrailListContainer>
                 <TrailList parkId={this.state.park.id} trails={this.state.park.trails} deleteATrail={this.deleteATrail}/>
-                <button onClick={this.toggleShowNewTrailForm}>Submit a new trail</button>
+
+                    <AddTrailButton 
+                    
+                    onClick={this.toggleShowNewTrailForm}>
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                   <span></span>  new trail
+                    </AddTrailButton> 
+
                 </TrailListContainer>
 
                 {this.state.showNewTrailForm ? <NewTrailForm 

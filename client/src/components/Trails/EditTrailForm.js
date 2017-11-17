@@ -50,14 +50,14 @@ const Input = styled.input.attrs({
 	padding: ${props => props.padding};
 `
 
-const Button = styled.button`
+const SaveButton = styled.button`
 cursor: pointer;
- background: #62C1FF;
-	color: white;
+    
+	color: black;
 	font-size: 1em;
 	margin: 1em;
 	padding: 0.25em 1em;
-	border: 2px solid white;
+	border: 2px solid black;
 	border-radius: 3px;
     &:hover{
         box-shadow: 1px 1px 2px;
@@ -148,7 +148,7 @@ if (this.state.redirectToTrail) {
                 </div>
             
 
-            <button>submit changes</button>
+            <SaveButton><i class="fa fa-lock" aria-hidden="true"></i> save</SaveButton>
                 </form>
                 </FormContainer>
             </FormContainerParentContainer>
