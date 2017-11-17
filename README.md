@@ -33,5 +33,9 @@ Before attending GA, my finance and I hiked every weekend. We've been to dozens 
 
 #### For the Future - Version Two:
 1. Fixing the nav-bar links and sticky footer
-2. 
+2. Validation of the user so that when they are not signed in and they try to leave a comment, they are prompted to sign in. 
+3. User's profile page -- showing them their name and their information should they need to edit or change information. 
+4. Rate the comments -- say if something was helpful or not. 
+5. Some items have been hard coded in, like the difficulty level and if pets are allowed or not on the trail and I would like to change those to be multiple choice and booleans respectively. 
+
 
