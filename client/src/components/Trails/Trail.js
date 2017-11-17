@@ -80,7 +80,7 @@ margin: auto;
 min-height: 60px;
 padding: 20px 10px 9px 20px;
 max-width: 550px;
-border: 2px solid #d7d7d7;
+border: 2px solid rgba(237, 234, 231, 100);
 border-radius: 2px;
 background-color: white;
 img{
