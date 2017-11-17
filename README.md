@@ -13,7 +13,7 @@ Before attending GA, my finance and I hiked every weekend. We've been to dozens 
 [WireFrame](https://marvelapp.com/279hj66 "Wireframe")
 
 ### ERD: 
-<img src="/project_four_erd.jpg" width="500">
+<img src="/erd_project_four.jpg" width="500">
 
 
 #### Technologies Used:
