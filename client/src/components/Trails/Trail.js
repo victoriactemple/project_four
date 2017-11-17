@@ -50,27 +50,53 @@ a{
     outline: none;
 }
 `
-const TrailInfo = styled.div`
+/* const TrailInfo = styled.div`
+@media only screen and (min-width: 1024px);
 font-family: "Oxygen", sans-serif;
+display: flex;
+align-items: center;
+justify-content: space-evenly;
 margin-left: 250px;
 margin-right: 250px;
 margin-bottom: 20px;
 padding: 15px;
-max-width: 500px;
-background-color: white;
-drop-shaddow: 1px box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+max-width: 550px;
 
+background-color: white;
+img{
+    max-width: 80px;
+}
+` */
+
+const TrailInfo = styled.div`
+/* @media only screen and (min-width: 500px); */
+font-family: "Oxygen", sans-serif;
+display: flex;
+
+align-items: center;
+justify-content: space-around;
+/* margin: 40px 10px 40px 15px; */
+margin: auto;
+min-height: 60px;
+padding: 20px 10px 9px 20px;
+max-width: 550px;
+border: 2px solid #d7d7d7;
+border-radius: 2px;
+background-color: white;
 img{
     max-width: 80px;
 }
 `
-
+/* const TrailInfoContainer = styled.div`
+margin: 0 auto;
+` */
 
 const Description = styled.div`
 text-align: left;
 margin-left: 100px;
 margin-right: 100px;
 margin-bottom: 20px;
+margin-top: 40px;
 padding: 15px;
 background-color: rgba(212, 209, 188, .2);
 /* border: solid 1px; */
@@ -153,12 +179,17 @@ class Trail extends Component {
                     <ParkName>{this.state.trail.name}</ParkName>
                      <TrailImage><img src={this.state.trail.image} /> </TrailImage>
                     
+                    
 
                         <TrailInfo>
-                            <p> {this.state.trail.distance} miles</p>
+                        <span>distance: 
+                        <p> {this.state.trail.distance} miles</p></span>
+                            
+                            
                             <img src={this.state.trail.difficulty} />
                             <img src = {this.state.trail.pet_friendly} />
                         </TrailInfo>
+                   
 
                         <Description>
                             <p>{this.state.trail.description}</p>
