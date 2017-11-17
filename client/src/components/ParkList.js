@@ -37,8 +37,6 @@ const ParkListContainer = styled.div`
 text-align: center;
 background-color: rgba(255, 255, 255, .5);
 max-width: 280px;
-
-
 `
 
 

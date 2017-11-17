@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom'
+import styled from 'styled-components';
+
+const SignUpLogInPageContainer = styled.div`
+min-height: 100vh;
+`
+
 
 
 class SignUpLogIn extends Component {
@@ -46,7 +52,8 @@ class SignUpLogIn extends Component {
             )
         }
         return (
-            <div>
+            <SignUpLogInPageContainer>
+
                     <form>
                         <div>
                             <label htmlFor="email">Email: </label>
@@ -64,7 +71,7 @@ class SignUpLogIn extends Component {
                         <button onClick={this.signUp}>SignUp</button>
                         <button onClick={this.signIn}>Login</button>
                     </form>
-            </div>
+            </SignUpLogInPageContainer>
         );
     }
 }

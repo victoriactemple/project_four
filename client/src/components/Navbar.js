@@ -35,39 +35,26 @@ border-radius: 3px;
 `
 
 const UserButton = styled.div`
-
+margin-right: -100px;
 
 `
 
 const BackgroundContainer = styled.div`
 font-family: 'Quicksand', sans-serif;
 background-color: rgba(237, 234, 231, 100);
-display: flex;
-justify-content: flex-end;
+display: flex; 
+justify-content: center;
 height: 50px;
 `
 
-const NavBarLinks = styled.button`
+const NavBarLinks = styled.div`
 text-align: center;
-cursor: pointer;
-background-color: rgb(251, 250, 248);
-color: black;
-font-size: .7em;
-margin: .5em;
-padding: 0.25em 1em;
-border: 2px solid black;
-border-radius: 3px;
-&:hover{
-    box-shadow: 1px 1px 2px;
-}
-&:focus{
-    outline: none;
-}
+font-family: 'Quicksand', sans-serif;
+font-size: 30px;
 a {
-    text-align: right;
     text-decoration: none;
     color: black;
-} 
+}
 `
 
 class NavBar extends Component {
@@ -89,21 +76,24 @@ class NavBar extends Component {
  
         return (
             <BackgroundContainer>
-                <NavBarLinks><Link to="/parks">All Parks</Link></NavBarLinks>
-        <UserButton>
-        {this.props.signedIn ? 
-        <Button onClick={this.props.signOut}>
-        <i class="fa fa-user" aria-hidden="true"></i> signout
-        
-        </Button> :
-        <Button onClick={this.props.goToLogIn}>
-        <i class="fa fa-user" aria-hidden="true"></i>
-        sign-in</Button>
-     
-         }   
-         {this.props.redirectToSignIn ? (<Redirect to="/sign_up" />) : null }           
-         </UserButton>
-        
+
+                <NavBarLinks><Link to="/parks">georgia state parks</Link></NavBarLinks>
+
+
+                    <UserButton>
+                        {this.props.signedIn ? 
+                        <Button onClick={this.props.signOut}>
+                        <i class="fa fa-user" aria-hidden="true"></i> signout
+                        
+                        </Button> :
+                        <Button onClick={this.props.goToLogIn}>
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        sign-in</Button>
+                    
+                        }   
+                        {this.props.redirectToSignIn ? (<Redirect to="/sign_up" />) : null }           
+                    </UserButton>
+                    
             
             
             </BackgroundContainer>
