@@ -76,11 +76,9 @@ class EditTrailForm extends Component {
             park: {},
             trail: {
                 name: '',
-                difficulty: '',
+                description: '',
                 image: '',
                 distance: '',
-                pet_friendly: '',
-                elevation_profile: ''
             },
             redirectToTrail: false
         }
@@ -141,8 +139,8 @@ if (this.state.redirectToTrail) {
                     <Input onChange={this.handleChange} type="text" name="name" value={this.state.trail.name} />
                 </div>
                 <div>
-                    <label htmlFor="difficulty">difficulty: </label>
-                    <Input onChange={this.handleChange} type="text" name="difficulty" value={this.state.trail.difficulty} />
+                    <label htmlFor="description">description: </label>
+                    <Input onChange={this.handleChange} type="text" name="description" value={this.state.trail.description} />
                 </div>
                 <div>
                     <label htmlFor="image">image: </label>

@@ -43,7 +43,7 @@ end
 private 
 
 def trail_params
-    params.require(:trail).permit(:name, :distance, :image, :elevation_profile, :difficulty, :pet_friendly)
+    params.require(:trail).permit(:name, :distance, :image, :description, :difficulty, :pet_friendly)
 end
 
 end
