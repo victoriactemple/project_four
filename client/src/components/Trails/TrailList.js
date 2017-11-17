@@ -22,7 +22,7 @@ font-size: 20px;
 text-align: center;
 
 a {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     color: black;
     text-decoration: none;
     /* color: rgb(104, 153, 80) */

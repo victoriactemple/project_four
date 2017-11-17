@@ -12,7 +12,7 @@ align-items: center;
 `
 
 const ParkName = styled.h3`
-font-family: 'Lato', sans-serif;
+font-family: 'Quicksand', sans-serif;
  font-size: 25px;
  cursor: pointer;
  color: black;
@@ -33,11 +33,11 @@ img {
 `
 
 
-
 const ParkListContainer = styled.div`
 text-align: center;
 background-color: rgba(255, 255, 255, .5);
 max-width: 280px;
+
 
 `
 
