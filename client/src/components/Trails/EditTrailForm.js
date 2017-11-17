@@ -47,7 +47,10 @@ const Input = styled.input.attrs({
 	border-radius: 3px;
 
     margin: ${props => props.margin};
-	padding: ${props => props.padding};
+    padding: ${props => props.padding};
+    &:focus{
+        outline: none;
+    }
 `
 
 const SaveButton = styled.button`
@@ -61,6 +64,9 @@ cursor: pointer;
 	border-radius: 3px;
     &:hover{
         box-shadow: 1px 1px 2px;
+    }
+    &:focus{
+        outline: none;
     }
 `
 

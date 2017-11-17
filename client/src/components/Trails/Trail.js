@@ -36,6 +36,9 @@ a{
     text-decoration: none;
     color: black;
 }
+&:focus{
+    outline: none;
+}
 `
 
 

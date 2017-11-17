@@ -14,7 +14,10 @@ const Input = styled.input.attrs({
 	border-radius: 3px;
 
     margin: ${props => props.margin};
-	padding: ${props => props.padding};
+    padding: ${props => props.padding};
+    &:focus{
+        outline: none;
+    }
 `
 
 
@@ -30,7 +33,11 @@ const TextArea = styled.textarea.attrs({
 	border-radius: 3px;
 
     margin: ${props => props.margin};
-	padding: ${props => props.padding};
+    padding: ${props => props.padding};
+
+    &:focus{
+        outline: none;
+    }
 `
 
 
@@ -58,6 +65,11 @@ a{
     text-decoration: none;
     color: black;
 }
+
+&:focus{
+        outline: none;
+    }
+
 `
 
 class TrailCommentForm extends Component {
