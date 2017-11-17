@@ -44,6 +44,7 @@ background-color: rgba(212, 209, 188, .2);
 const WeatherContainer = styled.div`
 text-align: center;
 margin: 0 auto;
+padding-bottom: 10px;
 font-family: 'Kameron', serif;
 background-color: white;
 max-width: 300px;
@@ -60,6 +61,8 @@ margin-right: 60px;
 
 
 const AddTrailButton = styled.button`
+
+    text-align: center;
     cursor: pointer;
 	color: black;
 	font-size: 1em;
@@ -75,6 +78,13 @@ const AddTrailButton = styled.button`
     }
 `
 
+const ButtonDiv = styled.div`
+padding-top: 10px;
+display: flex;
+align-items: center;
+justify-content: center;
+
+`
 
 const ParkImageMain = styled.div`
 text-align: center;
@@ -184,12 +194,14 @@ class Park extends Component {
                 <TrailListContainer>
                 <TrailList parkId={this.state.park.id} trails={this.state.park.trails} deleteATrail={this.deleteATrail}/>
 
+                <ButtonDiv>
                     <AddTrailButton 
                     
                     onClick={this.toggleShowNewTrailForm}>
                     <i class="fa fa-plus" aria-hidden="true"></i>
                    <span></span>  new trail
                     </AddTrailButton> 
+                </ButtonDiv>
 
                 </TrailListContainer>
 

@@ -107,16 +107,17 @@ class NavBar extends Component {
     // goToLogIn = () => {
     //     this.setState({redirectToSignIn: true})
     // }
-    
-    render() {
-           
-    //   const SignUpLogInComponent = () => (
+       //   const SignUpLogInComponent = () => (
     //     <SignUpLogIn
     //         signUp={this.signUp}
     //         signIn={this.signIn}
     //         signedIn={this.signedIn}
     //         />
     // )
+    
+    render() {
+           
+ 
         return (
             <BackgroundContainer>
                

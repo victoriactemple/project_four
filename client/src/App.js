@@ -130,10 +130,7 @@ const SignedInState = () => {
     return (
      <Router>
        <div>
-       {/* {this.state.signedIn ? 
-        <button onClick={this.signOut}>signout</button> :
-        <button onClick={this.goToLogIn}>sign-in</button>
-         } */}
+     
          <NavBar signedIn={this.state.signedIn} 
          redirectToSignIn={this.state.redirectToSignIn}
          goToLogIn={this.goToLogIn}
@@ -149,7 +146,7 @@ const SignedInState = () => {
   
              
           </Switch>
-          {/* {this.state.redirectToSignIn ? (<Redirect to="/sign_up" />) : null } */}
+          
           <Footer />
        </div>
      </Router>
