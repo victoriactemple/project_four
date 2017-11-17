@@ -38,7 +38,6 @@ margin-bottom: 20px;
 padding: 15px;
 background-color: rgba(212, 209, 188, .2);
 /* border: solid 1px; */
-
 `
 
 const WeatherContainer = styled.div`
@@ -86,6 +85,7 @@ justify-content: center;
 `
 
 const ParkImageMain = styled.div`
+@media only screen and (min-width: 1024px);
 text-align: center;
 img{
     max-height: 400px;

@@ -155,13 +155,28 @@ tommy_comment = ParkComment.create({
 
 
 providence_canyon_loop_trail = Trail.create({
-    difficulty: "easy",
-    elevation_profile: "https://2wzlm92dvpgd3a560m9ue6tx-wpengine.netdna-ssl.com/images/providence-canyon-hiking-trail-loop/providence-canyon-trail-elevation-profile.png",
-    image: "http://www.hikingtheappalachians.com/uploads/2/4/2/9/24290352/6751664_orig.jpg",
+    difficulty: "https://i.imgur.com/K87he5Q.png",
+    elevation_profile: "https://media4.trover.com/T/54fa3649ae8d8a0e88001865/fixedw_large_4x.jpg",
+    image: "http://static.panoramio.com/photos/large/1867033.jpg",
     pet_friendly: "https://i.imgur.com/vEB2ZHp.png",
-    distance: 0.25,
+    distance: 4.85,
     park_id: providence_canyon.id,
-    name: "Providence Canyon Loop Trail"
+    name: "Providence Canyon Loop Trail",
+    description: "\tThe White Blaze Canyon Loop Trail circles nine of the canyons.
+    To hike canyons 1-5 from the Visitor Center, hike ¼ of a mile
+    down to the creek bed, and turn left, following the creek bed
+    into the canyons. Hikers may reach canyons 6-9 by turning left
+    into the second creek further down the Canyon Loop Trail. After
+    arriving at the end of each canyon, backtrack out to return to the
+    trail. Turn right on the Canyon Loop Trail to return to the Visitor
+    Center, or turn left on the trail to continue the loop. While hiking
+    through the day-use area, follow the fence line for the best
+    overlooks. The soils are very fragile on the canyon walls, so no
+    climbing is allowed from the canyon floor or rim. While hiking
+    into the canyons, it is best to stay in the middle of the creek
+    beds, because the soils on the side can be very muddy, similar
+    to quicksand. The canyon floors are prone to be wet or muddy,
+    so wear appropriate footwear."
 })
 
 providence_canyon_other_loop_trail = Trail.create({

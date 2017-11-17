@@ -9,15 +9,25 @@ import styled from 'styled-components';
 
 const TrailImage = styled.div`
 img {
-    max-width: 400px;
+    max-width: 500px;
+    border-radius: 3px;
 }
+
+padding-bottom: 70px;
+`
+
+const ParkName = styled.h2`
+text-align: center;
+font-family: 'Arimo', sans-serif;
+font-weight: 25px;
 `
 
 const TrailContainer = styled.div`
 @media only screen and (min-width: 1024px);
-margin-left: 100px;
-margin-right: 100px
-// text-align: center;
+margin-left: 60px;
+margin-right: 60px;
+text-align: center;
+
 `
 
 const Button = styled.button`
@@ -41,15 +51,33 @@ a{
 }
 `
 const TrailInfo = styled.div`
+font-family: "Oxygen", sans-serif;
+margin-left: 250px;
+margin-right: 250px;
+margin-bottom: 20px;
+padding: 15px;
+max-width: 500px;
+background-color: white;
+drop-shaddow: 1px box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+img{
+    max-width: 80px;
+}
+`
+
+
+const Description = styled.div`
+text-align: left;
 margin-left: 100px;
 margin-right: 100px;
 margin-bottom: 20px;
 padding: 15px;
 background-color: rgba(212, 209, 188, .2);
 /* border: solid 1px; */
-img{
-    max-width: 30px;
-}
+`
+
+
+const TrailCommentFormContainer = styled.div`
 
 `
 
@@ -121,22 +149,26 @@ class Trail extends Component {
         if (!this.state.editTrailDetails) {
             return (
                 <div>
-
-                    <TrailContainer>
+                 <TrailContainer>
+                    <ParkName>{this.state.trail.name}</ParkName>
+                     <TrailImage><img src={this.state.trail.image} /> </TrailImage>
+                    
 
                         <TrailInfo>
-                            <p>{this.state.trail.difficulty}</p>  
-                            <p>{this.state.trail.distance}</p>
+                            <p> {this.state.trail.distance} miles</p>
+                            <img src={this.state.trail.difficulty} />
                             <img src = {this.state.trail.pet_friendly} />
                         </TrailInfo>
 
-                    <h2>{this.state.trail.name}</h2>
-                    <p>distance: {this.state.trail.distance} miles</p>
-                    <p>difficulty: {this.state.trail.difficulty}</p>
-                    {/* <p>pet_friendly: {this.state.trail.pet_friendly}</p> */}
+                        <Description>
+                            <p>{this.state.trail.description}</p>
+                        </Description>
+
+                    
+                    
                     <TrailImage><img src={this.state.trail.elevation_profile} /></TrailImage>
 
-                    <TrailImage><img src={this.state.trail.image} /> </TrailImage>
+                   
 
 
                     <Button onClick={this.deleteATrail}> 
@@ -153,7 +185,11 @@ class Trail extends Component {
 
                 
 
+                    <TrailCommentList comments={this.state.trail.trail_comments}
+                        toggleAddComment={this.toggleAddComment} />
+
                  
+                 <TrailCommentFormContainer>
 
                     {this.state.showCreateComment ? <TrailCommentForm
                         getTrailAndComments={this.getTrailAndComments}
@@ -164,9 +200,10 @@ class Trail extends Component {
                         trail_id={this.state.trail.id}
 
                     /> : null}
+                    
+                    </TrailCommentFormContainer>
 
-                    <TrailCommentList comments={this.state.trail.trail_comments}
-                        toggleAddComment={this.toggleAddComment} />
+                   
                 </TrailContainer>
                 </div>
             )

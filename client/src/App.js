@@ -115,9 +115,9 @@ render() {
         />
 )
 
-const SignedInState = () => {
-    <NavBar signedIn={this.state.signedIn}/>
-}
+// const SignedInState = () => {
+//     <NavBar signedIn={this.state.signedIn}/>
+// }
 //   if signed in is true, then call the signout function and 
     // {this.state.signedIn ? 
         //  and have button display signout 
