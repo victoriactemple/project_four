@@ -61,7 +61,6 @@ margin-right: 60px;
 
 
 const AddTrailButton = styled.button`
-
     text-align: center;
     cursor: pointer;
 	color: black;

@@ -13,14 +13,56 @@ flex-direction: row;
 Justify-content: space-around;
 padding-right: 20px;
 padding-left: 10px;
+
+`
+
+const Button = styled.button`
+text-align: center;
+cursor: pointer;
+background-color: rgb(251, 250, 248);
+color: black;
+font-size: .5em;
+margin: .5em;
+padding: 0.25em 1em;
+border: 2px solid black;
+border-radius: 3px;
+&:hover{
+    box-shadow: 1px 1px 2px;
+}
+&:focus{
+    outline: none;
+}
+`
+
+const UserButton = styled.div`
+
+
 `
 
 const BackgroundContainer = styled.div`
 font-family: 'Quicksand', sans-serif;
 background-color: rgba(237, 234, 231, 100);
+display: flex;
+justify-content: flex-end;
+height: 50px;
 `
 
-const NavBarLinks = styled.h6`
+const NavBarLinks = styled.button`
+text-align: center;
+cursor: pointer;
+background-color: rgb(251, 250, 248);
+color: black;
+font-size: .7em;
+margin: .5em;
+padding: 0.25em 1em;
+border: 2px solid black;
+border-radius: 3px;
+&:hover{
+    box-shadow: 1px 1px 2px;
+}
+&:focus{
+    outline: none;
+}
 a {
     text-align: right;
     text-decoration: none;
@@ -33,80 +75,7 @@ class NavBar extends Component {
         // signedIn: false,
         // redirectToSignIn: false
       }
-    
-    //   async componentWillMount() {
-    //       try{
-    //           const signedIn = userIsLoggedIn()
-    //           if(signedIn){
-    //               setAxiosDefaults()
-    //           } this.setState({
-    //               signedIn
-    //           })
-    //       } catch (error){
-    //           console.log(error)
-    //       }
-    //   }
-    
-    
-    //   signUp = async (email, password, password_confirmation) => {
-    //         try {
-    //             const payload = {
-    //                 email: email,
-    //                 password: password,
-    //                 password_confirmation: password_confirmation
-    //             }
-    //             const response = await axios.post('/auth', payload)
-    //             saveAuthTokens(response.headers)
-        
-    //             this.setState({
-    //                 signedIn: true,
-    //                 redirectToSignIn: false
-    //             })
-        
-    //         } catch (error) {
-    //             console.log(error)
-    //         }
-    //     }
-        
-        
-    //     signIn = async (email, password) => {
-    //       try {
-    //           const payload = {
-    //               email,
-    //               password
-    //           }
-    //           const response = await axios.post('/auth/sign_in', payload)
-    //           saveAuthTokens(response.headers)
-        
-        
-    //           this.setState({
-    //               signedIn: true,
-    //               redirectToSignIn: false 
-    //           })
-        
-    //       } catch (error) {
-    //           console.log(error)
-    //       }
-    //     }
-        
-    //     signOut = async (event) => {
-    //       try {
-    //           event.preventDefault()
-        
-    //           await axios.delete('/auth/sign_out')
-        
-    //           clearAuthTokens();
-        
-    //           this.setState({signedIn: false})
-    //       } catch (error) {
-    //           console.log(error)
-    //       }
-    //     }
-        
-    
-    // goToLogIn = () => {
-    //     this.setState({redirectToSignIn: true})
-    // }
+
        //   const SignUpLogInComponent = () => (
     //     <SignUpLogIn
     //         signUp={this.signUp}
@@ -120,15 +89,23 @@ class NavBar extends Component {
  
         return (
             <BackgroundContainer>
-               
+                <NavBarLinks><Link to="/parks">All Parks</Link></NavBarLinks>
+        <UserButton>
         {this.props.signedIn ? 
-        <button onClick={this.props.signOut}>signout</button> :
-        <button onClick={this.props.goToLogIn}>sign-in</button>
+        <Button onClick={this.props.signOut}>
+        <i class="fa fa-user" aria-hidden="true"></i> signout
+        
+        </Button> :
+        <Button onClick={this.props.goToLogIn}>
+        <i class="fa fa-user" aria-hidden="true"></i>
+        sign-in</Button>
+     
          }   
          {this.props.redirectToSignIn ? (<Redirect to="/sign_up" />) : null }           
-
+         </UserButton>
+        
             
-            <NavBarLinks><Link to="/parks">Back to All Parks</Link></NavBarLinks>
+            
             </BackgroundContainer>
         );
     }

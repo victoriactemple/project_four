@@ -45,8 +45,10 @@ const TextArea = styled.textarea.attrs({
 
 const TrailFormContainer = styled.div`
 text-align: center;
-border: 1px solid rgba(87, 87, 87, .2); 
+/* max-width: 900px; */
+/* border: 1px solid rgba(87, 87, 87, .2);  */
 border-radius: 3px;
+padding-top: 10px;
 `
 
 
