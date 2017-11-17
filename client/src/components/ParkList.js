@@ -14,6 +14,7 @@ align-items: center;
 const ParkName = styled.h3`
 font-family: 'Lato', sans-serif;
  font-size: 25px;
+ cursor: pointer;
  color: black;
  text-decoration: none;
  a {
@@ -23,26 +24,19 @@ font-family: 'Lato', sans-serif;
 `
 
 const MainPhoto = styled.div`
-
+/* padding-right: 100px; */
+margin-left: -90px;
+z-index: -1;
 img {
-    /* max-height: 500px; */
-    max-width: 700px;
-    z-index: -1;
+    max-height: 400px;
 }
 `
-/* // const MainPhoto = styled.div`
-// height: 500px;
-// width: 900px;
-// background-image: 
-//     url(${image});
-// ` */
 
 
 
 const ParkListContainer = styled.div`
 text-align: center;
-/* margin: 0 auto; */
-background-color: white;
+background-color: rgba(255, 255, 255, .5);
 max-width: 280px;
 
 `

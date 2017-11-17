@@ -6,6 +6,7 @@ const FooterContainer = styled.div`
 background-color: rgba(237, 234, 231, 100);
 text-align: center;
 min-height: 70px;
+
 `
 
 const Footer = () => {
