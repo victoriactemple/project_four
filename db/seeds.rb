@@ -4,15 +4,17 @@ ParkComment.destroy_all
 Trail.destroy_all
 TrailComment.destroy_all
 
+
+
 providence_canyon = Park.create({name: "Providence Canyon", 
 description: "Georgia’s “Little Grand Canyon” is a testament to the power of man’s influence on the land. Massive gullies as deep as 150 feet were caused simply by poor farming practices during the 1800s, yet today they make some of the prettiest photographs within the state. The rare Plumleaf Azalea grows only in this region and blooms during July and August when most azaleas have lost their color. The canyon soil’s pink, orange, red and purple hues make a beautiful natural painting at this quiet park.
-
 Visitors can enjoy views of the canyons from the rim trail, taking care to stay behind fences and off the fragile canyon edge. Hikers who explore the deepest canyons will usually find a thin layer of water along the trail, indication of the water table below. Guests who hike to canyons 4 and 5 may want to join the Canyon Climbers Club. Backpackers can stay overnight along the backcountry trail which highlights portions of the canyon and winds through mixed forest. Camping, cottages and efficiency units are available nearby at Florence Marina State Park on 45,000 acre Lake Walter F. George.", 
 image: "http://gastateparks.org/sites/default/files/parks/ProvidenceCanyon.jpg",
 address: "8930 Canyon Rd, Lumpkin, GA 31815", 
 lat: 32.0675, 
 lon: -84.9037,
 zipcode: 31815
+
 })
 
 sweetwater_creek = Park.create({name: "Sweetwater Creek", 
@@ -142,11 +144,19 @@ tommy_comment = ParkComment.create({
 
 ## Trails 
 
+# # yes:
+# pet_friendly: "https://i.imgur.com/vEB2ZHp.png"
+
+# #no :
+# pet_friendly: "https://i.imgur.com/kVYdbSU.png"
+
+
+
 providence_canyon_loop_trail = Trail.create({
     difficulty: "easy",
     elevation_profile: "https://2wzlm92dvpgd3a560m9ue6tx-wpengine.netdna-ssl.com/images/providence-canyon-hiking-trail-loop/providence-canyon-trail-elevation-profile.png",
     image: "http://www.hikingtheappalachians.com/uploads/2/4/2/9/24290352/6751664_orig.jpg",
-    pet_friendly: false,
+    pet_friendly: "https://i.imgur.com/vEB2ZHp.png",
     distance: 0.25,
     park_id: providence_canyon.id,
     name: "Providence Canyon Loop Trail"
@@ -156,7 +166,7 @@ providence_canyon_other_loop_trail = Trail.create({
     difficulty: "easy",
     elevation_profile: "https://2wzlm92dvpgd3a560m9ue6tx-wpengine.netdna-ssl.com/images/providence-canyon-hiking-trail-loop/providence-canyon-trail-elevation-profile.png",
     image: "http://www.hikingtheappalachians.com/uploads/2/4/2/9/24290352/6751664_orig.jpg",
-    pet_friendly: false,
+    pet_friendly: "https://i.imgur.com/vEB2ZHp.png",
     distance: 0.25,
     park_id: providence_canyon.id,
     name: "Providence Canyon Loop Trail"
@@ -167,7 +177,7 @@ providence_canyon_other_another_loop_trail = Trail.create({
     difficulty: "easy",
     elevation_profile: "https://2wzlm92dvpgd3a560m9ue6tx-wpengine.netdna-ssl.com/images/providence-canyon-hiking-trail-loop/providence-canyon-trail-elevation-profile.png",
     image: "http://www.hikingtheappalachians.com/uploads/2/4/2/9/24290352/6751664_orig.jpg",
-    pet_friendly: false,
+    pet_friendly: "https://i.imgur.com/vEB2ZHp.png",
     distance: 0.25,
     park_id: providence_canyon.id,
     name: "Providence Canyon Loop Trail"
@@ -178,7 +188,7 @@ sweetwater_creek_white_trail = Trail.create({
     difficulty: "moderate",
     elevation_profile: "https://2wzlm92dvpgd3a560m9ue6tx-wpengine.netdna-ssl.com/images/providence-canyon-hiking-trail-loop/providence-canyon-trail-elevation-profile.png",
     image: "https://www.atlantatrails.com/images/sweetwater-creek-state-park-white-trail/03-sweetwater-creek-white-trail-best-atlanta-hikes@2x.jpg",
-    pet_friendly: true,
+    pet_friendly: "https://i.imgur.com/vEB2ZHp.png",
     distance: 4.10,
     park_id: sweetwater_creek.id,
     name: "Sweetwater Creek White Trail"
@@ -189,7 +199,7 @@ hurricane_falls_trail = Trail.create({
     difficulty: "difficult",
     elevation_profile: "https://2wzlm92dvpgd3a560m9ue6tx-wpengine.netdna-ssl.com/images/providence-canyon-hiking-trail-loop/providence-canyon-trail-elevation-profile.png",
     image: "https://2wzlm92dvpgd3a560m9ue6tx-wpengine.netdna-ssl.com/wp-content/uploads/2017/01/07-tallulah-gorge-hurricane-falls-trail@2x.jpg",
-    pet_friendly: false,
+    pet_friendly: "https://i.imgur.com/kVYdbSU.png",
     distance: 2.0,
     park_id: tallulah_gorge.id,
     name: "Hurricane Falls Trail"

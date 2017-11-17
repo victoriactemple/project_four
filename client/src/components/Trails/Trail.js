@@ -40,7 +40,18 @@ a{
     outline: none;
 }
 `
+const TrailInfo = styled.div`
+margin-left: 100px;
+margin-right: 100px;
+margin-bottom: 20px;
+padding: 15px;
+background-color: rgba(212, 209, 188, .2);
+/* border: solid 1px; */
+img{
+    max-width: 30px;
+}
 
+`
 
 
 
@@ -112,6 +123,12 @@ class Trail extends Component {
                 <div>
 
                     <TrailContainer>
+
+                        <TrailInfo>
+                            <p>{this.state.trail.difficulty}</p>  
+                            <p>{this.state.trail.distance}</p>
+                            <img src = {this.state.trail.pet_friendly} />
+                        </TrailInfo>
 
                     <h2>{this.state.trail.name}</h2>
                     <p>distance: {this.state.trail.distance} miles</p>
