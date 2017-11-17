@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171114214520) do
+ActiveRecord::Schema.define(version: 20171117021557) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,12 +53,13 @@ ActiveRecord::Schema.define(version: 20171114214520) do
     t.string "difficulty"
     t.string "elevation_profile"
     t.string "image"
-    t.boolean "pet_friendly"
+    t.string "pet_friendly"
     t.float "distance"
     t.bigint "park_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+    t.string "description"
     t.index ["park_id"], name: "index_trails_on_park_id"
   end
 
