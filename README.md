@@ -6,7 +6,7 @@ Before attending GA, my finance and I hiked every weekend. We've been to dozens 
 
 
 
-[Heroku](https://shielded-bastion-69368.herokuapp.com/ "Heroku")
+[Heroku](https://shielded-bastion-69368.herokuapp.com/parks "Heroku")
 
 [User Stories](https://trello.com/b/y9gAto1I/project-4 "User Stores")
 
