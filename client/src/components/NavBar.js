@@ -5,16 +5,16 @@ import {clearAuthTokens, saveAuthTokens, setAxiosDefaults, userIsLoggedIn} from 
 import axios from 'axios'
 import SignUpLogIn from './SignUpLogIn'
 
-const NavBarLinkHolder = styled.div`
-font-family: 'News Cycle', sans-serif;
-display: flex;
-background-color: rgba(237, 234, 231, 100);
-flex-direction: row;
-Justify-content: space-around;
-padding-right: 20px;
-padding-left: 10px;
+// const NavBarLinkHolder = styled.div`
+// font-family: 'News Cycle', sans-serif;
+// display: flex;
+// background-color: rgba(237, 234, 231, 100);
+// flex-direction: row;
+// Justify-content: space-around;
+// padding-right: 20px;
+// padding-left: 10px;
 
-`
+// `
 
 const Button = styled.button`
 text-align: center;
@@ -34,8 +34,17 @@ border-radius: 3px;
 }
 `
 
+
+const UserButtonDiv = styled.div`
+display: flex;
+justify-content: flex-end;
+align-items: center;
+text-align: right;
+`
+
 const UserButton = styled.div`
-margin-right: -100px;
+
+margin-right: 100px;
 
 `
 
@@ -78,9 +87,9 @@ class NavBar extends Component {
             <BackgroundContainer>
 
                 <NavBarLinks><Link to="/parks">georgia state parks</Link></NavBarLinks>
-
-
-                    <UserButton>
+                    
+             <UserButtonDiv>
+                <UserButton>
                         {this.props.signedIn ? 
                         <Button onClick={this.props.signOut}>
                         <i class="fa fa-user" aria-hidden="true"></i> signout
@@ -93,8 +102,7 @@ class NavBar extends Component {
                         }   
                         {this.props.redirectToSignIn ? (<Redirect to="/sign_up" />) : null }           
                     </UserButton>
-                    
-            
+               </UserButtonDiv>
             
             </BackgroundContainer>
         );
