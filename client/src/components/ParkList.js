@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import styled from 'styled-components';
-import image from '../mountain_image.jpg'
+// import image from '../mountain_image.jpg'
 
 const MainPageContainer = styled.div`
 @media only screen and (min-width: 1024px);
@@ -65,14 +65,14 @@ class ParkList extends Component {
                     <ParkListContainer>
                     {this.state.parks.map(park => (
                         
-                 <ParkName>  <Link key={park.id} to={`/parks/${park.id}`}>
+                 <ParkName>  <Link to={`/parks/${park.id}`} key={park.id}>
                         {park.name}
                         
                     </Link>
                     </ParkName> 
                     ))}
                     </ParkListContainer>
-                  <MainPhoto><img src="https://www.lucillesmountaintopinn.com/wp-content/uploads/blog.jpg" /></MainPhoto>  
+                  <MainPhoto><img alt="mountain top view in georgia park" src="https://www.lucillesmountaintopinn.com/wp-content/uploads/blog.jpg" /></MainPhoto>  
 
                 
                 

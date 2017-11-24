@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import Moment from 'react-moment';
-import 'moment-timezone';
-import CommentList from './Comments/CommentList'
 import styled from 'styled-components';
-import CommentForm from './Comments/CommentForm'
 import TrailList from './Trails/TrailList'
-import Trail from './Trails/Trail'
+// import Trail from './Trails/Trail'
 import NewTrailForm from './Trails/NewTrailForm'
-import Buttons from './Styled-Components/Buttons'
+
 
 
 
@@ -172,7 +168,7 @@ class Park extends Component {
 
                 <ParkName>{this.state.park.name}</ParkName>
 
-              <ParkImageMain><img src = {this.state.park.image} /></ParkImageMain>  
+              <ParkImageMain><img alt="this.state.park.name photograph" src = {this.state.park.image} /></ParkImageMain>  
                 
                 <Address>{this.state.park.address}</Address>
                 <Description>{this.state.park.description}</Description>
@@ -181,7 +177,7 @@ class Park extends Component {
                         <h5>Current Weather</h5>
                     <p>{this.state.weather.temp}°F </p>
                     <p> {this.state.weather.general}</p>
-                    <img src={`http://openweathermap.org/img/w/${this.state.weather.icon}.png`} />
+                    <img alt="icon depiction of the the api's weather description" src={`http://openweathermap.org/img/w/${this.state.weather.icon}.png`} />
                     
                     <p>{this.state.weather.description} </p>
                     <p>humidity: {this.state.weather.humidity}%</p>

@@ -1,6 +1,5 @@
 import React from 'react';
 import TrailComment from './TrailComment'
-import TrailCommentForm from './TrailCommentForm'
 import styled from 'styled-components';
 
 const AddCommentButton = styled.button`

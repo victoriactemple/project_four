@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import Trail from './Trail'
 import styled from 'styled-components';
 
 const TrailListContainer = styled.div`
@@ -58,7 +57,7 @@ class TrailList extends Component {
                    
                    <Link to={`/parks/${this.props.parkId}/trails/${trail.id}`}>
                             
-                            <TrailListImage> <img src ={trail.image} /></TrailListImage>
+                            <TrailListImage> <img alt="this.props.trail.name photograph " src ={trail.image} /></TrailListImage>
                             <TrailName>{trail.name}</TrailName>
                             
                     </Link>
@@ -78,8 +77,3 @@ export default TrailList;
 
 
 
-{/* <div key={trail.id}>
-<strong>{trail.name}</strong>
-<div>{trail.image}</div>
-<button onClick={this.toggleEdit}>Read More</button>
-{this.state.toggleTrail ? <Trail {...trail} deleteATrail={this.props.deleteATrail}/> : null } */}

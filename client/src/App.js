@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import {clearAuthTokens, saveAuthTokens, setAxiosDefaults, userIsLoggedIn} from "./util/SessionHeaderUtil"
 import axios from 'axios'
-import styled from 'styled-components';
 import { injectGlobal } from 'styled-components'
 import Footer from './components/Footer'
 import NavBar from './components/Navbar'
 import ParkList from './components/ParkList'
 import Park from './components/Park'
 import SignUpLogIn from './components/SignUpLogIn'
-import CommentList from './components/Comments/CommentList'
-import CommentForm from './components/Comments/CommentForm'
 import TrailList from './components/Trails/TrailList'
 import Trail from './components/Trails/Trail'
-import TrailCommentForm from './components/TrailComments/TrailCommentForm'
 import EditTrailForm from './components/Trails/EditTrailForm'
 
 injectGlobal`

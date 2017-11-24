@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom'
 import styled from 'styled-components';
-import {clearAuthTokens, saveAuthTokens, setAxiosDefaults, userIsLoggedIn} from "../util/SessionHeaderUtil"
-import axios from 'axios'
-import SignUpLogIn from './SignUpLogIn'
+// import {clearAuthTokens, saveAuthTokens, setAxiosDefaults, userIsLoggedIn} from "../util/SessionHeaderUtil"
+// import axios from 'axios'
+// import SignUpLogIn from './SignUpLogIn'
 
 // const NavBarLinkHolder = styled.div`
 // font-family: 'News Cycle', sans-serif;

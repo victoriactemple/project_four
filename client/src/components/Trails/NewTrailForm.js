@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import { Redirect } from 'react-router-dom'
 import styled from 'styled-components';
 
 
@@ -24,23 +23,23 @@ const Input = styled.input.attrs({
 `
 
 
-const TextArea = styled.textarea.attrs({
+// const TextArea = styled.textarea.attrs({
     
-	margin: props => props.size || '1em',
-	padding: props => props.size || '2em'
-})`
-	color: black;
-    font-family: "Oxygen", sans-serif;
-	font-size: 0.75em;
-	border: 2px solid black;
-	border-radius: 3px;
+// 	margin: props => props.size || '1em',
+// 	padding: props => props.size || '2em'
+// })`
+// 	color: black;
+//     font-family: "Oxygen", sans-serif;
+// 	font-size: 0.75em;
+// 	border: 2px solid black;
+// 	border-radius: 3px;
 
-    margin: ${props => props.margin};
-    padding: ${props => props.padding};
-    &:focus{
-        outline: none;
-    }
-`
+//     margin: ${props => props.margin};
+//     padding: ${props => props.padding};
+//     &:focus{
+//         outline: none;
+//     }
+// `
 
 
 const TrailFormContainer = styled.div`

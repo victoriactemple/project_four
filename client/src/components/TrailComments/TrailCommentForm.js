@@ -102,7 +102,7 @@ const emptyForm={
     title: '',
     content: ''
 }
-const res = await axios.post(`/api/parks/${park_id}/trails/${trailId}/trail_comments`, payload)
+await axios.post(`/api/parks/${park_id}/trails/${trailId}/trail_comments`, payload)
 this.setState({
                 trailComment: emptyForm
 })

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect, Link } from 'react-router-dom'
 import axios from 'axios'
-import EditTrailForm from './EditTrailForm'
+// import EditTrailForm from './EditTrailForm'
 import TrailCommentList from '../TrailComments/TrailCommentList'
 import TrailCommentForm from '../TrailComments/TrailCommentForm'
 import styled from 'styled-components';
@@ -177,7 +177,7 @@ class Trail extends Component {
                 <div>
                  <TrailContainer>
                     <ParkName>{this.state.trail.name}</ParkName>
-                     <TrailImage><img src={this.state.trail.image} /> </TrailImage>
+                     <TrailImage><img alt="User Submitted Trail" src={this.state.trail.image} /> </TrailImage>
                     
                     
 
@@ -186,8 +186,8 @@ class Trail extends Component {
                         <p> {this.state.trail.distance} miles</p></span>
                             
                             
-                            <img src={this.state.trail.difficulty} />
-                            <img src = {this.state.trail.pet_friendly} />
+                            <img alt="this.state.trail.difficulty number in miles" src={this.state.trail.difficulty} />
+                            <img alt="shows whether trail allows dogs or not" src = {this.state.trail.pet_friendly} />
                         </TrailInfo>
                    
 
@@ -197,7 +197,7 @@ class Trail extends Component {
 
                     
                     
-                    <TrailImage><img src={this.state.trail.elevation_profile} /></TrailImage>
+                    <TrailImage><img alt="elevation profile which shows the grade/steepness of trail" src={this.state.trail.elevation_profile} /></TrailImage>
 
                    
 
