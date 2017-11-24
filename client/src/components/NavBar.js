@@ -89,7 +89,7 @@ class NavBar extends Component {
         return (
             <BackgroundContainer>
 
-                <NavBarLinks><Link to="/parks">georgia state parks</Link></NavBarLinks>
+                <NavBarLinks><Link to="/">georgia state parks</Link></NavBarLinks>
                     
              <UserButtonDiv>
                 <UserButton>

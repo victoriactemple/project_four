@@ -86,7 +86,7 @@ class SignUpLogIn extends Component {
     render() {
         if (this.state.toggleRedirect) {
             return (
-                <Redirect to="/parks" />
+                <Redirect to="/" />
             )
         }
         return (
