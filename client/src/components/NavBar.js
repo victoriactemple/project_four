@@ -36,10 +36,13 @@ border-radius: 3px;
 
 
 const UserButtonDiv = styled.div`
-display: flex;
+float: right;
+/* display: inline-flex;
 justify-content: flex-end;
-align-items: center;
-text-align: right;
+flex-direction: row; */
+/* align-items: center; */
+
+
 `
 
 const UserButton = styled.div`

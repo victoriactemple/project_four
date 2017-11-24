@@ -138,7 +138,7 @@ render() {
          signOut={this.signOut}
          />
           <Switch>
-              <Route exact path="/parks" component={ParkList} />
+              <Route exact path="/" component={ParkList} />
               <Route exact path="/parks/:park_id" component={Park} /> 
               <Route exact path="/parks/:park_id/trails" component={TrailList} /> 
               <Route exact path="/parks/:park_id/trails/:trail_id" component={Trail} /> 
