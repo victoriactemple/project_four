@@ -3,7 +3,7 @@ import { Link, Redirect } from 'react-router-dom'
 import styled from 'styled-components';
 // import {clearAuthTokens, saveAuthTokens, setAxiosDefaults, userIsLoggedIn} from "../util/SessionHeaderUtil"
 // import axios from 'axios'
-// import SignUpLogIn from './SignUpLogIn'
+import SignUpLogIn from './SignUpLogIn'
 
 // const NavBarLinkHolder = styled.div`
 // font-family: 'News Cycle', sans-serif;
@@ -89,17 +89,17 @@ class NavBar extends Component {
         return (
             <BackgroundContainer>
 
-                <NavBarLinks><Link to="/">georgia state parks</Link></NavBarLinks>
+                <NavBarLinks><Link to="/parks">georgia state parks</Link></NavBarLinks>
                     
              <UserButtonDiv>
                 <UserButton>
                         {this.props.signedIn ? 
                         <Button onClick={this.props.signOut}>
-                        <i class="fa fa-user" aria-hidden="true"></i> signout
+                        <i className="fa fa-user" aria-hidden="true"></i> signout
                         
                         </Button> :
                         <Button onClick={this.props.goToLogIn}>
-                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <i className="fa fa-user" aria-hidden="true"></i>
                         sign-in</Button>
                     
                         }   
