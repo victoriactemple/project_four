@@ -108,6 +108,7 @@ render() {
     <SignUpLogIn
         signUp={this.signUp}
         signIn={this.signIn}
+        signOut={this.signOut}
         signedIn={this.signedIn}
         />
 )
