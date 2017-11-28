@@ -65,7 +65,7 @@ class ParkList extends Component {
                     <ParkListContainer>
                     {this.state.parks.map(park => (
                         
-                 <ParkName>  <Link key={park.id} to={`/parks/${park.id}`} >
+                 <ParkName key={park.id}>  <Link to={`/parks/${park.id}`} >
                         {park.name}
                         
                     </Link>
