@@ -16,7 +16,7 @@ img {
 padding-bottom: 70px;
 `
 
-const ParkName = styled.h2`
+const TrailName = styled.h2`
 text-align: center;
 font-family: 'Arimo', sans-serif;
 font-weight: 25px;
@@ -176,7 +176,7 @@ class Trail extends Component {
             return (
                 <div>
                  <TrailContainer>
-                    <ParkName>{this.state.trail.name}</ParkName>
+                    <TrailName>{this.state.trail.name}</TrailName>
                      <TrailImage><img alt="User Submitted Trail" src={this.state.trail.image} /> </TrailImage>
                     
                     

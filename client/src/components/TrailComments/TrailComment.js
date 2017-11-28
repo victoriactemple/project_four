@@ -3,7 +3,7 @@ import Moment from 'react-moment';
 import styled from 'styled-components';
 
 const TrailCommentContainer = styled.div`
-font-family: 'Actor', sans-serif;
+font-family: 'Oxygen', sans-serif;
 `
 
 const Title = styled.h3`
