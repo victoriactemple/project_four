@@ -13,7 +13,7 @@ align-items: center;
 
 const ParkName = styled.h3`
 font-family: 'Quicksand', sans-serif;
- font-size: 25px;
+ font-size: 1.5vw;
  cursor: pointer;
  color: black;
  text-decoration: none;
@@ -28,7 +28,10 @@ const MainPhoto = styled.div`
 margin-left: -90px;
 z-index: -1;
 img {
-    max-height: 400px;
+    max-width: 400px;
+    max-width: 90%; 
+    /* /* height: auto; */
+
 }
 `
 
@@ -36,6 +39,7 @@ img {
 const ParkListContainer = styled.div`
 text-align: center;
 background-color: rgba(255, 255, 255, .5);
+margin-left: 110px;
 max-width: 280px;
 `
 
@@ -60,12 +64,12 @@ class ParkList extends Component {
         return (
             <MainPageContainer>
                 
-                    {/* <h1>GEORGIA STATE PARKS</h1> */}
+                    
                         
                     <ParkListContainer>
                     {this.state.parks.map(park => (
                         
-                 <ParkName key={park.id}>  <Link to={`/parks/${park.id}`} >
+                 <ParkName key={park.id}> <Link to={`/parks/${park.id}`} >
                         {park.name}
                         
                     </Link>
@@ -73,6 +77,7 @@ class ParkList extends Component {
                     ))}
                     </ParkListContainer>
                   <MainPhoto><img alt="mountain top view in georgia park" src="https://www.lucillesmountaintopinn.com/wp-content/uploads/blog.jpg" /></MainPhoto>  
+                  
 
                 
                 

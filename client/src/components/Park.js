@@ -168,7 +168,7 @@ class Park extends Component {
 
                 <ParkName>{this.state.park.name}</ParkName>
 
-              <ParkImageMain><img alt="this.state.park.name photograph" src = {this.state.park.image} /></ParkImageMain>  
+              <ParkImageMain><img alt="panaramic photograph of state park" src = {this.state.park.image} /></ParkImageMain>  
                 
                 <Address>{this.state.park.address}</Address>
                 <Description>{this.state.park.description}</Description>
