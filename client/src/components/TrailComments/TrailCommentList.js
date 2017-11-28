@@ -39,7 +39,6 @@ const TrailCommentList = (props) => {
 
            {props.signedIn ?  <AddCommentButton onClick={props.toggleAddComment}> 
            
-            
              <span class="sr-only"> add comment </span><span></span>
             <i class="fa fa-comment" aria-hidden="true" title="add comment"></i>
             <span></span> add comment
