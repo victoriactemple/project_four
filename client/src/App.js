@@ -123,7 +123,9 @@ render() {
         // if you are !not signed in yet
         // when clicked, it redirects to form
         
-        
+    const TrailComponent=(props) => (
+        <Trail signedIn={this.state.signedIn} {...props}/>
+    )
 
     return (
      <Router>
@@ -138,10 +140,10 @@ render() {
               <Route exact path="/" component={ParkList} />
               <Route exact path="/parks/:park_id" component={Park} /> 
               <Route exact path="/parks/:park_id/trails" component={TrailList} /> 
-              <Route exact path="/parks/:park_id/trails/:trail_id" component={Trail} /> 
+              <Route exact path="/parks/:park_id/trails/:trail_id" render={TrailComponent} /> 
               <Route exact path="/sign_up" render={SignUpLogInComponent} />
               <Route exact path="/parks/:park_id/trails/:trail_id/edit" component={EditTrailForm} />
-  
+            
              
           </Switch>
           

@@ -136,6 +136,7 @@ this.props.getTrailAndComments()
 
                     <div>
                        <Button><i class="fa fa-lock" aria-hidden="true" title="save"></i> post</Button>
+                       {this.props.signedIn ? <p>You must be signed in to leave a comment</p> : null}
                     </div>
 
                 </form>

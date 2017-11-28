@@ -1,6 +1,7 @@
 import React from 'react';
 import TrailComment from './TrailComment'
 import styled from 'styled-components';
+import TrailAlertToSignIn from './TrailAlertToSignIn'
 
 const AddCommentButton = styled.button`
 cursor: pointer;
@@ -35,14 +36,16 @@ const TrailCommentList = (props) => {
             })}
             
             <br />
-            <AddCommentButton onClick={props.toggleAddComment}>
+
+           {props.signedIn ?  <AddCommentButton onClick={props.toggleAddComment}> 
            
+            
              <span class="sr-only"> add comment </span><span></span>
             <i class="fa fa-comment" aria-hidden="true" title="add comment"></i>
             <span></span> add comment
             
             
-            </AddCommentButton>
+        </AddCommentButton>  : <TrailAlertToSignIn />}
         </div>
     );
 };

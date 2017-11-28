@@ -216,7 +216,7 @@ class Trail extends Component {
 
                 
 
-                    <TrailCommentList comments={this.state.trail.trail_comments}
+                    <TrailCommentList signedIn={this.props.signedIn} comments={this.state.trail.trail_comments}
                         toggleAddComment={this.toggleAddComment} />
 
                  
@@ -229,6 +229,7 @@ class Trail extends Component {
                         trail={this.state.trails}
                         park_id={this.props.match.params.park_id}
                         trail_id={this.state.trail.id}
+                        signedIn={this.props.signedIn}
 
                     /> : null}
                     
