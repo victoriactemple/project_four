@@ -216,7 +216,7 @@ backcountry_red_blaze_trail = Trail.create({
 
 
 sweetwater_creek_white_trail = Trail.create({
-    difficulty: "moderate",
+    difficulty: "https://i.imgur.com/Pjy7TV9.png",
     elevation_profile: "https://i.imgur.com/EZXlKeN.png",
     image: "https://i.imgur.com/HAbIpYy.jpg",
     pet_friendly: "https://i.imgur.com/vEB2ZHp.png",
