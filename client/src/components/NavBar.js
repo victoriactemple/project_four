@@ -43,6 +43,7 @@ const UserButton = styled.div`
 text-align: right;
 margin-top: -18px;
 margin-right: 10px;
+font-size: 1.2em;
 /* align-self: flex-end; */
 /* align-items: center; */
 `

@@ -51,7 +51,6 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 const TrailListContainer = styled.div`
 margin-left: 60px;
 margin-right: 60px;
-
 `
 
 
@@ -81,10 +80,10 @@ justify-content: center;
 `
 
 const ParkImageMain = styled.div`
-@media only screen and (min-width: 1024px);
+/* @media only screen and (min-width: 1024px); */
 text-align: center;
 img{
-    max-height: 400px;
+    max-width: 100%;
     border-radius: 3px;
 }
 `
@@ -194,7 +193,7 @@ class Park extends Component {
                     
                     onClick={this.toggleShowNewTrailForm}>
                     <i class="fa fa-plus" aria-hidden="true"></i>
-                   <span></span>  new trail
+                   <span></span> add new trail
                     </AddTrailButton> 
                 </ButtonDiv>
 
