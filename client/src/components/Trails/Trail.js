@@ -186,7 +186,7 @@ class Trail extends Component {
                         <p> {this.state.trail.distance} miles</p></span>
                             
                             
-                            <img alt="this.state.trail.difficulty number in miles" src={this.state.trail.difficulty} />
+                            <img alt="rating easy to strenuous" src={this.state.trail.difficulty} />
                             <img alt="shows whether trail allows dogs or not" src = {this.state.trail.pet_friendly} />
                         </TrailInfo>
                    
@@ -197,7 +197,7 @@ class Trail extends Component {
 
                     
                     
-                    <TrailImage><img alt="elevation profile which shows the grade/steepness of trail" src={this.state.trail.elevation_profile} /></TrailImage>
+                    <TrailImage><img alt=" trail elevation profile or photograph" src={this.state.trail.elevation_profile} /></TrailImage>
 
                    
 
