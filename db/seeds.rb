@@ -217,25 +217,233 @@ backcountry_red_blaze_trail = Trail.create({
 
 sweetwater_creek_white_trail = Trail.create({
     difficulty: "moderate",
-    elevation_profile: "https://2wzlm92dvpgd3a560m9ue6tx-wpengine.netdna-ssl.com/images/providence-canyon-hiking-trail-loop/providence-canyon-trail-elevation-profile.png",
-    image: "https://www.atlantatrails.com/images/sweetwater-creek-state-park-white-trail/03-sweetwater-creek-white-trail-best-atlanta-hikes@2x.jpg",
+    elevation_profile: "https://i.imgur.com/EZXlKeN.png",
+    image: "https://i.imgur.com/HAbIpYy.jpg",
     pet_friendly: "https://i.imgur.com/vEB2ZHp.png",
-    distance: 4.10,
+    distance: 4.1,
     park_id: sweetwater_creek.id,
-    name: "Sweetwater Creek White Trail"
+    name: "Sweetwater Creek White Trail",
+    description: "The White Trail begins at the front door of the visitor center. Turn right at the main trailhead to stay on the White Trail (the Red Trail descends to the left). After you enter the forest, the trail will fork. You can go either way, but going right allows you to get a good warm up with gentle inclines. It also allows you to get some of the less-scenic parts out of the way. 
+    "
+
+})
+
+
+sweetwater_creek_brown_trail = Trail.create({
+    difficulty: "https://i.imgur.com/StjacU0.png",
+    elevation_profile: "https://i.imgur.com/JGDAiOv.jpg",
+    image: "https://i.imgur.com/x3LX7z1.jpg",
+    pet_friendly: "https://i.imgur.com/kVYdbSU.png",
+    distance: 1.2,
+    park_id: sweetwater_creek.id,
+    name: "Sweetwater Creek Brown Trail",
+    description: "The Brown Trail is a short connector trail that can be used to cut-off some mileage on the southern end of the White Trail. If taken from north to south, it is a gradual downhill with one steeper section before it rejoins with the White Trail. 
+    
+    From here, the Brown Trail continues another quarter mile or so until is dead-ends at private property. Unless you are looking to add mileage to your hike, you can probably skip this portion and head left of right on the White Trail to continue your hike."
 
 })
 
 hurricane_falls_trail = Trail.create({
-    difficulty: "difficult",
-    elevation_profile: "https://2wzlm92dvpgd3a560m9ue6tx-wpengine.netdna-ssl.com/images/providence-canyon-hiking-trail-loop/providence-canyon-trail-elevation-profile.png",
-    image: "https://2wzlm92dvpgd3a560m9ue6tx-wpengine.netdna-ssl.com/wp-content/uploads/2017/01/07-tallulah-gorge-hurricane-falls-trail@2x.jpg",
-    pet_friendly: "https://i.imgur.com/kVYdbSU.png",
+    difficulty: "https://i.imgur.com/Pjy7TV9.png",
+    elevation_profile: "https://photos.smugmug.com/Tallulah-Gorge-State-Park/i-mBv2JWt/0/650b28c9/X3/DSC_4823-X3.jpg",
+    image: "https://photos.smugmug.com/Tallulah-Gorge-State-Park/i-F5pHcmT/0/cda326a7/X3/DSC_4681-X3.jpg",
+    pet_friendly: "https://i.imgur.com/vEB2ZHp.png",
     distance: 2.0,
     park_id: tallulah_gorge.id,
-    name: "Hurricane Falls Trail"
+    name: "Hurricane Falls Trail",
+    description: "This hike offers incredible views of beautiful waterfalls roaring through a 1,000ft deep gorge. The hike consists of a grouping of stairs that take you down to Hurricane Falls which is located at the bottom of the gorge. Half way to the bottom, the hike crosses the gorge on a suspension providing a different perspective."
 
 })
+
+
+
+cloudland_canyon_west_rim_trail = Trail.create({
+    difficulty: "https://i.imgur.com/StjacU0.png",
+    elevation_profile: "https://i.imgur.com/4jGJcBy.jpg",
+    image: "https://i.imgur.com/MTYzbb4.jpg",
+    pet_friendly: "https://i.imgur.com/kVYdbSU.png",
+    distance: 5,
+    park_id: cloudland_canyon.id,
+    name: "West Rim Loop Trail",
+    description: "Formerly rated as one of the top ten hikes in the U.S. by
+    Backpacker Magazine, the West Rim Loop Trail is a five-mile
+    lollipop style hike provoding several overlooks that showcase
+    the park’s rugged geology, deep canyons, dense woodland, and
+    views beyond. From the Main Trailhead, hikers drop down to
+    Daniel Creek and cross over it. The trail then proceed uphill to
+    a rocky promontory. Just after one mile, the loop component
+    of the hike begins. At about mile four, you complete the loop
+    and then head back to the Main Trailhead, retracing your steps
+    of the first mile. The West Rim Loop Trail is marked by yellow
+    blazes and is most easily accessed from the Main Trailhead.
+    Overnight guests can also access it from the Yurt Village,
+    West Rim Campground, Walk-In Campground, and West Rim
+    cottages. The trail is marked by yellow blazes and is rocky and
+    rooty in several locations."
+})
+
+
+
+panola_lake_trail = Trail.create({
+    difficulty: "https://i.imgur.com/StjacU0.png",
+    elevation_profile: "https://i.imgur.com/K87he5Q.png",
+    image: "https://photos.smugmug.com/Panola-Mountain-State-Park/i-hsG5FxL/0/006517b3/L/RonnieOwings03-L.jpg",
+    pet_friendly: "https://i.imgur.com/vEB2ZHp.png",
+    distance: 1.25,
+    park_id: panola_mountain.id,
+    name: "Panola Mountain Lake Trail",
+    description: "Be sure to visit the other half of our park where you can
+    soak up the sun by the lake, fish for bass and catfish,
+    rent a boat to paddle around, or hike and bike the PATH
+    Foundation trails surrounding Alexander Lake. On this
+    side of the park, you will also find our archery range,
+    primitive hike-in campsites, as well as the location of
+    our Tree Top Excursions where you can harness-in and
+    climb your way up a 100-foot tree. Parking is available
+    at the intersection of Alexander Lake and Flatbridge
+    Roads."
+})
+
+
+
+panola_lake_trail = Trail.create({
+    difficulty: "https://i.imgur.com/StjacU0.png",
+    elevation_profile: "https://i.imgur.com/K87he5Q.png",
+    image: "https://photos.smugmug.com/Panola-Mountain-State-Park/i-hsG5FxL/0/006517b3/L/RonnieOwings03-L.jpg",
+    pet_friendly: "https://i.imgur.com/vEB2ZHp.png",
+    distance: 1.25,
+    park_id: panola_mountain.id,
+    name: "Panola Mountain Lake Trail",
+    description: "Be sure to visit the other half of our park where you can
+    soak up the sun by the lake, fish for bass and catfish,
+    rent a boat to paddle around, or hike and bike the PATH
+    Foundation trails surrounding Alexander Lake. On this
+    side of the park, you will also find our archery range,
+    primitive hike-in campsites, as well as the location of
+    our Tree Top Excursions where you can harness-in and
+    climb your way up a 100-foot tree. Parking is available
+    at the intersection of Alexander Lake and Flatbridge
+    Roads."
+})
+
+
+coosa_backcountry_trail = Trail.create({
+    difficulty: "https://i.imgur.com/StjacU0.png",
+    elevation_profile: "https://photos.smugmug.com/Vogel-State-Park/i-QKVsCtb/0/4cb0bf27/X3/_MG_9846-X3.jpg",
+    image: "https://photos.smugmug.com/Vogel-State-Park/i-VRpxwkV/0/f6f78df5/X3/_MG_9878-X3.jpg",
+    pet_friendly: "https://i.imgur.com/vEB2ZHp.png",
+    distance: 12.9,
+    park_id: vogel.id,
+    name: "Coosa Backcountry Trail",
+    description: "Beginning at the Backcountry
+    Trailhead, follow the greenblazed
+    access trail to where
+    the green-blazed Coosa
+    Backcountry Trail begins its
+    loop up and over the summit of
+    Duncan Ridge and connection
+    can be made with several trails
+    in the Chattahoochee National
+    Forest. Hikers will climb and
+    descend over 1 mile in elevation
+    crossing 3 ridgelines. Please
+    read the precautions for the
+    Bear Gap Trail."
+})
+
+
+avian_loop_trail = Trail.create({
+    difficulty: "https://i.imgur.com/K87he5Q.png",
+    elevation_profile: "https://photos.smugmug.com/Skidaway-Island-State-Park/i-mS6Pr2x/0/de3cb9d8/X3/sip0907_122-X3.jpg",
+    image: "https://photos.smugmug.com/Skidaway-Island-State-Park/i-nnt5HjV/0/0c3a5026/X3/sip0907_093-X3.jpg",
+    pet_friendly: "https://i.imgur.com/vEB2ZHp.png",
+    distance: 4.3,
+    park_id: skidaway_island.id,
+    name: "Avian Loop Trail",
+    description: "This one-mile loop takes you to the intracoastal waterway where
+    you may catch a glimpse of osprey hunting for fish or dolphin
+    swimming down river. A sandy causeway crosses the largest
+    tidal creek that flows into the park. This is a great place to see
+    the force and speed of tides flowing in and out of the marsh
+    every six hours. Hanging from the trees is Spanish Moss, an
+    epiphyte once used to stuff mattresses. Look but don’t touch
+    because red bugs (or chiggers) reside in this enchanting plant.
+    That’s why some Georgians still say, 'Sleep tight; don’t let the
+    bed bugs bite!'"
+})
+
+sweetgum_trail = Trail.create({
+    difficulty: "https://i.imgur.com/K87he5Q.png",
+    elevation_profile: "https://photos.smugmug.com/Red-Top-Mountain-State-Park/i-D3PVCm7/0/a1b42ec9/X3/DSC_0341-X3.jpg",
+    image: "https://photos.smugmug.com/Red-Top-Mountain-State-Park/i-VdCd49z/0/ed04989f/X3/a%20DSC_0359-X3.jpg",
+    pet_friendly: "https://i.imgur.com/vEB2ZHp.png",
+    distance: 4.3,
+    park_id: red_top_mountain.id,
+    name: "Sweetgum Trail",
+    description: "This trail begins at the Visitor Center parking area
+    and also follows a route north. After 0.5 mile the trail
+    then makes a loop through the Park Office area of
+    the park and then back to the 0.5 mile section for a
+    return to the Visitor Center. The Sweet Gum Trail also
+    travels south from the Visitor Center and connects
+    to the Campground Trail which connects to the
+    campground, allowing campers to access the park
+    trail without driving. There are sections of the trail
+    where Homestead and Sweet Gum share the same
+    pathway. These sections are marked with yellow and
+    red blazes. Trail is not accessible to bicycles."
+})
+
+east_ridge_trail = Trail.create({
+    difficulty: "https://i.imgur.com/StjacU0.png",
+    elevation_profile: "https://media-cdn.tripadvisor.com/media/photo-s/06/ac/f1/10/amicalola-falls-state.jpg",
+    image: "https://www.lillypadvillage.com/wp-content/uploads/2017/08/amicalola-falls.jpg",
+    pet_friendly: "https://i.imgur.com/kVYdbSU.png",
+    distance: 4.3,
+    park_id: amicalola_falls.id,
+    name: "East Ridge Trail ",
+    description: "This trail is the start of the Springer Mountain approach trail, which marks the beginning of the Appalachian Trail. This very popular hiking route goes from the visitor center to the top of the falls. There are many photo opportunities along the way looking out along the mountain vistas.
+    
+    The first part of the trail is wooded and has several switchbacks to reduce the grade. About half way to the top the trail merges with a service road and continues along it for the remainder of the trail to the top.
+    
+    Once your reach the top of the falls, you can descend down the massive West Ridge staircase with over 400 stairs leading down to the base of the falls.
+    
+    This route is easier than hiking up the stairs from the West Ridge trail, there are warning signs stating that the stairs are strenuous."
+})
+
+
+swamp_trail = Trail.create({
+    difficulty: "https://i.imgur.com/K87he5Q.png",
+    elevation_profile: "https://upload.wikimedia.org/wikipedia/commons/a/a7/Stephen_C._Foster_State_Park_Trembling_Earth_Nature_Trail_trailhead.JPG",
+    image: "https://photos.smugmug.com/Stephen-C-Foster-State-Park/i-hqNLk7H/0/fee15f92/X3/Stephen_C_Foster-0511-X3.jpg",
+    pet_friendly: "https://i.imgur.com/kVYdbSU.png",
+    distance: 0.75,
+    park_id: stephen_c_foster.id,
+    name: "Trembling Earth Nature Trail",
+    description: "The Okefenokee Swamp really is a land of 
+    trembling earth. Peat deposits up to 15 feet 
+    thick cover the floor of the swamp and often 
+    towering trees grow from them. The peat 
+    deposits are unstable in places, however, 
+    and bushes and trees often tremble from the 
+    footsteps of explorers.
+    "
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 veronica_comment = TrailComment.create({
@@ -258,8 +466,6 @@ veronica_comment = TrailComment.create({
     user_id: veronica.id,
     trail_id: providence_canyon_loop_trail.id 
 })
-
-
 
 
 
