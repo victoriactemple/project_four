@@ -286,29 +286,7 @@ cloudland_canyon_west_rim_trail = Trail.create({
 
 panola_lake_trail = Trail.create({
     difficulty: "https://i.imgur.com/StjacU0.png",
-    elevation_profile: "https://i.imgur.com/K87he5Q.png",
-    image: "https://photos.smugmug.com/Panola-Mountain-State-Park/i-hsG5FxL/0/006517b3/L/RonnieOwings03-L.jpg",
-    pet_friendly: "https://i.imgur.com/vEB2ZHp.png",
-    distance: 1.25,
-    park_id: panola_mountain.id,
-    name: "Panola Mountain Lake Trail",
-    description: "Be sure to visit the other half of our park where you can
-    soak up the sun by the lake, fish for bass and catfish,
-    rent a boat to paddle around, or hike and bike the PATH
-    Foundation trails surrounding Alexander Lake. On this
-    side of the park, you will also find our archery range,
-    primitive hike-in campsites, as well as the location of
-    our Tree Top Excursions where you can harness-in and
-    climb your way up a 100-foot tree. Parking is available
-    at the intersection of Alexander Lake and Flatbridge
-    Roads."
-})
-
-
-
-panola_lake_trail = Trail.create({
-    difficulty: "https://i.imgur.com/StjacU0.png",
-    elevation_profile: "https://i.imgur.com/K87he5Q.png",
+    elevation_profile: "https://i.imgur.com/dm0xbJM.jpg",
     image: "https://photos.smugmug.com/Panola-Mountain-State-Park/i-hsG5FxL/0/006517b3/L/RonnieOwings03-L.jpg",
     pet_friendly: "https://i.imgur.com/vEB2ZHp.png",
     distance: 1.25,
