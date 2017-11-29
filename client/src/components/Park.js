@@ -51,6 +51,7 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 const TrailListContainer = styled.div`
 margin-left: 60px;
 margin-right: 60px;
+margin-top: 30px;
 `
 
 
@@ -77,6 +78,16 @@ display: flex;
 align-items: center;
 justify-content: center;
 
+`
+
+const TrailsHeader = styled.div`
+font-family: 'Actor', sans-serif;
+text-align: center;
+font-size: 1.5em;
+/* font-weight: bold; */
+
+margin-top: 25px;
+margin-bottom: 20px;
 `
 
 const ParkImageMain = styled.div`
@@ -186,6 +197,8 @@ class Park extends Component {
              
              
                 <TrailListContainer>
+
+                    <TrailsHeader>Trails at {this.state.park.name}</TrailsHeader>
                 <TrailList parkId={this.state.park.id} trails={this.state.park.trails} deleteATrail={this.deleteATrail}/>
 
                 <ButtonDiv>
