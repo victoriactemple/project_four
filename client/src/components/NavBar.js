@@ -36,26 +36,21 @@ border-radius: 3px;
 
 
 const UserButtonDiv = styled.div`
-float: right;
-/* display: inline-flex;
-justify-content: flex-end;
-flex-direction: row; */
-/* align-items: center; */
-
-
+/* display: flex; */
 `
 
 const UserButton = styled.div`
-
-margin-right: 100px;
-
+text-align: right;
+margin-top: -18px;
+margin-right: 10px;
+/* align-self: flex-end; */
+/* align-items: center; */
 `
 
 const BackgroundContainer = styled.div`
 font-family: 'Quicksand', sans-serif;
 background-color: rgba(237, 234, 231, 100);
-display: flex; 
-justify-content: center;
+text-align: center;
 height: 50px;
 `
 
